@@ -5,7 +5,7 @@ import BookNow from "../buttons/BookNow";
 const IndexHead = () => {
 
     return (
-        <div style={{ background: 'url(' + Image + ')', height: 600, width: '100%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', }}>
+        <div className="indexHead" style={{ background: 'url(' + Image + ')'}}>
             <div className="flex-row alignCenter justifyEven">
                 <h2 className="whiteText headText">Devgad Beach</h2>
                 <div style={{display: 'flex', width: '35%', justifyContent: 'center'}}>

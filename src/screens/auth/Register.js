@@ -53,7 +53,7 @@ const Register = () => {
         .then(res => {
             console.log('res', res);
             if (res.data.success) {
-                navigate('/login');
+                navigate('#/login');
             } else {
                 setErr(true);
                 setErrMsg('Could not create user');
@@ -113,7 +113,7 @@ const Register = () => {
                     <button className="my-btn" onClick={() => validate()}>Sign Up</button>
                 </div>
                 <div>
-                    <text>Already a user? <a href="/login">Login</a></text>
+                    <text>Already a user? <a href="#/login">Login</a></text>
                 </div>
             </div>
         </div>

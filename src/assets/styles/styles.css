@@ -44,14 +44,17 @@
     text-align: center;
     color: #fff;
 }
+
 .alignCenter {
     display: flex;
     align-items: center;
 }
+
 .justifyEven {
     display: flex;
     justify-content: space-evenly;
 }
+
 .Row {
     display: flex;
     flex-direction: row;
@@ -93,15 +96,23 @@
 }
 
 .smlText {
-    font-size: 24px;
+    font-size: 2vw;
 }
 
 .medText {
-    font-size: 36px;
+    font-size: 4vw;
 }
 
 .lgText {
-    font-size: 48px;
+    font-size: 5vh;
+}
+
+.indexHead {
+    height: 80vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center
 }
 
 .headText {
@@ -109,8 +120,8 @@
     font-family: 'Abril Fatface';
     font-style: normal;
     font-weight: 400;
-    font-size: 200px;
-    line-height: 200px;
+    font-size: 15vw;
+    line-height: 15vw;
     display: flex;
     align-items: center;
     text-align: center;
@@ -252,8 +263,8 @@ a {
 
 .bkNow {
     display: flex;
-    width: 277px;
-    height: 80px;
+    width: 20vw;
+    height: 5vw;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
@@ -262,18 +273,19 @@ a {
 }
 
 .bkArrow {
-    height: 30px;
-    width: 40px;
+    height: 3vw;
+    width: 5vw;
 }
 
 .indHdDesc {
-    margin-left: 100px;
-    width: 60vw;
+    margin-left: 5vw;
+    width: 70vw;
     display: flex;
     justify-content: space-between;
 }
+
 .servDiv {
-    width: 883px;
+    width: 60vw;
     height: 78px;
     left: 100px;
     top: 918px;
@@ -282,3 +294,40 @@ a {
     /* background-size: cover;     */
     /* box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25); */
 }
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .indexHead {
+        height: 40vh;
+    }
+    .servDiv {
+        width: 90vw;
+    }
+}
+
+/* Extra small devices (phones, 600px and down)
+@media only screen and (max-width: 600px) {
+    ...
+}
+
+Small devices (portrait tablets and large phones, 600px and up)
+@media only screen and (min-width: 600px) {
+    ...
+}
+
+Medium devices (landscape tablets, 768px and up)
+@media only screen and (min-width: 768px) {
+    ...
+}
+
+Large devices (laptops/desktops, 992px and up)
+@media only screen and (min-width: 992px) {
+    ...
+}
+
+Extra large devices (large laptops and desktops, 1200px and up)
+@media only screen and (min-width: 1200px) {
+    ...
+} */

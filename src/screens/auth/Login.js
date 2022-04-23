@@ -92,7 +92,7 @@ const Login = () => {
                     <button className="my-btn" onClick={() => validate()}>Log In</button>
                 </div>
                 <div>
-                    <text>Don't have an account? <a href="/register">Register</a></text>
+                    <text>Don't have an account? <a href="#/register">Register</a></text>
                 </div>
             </div>
         </div>
