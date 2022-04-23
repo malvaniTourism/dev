@@ -3,21 +3,21 @@ import React from "react";
 const MainNav = () => {
 
     return (
-        <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
+        <nav class="navbar navbar-expand-lg sticky-top" style={{backgroundColor: '#FF0038'}}>
+            <a className="navbar-brand m-3" href="#"><text className="whiteText bold">Malvan</text></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse ml-8" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a className="nav-link" href="#"><text className="whiteText">Home</text></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#/login">Login</a>
+                        <a className="nav-link" href="#/login"><text className="whiteText">Login</text></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a className="nav-link" href="#"><text className="whiteText">Pricing</text></a>
                     </li>
                 </ul>
             </div>
