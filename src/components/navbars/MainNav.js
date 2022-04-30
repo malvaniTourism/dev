@@ -17,7 +17,7 @@ const MainNav = () => {
                         <a className="nav-link" href="#/login"><text className="whiteText">Login</text></a>
                     </li>
                     <li class="nav-item">
-                        <a className="nav-link" href="#"><text className="whiteText">Pricing</text></a>
+                        <a className="nav-link" href="#/mainProd"><text className="whiteText">Pricing</text></a>
                     </li>
                 </ul>
             </div>

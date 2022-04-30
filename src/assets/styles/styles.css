@@ -272,9 +272,23 @@ a {
     justify-content: space-evenly;
 }
 
+.knMore {
+    width: 20vw;
+    height: 5vw;
+    background: #FF0038;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 .bkArrow {
     height: 3vw;
     width: 5vw;
+}
+.knArrow {
+    height: 2vw;
+    width: 3vw;
 }
 
 .indHdDesc {
@@ -294,7 +308,84 @@ a {
     /* background-size: cover;     */
     /* box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25); */
 }
+.holiCard {
+    width: 273px;
+    height: 467px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 15px 15px;
+    margin-bottom: 20px;
+}
+.cardInfo {
+    height: 234px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 0px 20px;
+    justify-content: space-around;
+}
+.summ {
+    border-bottom: 1px solid #C4C4C4;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
 
+.cafeCard {
+    width: 400px;
+    height: 398px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 0px 0px 20px 20px;
+    background-color: linear-gradient(180deg, #090523 31.77%, rgba(11, 6, 44, 0.46) 61.98%, rgba(196, 196, 196, 0) 100%);
+}
+.cafeCardDiv {
+    display: flex;
+    top: 0;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-items: flex-start;
+    height: 300px;
+}
+.detPageImgDiv {
+    background: url(../images/f1.png);
+    object-fit: fill;
+    background-repeat: no-repeat;
+    padding-top: 8vh;
+    padding-left: 8vw;
+    height: 361px
+}
+.detPageHead {
+    width: 1161px;
+    height: 130px;
+    font-family: Abril Fatface;
+    font-weight: bold;
+    font-size: 96px;
+    line-height: 130px;
+    display: flex;
+    align-items: center;
+    color: #FFFDFD;
+}
+.detPageSubHead {
+    width: 448px;
+    height: 22px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    color: #FFB524;
+}
+.detPageSubs {
+    width: 200px;
+    height: 66px;
+    flex-wrap: wrap;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
 
 
 
@@ -302,6 +393,7 @@ a {
     .indexHead {
         height: 40vh;
     }
+
     .servDiv {
         width: 90vw;
     }

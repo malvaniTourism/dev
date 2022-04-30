@@ -7,6 +7,7 @@ import Home from './screens/mains/Home';
 import Login from './screens/auth/Login';
 import Register from './screens/auth/Register';
 import NotFound from './screens/mains/NotFound';
+import MainProd from './screens/products/MainProd';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route exact path='/' element={<Home />}></Route>
         <Route exact path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Register />}></Route>
+        <Route path='/mainProd' element={<MainProd />}></Route>
         <Route element={<NotFound />}></Route>
       </Routes>
     </Router>
