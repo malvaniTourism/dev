@@ -6,15 +6,15 @@ const Services = () => {
         <div className="col-12 d-flex flex-lg-row flex-column justify-content-lg-around align-items-center" style={{ marginTop: 80, marginBottom: 80 }}>
             <div>
                 <div className="d-flex flex-lg-row flex-sm-column align-items-center servDiv">
-                    <text className="lgText whiteBold" style={{marginRight: 10, marginLeft: 5}}>Hotels</text>
+                    <text className="lgText whiteBold" style={{ marginRight: 10, marginLeft: 5 }}>Hotels</text>
                     <text className="whiteAlign">Special offers & Discounts on the Best hotels! </text>
                 </div>
                 <div className="d-flex flex-lg-row flex-sm-column align-items-center servDiv">
-                    <text className="lgText whiteBold" style={{marginRight: 10, marginLeft: 5}}>Tours</text>
+                    <text className="lgText whiteBold" style={{ marginRight: 10, marginLeft: 5 }}>Tours</text>
                     <text className="whiteAlign">Packed Holiday Plans!</text>
                 </div>
                 <div className="d-flex flex-lg-row flex-sm-column align-items-center servDiv">
-                    <text className="lgText whiteBold" style={{marginRight: 10, marginLeft: 5}}>Restaurants</text>
+                    <text className="lgText whiteBold" style={{ marginRight: 10, marginLeft: 5 }}>Restaurants</text>
                     <text className="whiteAlign">Best Places to eat!</text>
                 </div>
             </div>

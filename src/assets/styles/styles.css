@@ -286,6 +286,7 @@ a {
     height: 3vw;
     width: 5vw;
 }
+
 .knArrow {
     height: 2vw;
     width: 3vw;
@@ -308,6 +309,7 @@ a {
     /* background-size: cover;     */
     /* box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25); */
 }
+
 .holiCard {
     width: 273px;
     height: 467px;
@@ -316,6 +318,7 @@ a {
     border-radius: 0px 0px 15px 15px;
     margin-bottom: 20px;
 }
+
 .cardInfo {
     height: 234px;
     display: flex;
@@ -323,6 +326,7 @@ a {
     padding: 20px 20px 0px 20px;
     justify-content: space-around;
 }
+
 .summ {
     border-bottom: 1px solid #C4C4C4;
     justify-content: space-between;
@@ -336,6 +340,7 @@ a {
     border-radius: 0px 0px 20px 20px;
     background-color: linear-gradient(180deg, #090523 31.77%, rgba(11, 6, 44, 0.46) 61.98%, rgba(196, 196, 196, 0) 100%);
 }
+
 .cafeCardDiv {
     display: flex;
     top: 0;
@@ -344,6 +349,7 @@ a {
     justify-items: flex-start;
     height: 300px;
 }
+
 .detPageImgDiv {
     background: url(../images/f1.png);
     object-fit: fill;
@@ -352,6 +358,7 @@ a {
     padding-left: 8vw;
     height: 361px
 }
+
 .detPageHead {
     width: 1161px;
     height: 130px;
@@ -363,6 +370,7 @@ a {
     align-items: center;
     color: #FFFDFD;
 }
+
 .detPageSubHead {
     width: 448px;
     height: 22px;
@@ -375,6 +383,7 @@ a {
     align-items: center;
     color: #FFB524;
 }
+
 .detPageSubs {
     width: 200px;
     height: 66px;

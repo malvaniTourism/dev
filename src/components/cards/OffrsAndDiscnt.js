@@ -17,7 +17,7 @@ const OffrsAndDicsnt = (props) => {
                     <text className='primText locText'>Malvan</text>
                 </div>
                 <div className='bold smText'>Vasant Vijay</div>
-                <div style={{lineHeight:3}}>Starting from ₹ 250</div>
+                <div style={{ lineHeight: 3 }}>Starting from ₹ 250</div>
             </div>
         </div>
     )

@@ -15,7 +15,7 @@ const Home = () => {
             <Services />
             <OffrsSwiper />
             <HolidaySwiper />
-            <CafeSwiper/>
+            <CafeSwiper />
         </div>
     )
 };

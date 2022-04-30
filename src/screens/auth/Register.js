@@ -50,22 +50,22 @@ const Register = () => {
         formData.append('password_confirmation', cPass);
 
         comnPost('auth/register', formData)
-        .then(res => {
-            console.log('res', res);
-            if (res.data.success) {
-                navigate('#/login');
-            } else {
-                setErr(true);
-                setErrMsg('Could not create user');
-                setTimeout(() => {
-                    setErr(false);
-                    setErrMsg('');
-                }, 3000)
-            }
-        })
-        .catch(err => {
-            console.log('err', err);
-        })
+            .then(res => {
+                console.log('res', res);
+                if (res.data.success) {
+                    navigate('#/login');
+                } else {
+                    setErr(true);
+                    setErrMsg('Could not create user');
+                    setTimeout(() => {
+                        setErr(false);
+                        setErrMsg('');
+                    }, 3000)
+                }
+            })
+            .catch(err => {
+                console.log('err', err);
+            })
     }
 
     return (

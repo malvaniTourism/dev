@@ -55,12 +55,12 @@ const HolidaySwiper = () => {
             </div>
             <div className="textAlign mx-auto">
                 <div>
-                    <text className="lgText bold" style={{lineHeight: 4}}>Special offers & Discounts</text>
+                    <text className="lgText bold" style={{ lineHeight: 4 }}>Special offers & Discounts</text>
                 </div>
-                <div className="mx-auto" style={{width: '60%', lineHeight: 2, marginBottom: 35}}>
+                <div className="mx-auto" style={{ width: '60%', lineHeight: 2, marginBottom: 35 }}>
                     <text className="textAlign">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when unknown printer took a galley of type and scrambled it to make a type specimen book. It has not only five centuries</text>
                 </div>
-                <div className="mx-auto" style={{marginBottom: 30}}>
+                <div className="mx-auto" style={{ marginBottom: 30 }}>
                     <KnowMore />
                 </div>
             </div>

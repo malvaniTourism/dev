@@ -5,11 +5,11 @@ import BookNow from "../buttons/BookNow";
 const IndexHead = () => {
 
     return (
-        <div className="indexHead" style={{ background: 'url(' + Image + ')'}}>
+        <div className="indexHead" style={{ background: 'url(' + Image + ')' }}>
             <div className="flex-row alignCenter justifyEven">
                 <h2 className="whiteText headText">Devgad Beach</h2>
-                <div style={{display: 'flex', width: '35%', justifyContent: 'center'}}>
-                <BookNow />
+                <div style={{ display: 'flex', width: '35%', justifyContent: 'center' }}>
+                    <BookNow />
                 </div>
             </div>
             <div className="flex-row indHdDesc">

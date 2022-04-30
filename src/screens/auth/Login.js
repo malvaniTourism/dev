@@ -22,9 +22,9 @@ const Login = () => {
         } else if (pass === '') {
             setErr(true);
             setErrMsg('Enter Password')
-        // } else if (!validator.isStrongPassword(pass)) {
-        //     setErr(true);
-        //     setErrMsg('Enter Strong Password')
+            // } else if (!validator.isStrongPassword(pass)) {
+            //     setErr(true);
+            //     setErrMsg('Enter Strong Password')
         } else {
             setErr(false);
             setErrMsg('');
