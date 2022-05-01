@@ -6,7 +6,7 @@ const BookNow = () => {
     return (
         <div className="bkNow">
             <text className="whiteAlign bold smlText">BOOK NOW</text>
-            <img alt="bk_btn" className="bkArrow" src={Image} height={50} width={50} />
+            <img alt="bk_btn" className="bkArrow" src={Image} />
         </div>
     )
 };

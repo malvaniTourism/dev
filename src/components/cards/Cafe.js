@@ -12,7 +12,7 @@ const Cafe = () => {
                     <text>Devgad</text>
                 </div>
                 <div>
-                    <text className='medText'>The Riverine</text><br />
+                    <text className='lgText'>The Riverine</text><br />
                     <text className='xsmText'>Snacks, India</text>
                 </div>
                 <div>

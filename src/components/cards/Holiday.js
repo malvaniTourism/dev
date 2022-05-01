@@ -10,7 +10,7 @@ const Holiday = () => {
         <div className='holiCard'>
             <div className='commonPic offDiscImg' style={{ background: `url(https://cdn.pixabay.com/photo/2017/05/09/03/46/alberta-2297204_960_720.jpg)` }} />
             <div className='cardInfo'>
-                <div className='bold smlText'>Devgad Taramumbri</div>
+                <div className='bold lgText'>Devgad Taramumbri</div>
                 <div>
                     <HiLocationMarker color="#C4C4C4" fontSize="14px" />
                     <text className='greyText locText'>Devgad</text>

@@ -93,18 +93,22 @@
 
 .xsmText {
     font-size: 18px;
+    flex-wrap: wrap;
 }
 
 .smlText {
-    font-size: 2vw;
+    font-size: 2vh;
+    flex-wrap: wrap;
 }
 
 .medText {
-    font-size: 4vw;
+    font-size: 3vh;
+    flex-wrap: wrap;
 }
 
 .lgText {
-    font-size: 5vh;
+    font-size: 4vh;
+    flex-wrap: wrap;
 }
 
 .indexHead {
@@ -114,7 +118,8 @@
     background-repeat: no-repeat;
     background-position: center
 }
-
+.divHeads {
+}
 .headText {
     width: 50%;
     font-family: 'Abril Fatface';
@@ -263,8 +268,8 @@ a {
 
 .bkNow {
     display: flex;
-    width: 20vw;
-    height: 5vw;
+    width: 210px;
+    height: 50px;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
@@ -273,8 +278,8 @@ a {
 }
 
 .knMore {
-    width: 20vw;
-    height: 5vw;
+    width: 200px;
+    height: 70px;
     background: #FF0038;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
@@ -283,13 +288,13 @@ a {
 }
 
 .bkArrow {
-    height: 3vw;
-    width: 5vw;
+    height: 30px;
+    width: 40px;
 }
 
 .knArrow {
-    height: 2vw;
-    width: 3vw;
+    height: 20px;
+    width: 40px;
 }
 
 .indHdDesc {
@@ -334,7 +339,7 @@ a {
 }
 
 .cafeCard {
-    width: 400px;
+    width: 280px;
     height: 398px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 0px 0px 20px 20px;
@@ -356,37 +361,31 @@ a {
     background-repeat: no-repeat;
     padding-top: 8vh;
     padding-left: 8vw;
-    height: 361px
+    height: 45vh
 }
 
 .detPageHead {
-    width: 1161px;
-    height: 130px;
     font-family: Abril Fatface;
     font-weight: bold;
-    font-size: 96px;
-    line-height: 130px;
+    font-size: 6vw;
+    line-height: 8vw;
     display: flex;
     align-items: center;
     color: #FFFDFD;
 }
 
 .detPageSubHead {
-    width: 448px;
-    height: 22px;
     font-family: Rubik;
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 1em;
+    line-height: 3em;
     display: flex;
     align-items: center;
     color: #FFB524;
 }
 
 .detPageSubs {
-    width: 200px;
-    height: 66px;
     flex-wrap: wrap;
     font-family: Rubik;
     font-style: normal;
@@ -397,14 +396,37 @@ a {
 }
 
 
+* {
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
 
 @media only screen and (max-width: 600px) {
     .indexHead {
         height: 40vh;
     }
 
+    .indHdDesc {
+        width: 90vw;
+    }
+
     .servDiv {
         width: 90vw;
+    }
+
+    .mySlider {
+        padding: 30px 30px 30px 40px;
+    }
+    .knMore {
+        width: 170px;
+        height: 50px;
+    }
+    .bkArrow {
+        height: 20px;
+        width: 30px;
     }
 }
 
