@@ -9,6 +9,7 @@ import CustFooter from "../../components/footers/CustFooter";
 import CustNav from "../../components/navbars/CustNav";
 import CustHeader from "../../components/headers/CustHeader";
 import CustMainSearchBar from "../../components/filters/CustMainSearchBar";
+import CustOffers from "../../components/Swipers/CustOffers";
 
 const Home = () => {
 
@@ -18,6 +19,7 @@ const Home = () => {
             <CustHeader />
             <CustMainSearchBar />
             <Services />
+            <CustOffers />
             <OffrsSwiper />
             <HolidaySwiper />
             <CafeSwiper />

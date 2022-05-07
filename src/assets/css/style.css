@@ -3822,7 +3822,9 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     background: var(--main-color-two);
     z-index: -1; }
   .destinations-list-slider-bg .destinations-list-slider {
-    padding: 55px 0; }
+    padding: 55px 0;
+    background-color: red;
+  }
 
 .destinations-slider-controls .slider-nav {
   margin-bottom: 150px; }
