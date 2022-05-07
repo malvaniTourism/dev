@@ -9,6 +9,19 @@ import Register from './screens/auth/Register';
 import NotFound from './screens/mains/NotFound';
 import MainProd from './screens/products/MainProd';
 
+import './assets/css/bootstrap.min.css';
+import './assets/css/animate.css';
+import './assets/css/magnific-popup.css';
+import './assets/css/owl.carousel.min.css';
+import './assets/css/slick.css';
+import './assets/css/swiper.min.css';
+import './assets/css/nice-select.css';
+import './assets/css/jquery-ui.min.css';
+import './assets/css/font-awesome.min.css';
+import './assets/css/themify-icons.css';
+import './assets/css/line-awesome.min.css';
+import './assets/css/style.css';
+import './assets/css/responsive.css';
 
 function App() {
   return (
