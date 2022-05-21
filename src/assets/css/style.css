@@ -605,7 +605,7 @@ ul {
       margin-left: 6px; }
 
 .btn-yellow {
-  background: var(--main-color-one);
+  background: #F3941E;
   color: #ffffff; }
   .btn-yellow:hover, .btn-yellow:focus {
     color: #ffffff; }
@@ -3823,7 +3823,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     z-index: -1; }
   .destinations-list-slider-bg .destinations-list-slider {
     padding: 55px 0;
-    background-color: red;
+    /* background-color: red; */
   }
 
 .destinations-slider-controls .slider-nav {
@@ -5130,7 +5130,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
       .tp-tabs.style-two li:last-child {
         border-bottom: 0 !important; }
       .tp-tabs.style-two li .btn-yellow {
-        background: var(--main-color-one);
+        background: #F3941E;
         color: #ffffff;
         margin: 20px 0;
         border-radius: 4px; }

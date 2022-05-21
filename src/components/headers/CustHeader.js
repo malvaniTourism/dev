@@ -15,8 +15,8 @@ const CustHeader = () => {
         fade: true,
         autoplay: true,
         autoplaySpeed: 9000,
-        prevArrow: '<span class="slick-prev"><i class="la la-long-arrow-left"></i></span>',
-        nextArrow: '<span class="slick-next"><i class="la la-long-arrow-right"></i></span>',
+        prevArrow: <div class="slick-prev"><i class="la la-long-arrow-left"></i></div>,
+        nextArrow: <span class="slick-next"><i class="la la-long-arrow-right"></i></span>,
         // appendDots: $(".banner-slider-dots"),
     };
 
@@ -29,8 +29,8 @@ const CustHeader = () => {
                     <div className="col-xl-8 col-lg-9 offset-xl-2 offset-lg-1">
                 <Slider {...settings}>
                     <MainHeadData />
-                    {/* <MainHeadData /> */}
-                    {/* <MainHeadData /> */}
+                    <MainHeadData />
+                    <MainHeadData />
                 </Slider>
                 </div>
                 </div>
