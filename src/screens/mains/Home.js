@@ -10,6 +10,7 @@ import CustNav from "../../components/navbars/CustNav";
 import CustHeader from "../../components/headers/CustHeader";
 import CustMainSearchBar from "../../components/filters/CustMainSearchBar";
 import CustOffers from "../../components/Swipers/CustOffers";
+import HolidayPlans from "../../components/Swipers/HolidayPlans";
 
 const Home = () => {
 
@@ -21,6 +22,7 @@ const Home = () => {
             <Services />
             <CustOffers />
             <OffrsSwiper />
+            <HolidayPlans />
             <HolidaySwiper />
             <CafeSwiper />
             <CustFooter />

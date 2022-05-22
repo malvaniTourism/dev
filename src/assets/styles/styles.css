@@ -50,6 +50,11 @@
     align-items: center;
 }
 
+.justifyCenter {
+    display: flex;
+    justify-content: center;
+}
+
 .justifyEven {
     display: flex;
     justify-content: space-evenly;
@@ -118,8 +123,9 @@
     background-repeat: no-repeat;
     background-position: center
 }
-.divHeads {
-}
+
+.divHeads {}
+
 .headText {
     width: 50%;
     font-family: 'Abril Fatface';
@@ -420,10 +426,12 @@ a {
     .mySlider {
         padding: 30px 30px 30px 40px;
     }
+
     .knMore {
         width: 170px;
         height: 50px;
     }
+
     .bkArrow {
         height: 20px;
         width: 30px;

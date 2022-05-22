@@ -54,7 +54,7 @@ const HolidaySwiper = () => {
                 </Slider>
             </div>
             <div className="textAlign mx-auto">
-                <div style={{marginTop: 40}}>
+                <div style={{ marginTop: 40 }}>
                     <text className="lgText bold">Special offers & Discounts</text>
                 </div>
                 <div className="mx-auto" style={{ width: '60%', lineHeight: 2, marginBottom: 35 }}>

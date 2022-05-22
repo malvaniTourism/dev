@@ -1,4 +1,5 @@
 import React from "react";
+import Image from '../../assets/img/destination-list/1.png'
 
 const CustOffer = () => {
 
@@ -7,7 +8,7 @@ const CustOffer = () => {
             <div className="single-destinations-list text-center">
                 <div className="thumb">
                     <span className="d-list-tag">Special Offer</span>
-                    <img src="assets/img/destination-list/1.png" alt="list" />
+                    <img src={Image} alt="list" />
                     <div className="d-list-btn-wrap">
                         <div className="d-list-btn">
                             <a className="btn btn-yellow" href="#">Book Now <i className="fa fa-paper-plane" /></a>

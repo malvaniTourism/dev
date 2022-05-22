@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MainHeadData from './MainHeadData';
+import LeftArr from '../../assets/images/arrow_left.png'
+import RightArr from '../../assets/images/arrow_right.png'
 
 const CustHeader = () => {
 
@@ -15,27 +17,27 @@ const CustHeader = () => {
         fade: true,
         autoplay: true,
         autoplaySpeed: 9000,
-        prevArrow: <div class="slick-prev"><i class="la la-long-arrow-left"></i></div>,
-        nextArrow: <span class="slick-next"><i class="la la-long-arrow-right"></i></span>,
+        nextArrow: <img alt="arr-img" className="bkArrow" src={LeftArr} height={60} width={60} />,
+        prevArrow: <img alt="arr-img" className="bkArrow" src={RightArr} height={60} width={60} />
         // appendDots: $(".banner-slider-dots"),
     };
 
     return (
         <div className="banner-area">
             <div className="banner-slider">
-            <div className="banner-slider-item banner-bg-1">
-            <div className="container">
-                <div className="row">
-                    <div className="col-xl-8 col-lg-9 offset-xl-2 offset-lg-1">
-                <Slider {...settings}>
-                    <MainHeadData />
-                    <MainHeadData />
-                    <MainHeadData />
-                </Slider>
+                <div className="banner-slider-item banner-bg-1">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-xl-8 col-lg-9 offset-xl-2 offset-lg-1">
+                                <Slider {...settings}>
+                                    <MainHeadData />
+                                    <MainHeadData />
+                                    <MainHeadData />
+                                </Slider>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                </div>
-            </div>
-        </div>
 
             </div>
             <div className="banner-social-meta">

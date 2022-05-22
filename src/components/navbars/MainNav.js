@@ -5,7 +5,7 @@ const MainNav = () => {
         <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="https://tour.pranavkamble.in/mt.jpg" alt=""  height="30" class="d-inline-block align-text-top"/>
+                    <img src="https://tour.pranavkamble.in/mt.jpg" alt="" height="30" class="d-inline-block align-text-top" />
                     MalvaniTourism
                 </a>
                 <button class="navbar-toggler ms-auto ms-sm-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle Navigation">

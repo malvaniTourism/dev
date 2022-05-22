@@ -40,7 +40,6 @@ const CustOffers = () => {
         // prevArrow: <span class="slick-prev"><i class="la la-long-arrow-left"></i></span>,
         // nextArrow: <span class="slick-next"><i class="la la-long-arrow-right"></i></span>
     }
-    
 
     return (
         <div className="offer-area pd-top-70">
