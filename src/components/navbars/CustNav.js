@@ -21,7 +21,7 @@ const CustNav = () => {
                     </button>
                     <div className="nav-right-content">
                         <ul className="pl-0">
-                            <li className="top-bar-btn-booking">
+                            <li className="top-bar-btn-booking alignCenter mx-auto bkNow">
                                 <a className="btn btn-yellow" href="tour-details.html">Book Now <i className="fa fa-paper-plane" /></a>
                             </li>
                             <li className="tp-lang">
@@ -102,11 +102,12 @@ const CustNav = () => {
                     </ul>
                 </div>
                 <div className="nav-right-content">
-                    <ul>
-                        <li>
-                            <a className="btn btn-yellow" href="tour-details.html">Book Now <i className="fa fa-paper-plane" /></a>
-                        </li>
-                        <li className="tp-lang">
+                    <div className="Row alignCenter">
+                        <div className="d-list-btn-wrap btn-yellow d-list alignCenter mx-auto bkNow">
+                            <text className="whiteAlign bold mdText" href="#">Book Now</text>
+                            <i className="fa fa-paper-plane" />
+                        </div>
+                        <div className="tp-lang">
                             <div className="tp-lang-wrap">
                                 <select className="select single-select">
                                     <option value={1}>ENG</option>
@@ -115,16 +116,16 @@ const CustNav = () => {
                                     <option value={3}>Spanish</option>
                                 </select>
                             </div>
-                        </li>
-                        <li className="search">
+                        </div>
+                        <div className="search">
                             <i className="ti-search" />
-                        </li>
-                        <li className="notification">
+                        </div>
+                        <div className="notification">
                             <a className="signUp-btn" href="#">
                                 <i className="fa fa-user-o" />
                             </a>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
