@@ -66,7 +66,7 @@ const CustNav = () => {
                             </ul>
                         </li>
                         <li>
-                            <a href="about.html">About Us</a>
+                            <a href="#/aboutus">About Us</a>
                         </li>
                         <li className="menu-item-has-children">
                             <a href="#">Pages</a>
@@ -97,7 +97,7 @@ const CustNav = () => {
                             </ul>
                         </li>
                         <li>
-                            <a href="contact.html">Contact</a>
+                            <a href="#/contactus">Contact</a>
                         </li>
                     </ul>
                 </div>

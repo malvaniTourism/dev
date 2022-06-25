@@ -18,7 +18,7 @@ const CustOffers = () => {
 
     const getDimension = () => {
         console.log('log', window.innerWidth);
-        if (window.innerWidth <= 600) {
+        if (window.innerWidth <= 900) {
             console.log('less');
             setIsMobile(true)
             setSlides(1)

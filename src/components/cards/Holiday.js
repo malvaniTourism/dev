@@ -2,9 +2,10 @@ import React from 'react';
 import { HiLocationMarker, HiOutlineClock, HiStar } from 'react-icons/hi';
 import { RiCalendarEventFill } from 'react-icons/ri';
 import Details from '../buttons/Details';
-
+import { useNavigate } from 'react-router-dom';
 
 const Holiday = () => {
+    const navigate = useNavigate();
 
     return (
         <div className='holiCard'>
@@ -31,7 +32,7 @@ const Holiday = () => {
                 </div>
                 <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                 <div>
-                    <Details />
+                    <Details navigateTo={() => navigate('carddetails')}/>
                 </div>
             </div>
         </div>

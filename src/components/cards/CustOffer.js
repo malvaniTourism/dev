@@ -1,7 +1,9 @@
 import React from "react";
 import Image from '../../assets/img/destination-list/1.png'
+import { useNavigate } from 'react-router-dom';
 
 const CustOffer = () => {
+    const navigate = useNavigate();
 
     return (
         <div className="d-list-slider-item">
@@ -9,8 +11,8 @@ const CustOffer = () => {
                 <div className="thumb">
                     <span className="d-list-tag">Special Offer</span>
                     <img src={Image} alt="list" />
-                        <div className="d-list-btn-wrap btn-yellow d-list alignCenter mx-auto bkNow">
-                            <text className="whiteAlign bold mdText" href="#">Book Now</text>
+                        <div className="d-list-btn-wrap btn-yellow d-list alignCenter mx-auto bkNow" onClick={() => navigate('carddetails')}>
+                            <text className="whiteAlign bold mdText" href="#/carddetails">Book Now</text>
                             <i className="fa fa-paper-plane" />
                         </div>
                 </div>
