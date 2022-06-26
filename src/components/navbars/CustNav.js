@@ -24,16 +24,6 @@ const CustNav = () => {
                             <li className="top-bar-btn-booking alignCenter mx-auto bkNow">
                                 <a className="btn btn-yellow" href="tour-details.html">Book Now <i className="fa fa-paper-plane" /></a>
                             </li>
-                            <li className="tp-lang">
-                                <div className="tp-lang-wrap">
-                                    <select className="select single-select">
-                                        <option value={1}>ENG</option>
-                                        <option value={2}>BAN</option>
-                                        <option value={3}>Chinese</option>
-                                        <option value={3}>Spanish</option>
-                                    </select>
-                                </div>
-                            </li>
                             <li className="search">
                                 <i className="ti-search" />
                             </li>
@@ -106,16 +96,6 @@ const CustNav = () => {
                         <div className="d-list-btn-wrap btn-yellow d-list alignCenter mx-auto bkNow">
                             <text className="whiteAlign bold mdText" href="#">Book Now</text>
                             <i className="fa fa-paper-plane" />
-                        </div>
-                        <div className="tp-lang">
-                            <div className="tp-lang-wrap">
-                                <select className="select single-select">
-                                    <option value={1}>ENG</option>
-                                    <option value={2}>BAN</option>
-                                    <option value={3}>Chinese</option>
-                                    <option value={3}>Spanish</option>
-                                </select>
-                            </div>
                         </div>
                         <div className="search">
                             <i className="ti-search" />

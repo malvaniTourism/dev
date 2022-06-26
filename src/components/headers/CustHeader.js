@@ -38,7 +38,6 @@ const CustHeader = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
             <div className="banner-social-meta">
                 <div className="banner-slider-dots" />

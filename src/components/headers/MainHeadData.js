@@ -3,7 +3,7 @@ import React from "react";
 const MainHeadData = () => {
 
     return (
-        <div className="banner-slider-item banner-bg-1">
+        <div className="banner-bg-1">
             <div className="container">
                 <div className="row">
                     <div className="col-xl-8 col-lg-9 offset-xl-2 offset-lg-1">
@@ -11,7 +11,7 @@ const MainHeadData = () => {
                             <div className="col-lg-9 col-sm-8">
                                 <div className="banner-inner">
                                     <p className="banner-cat s-animate-1">Hot Places</p>
-                                    <h2 className="banner-title s-animate-2">Navagio <br /> Beach</h2>
+                                    <h2 className="banner-title s-animate-2" style={{fontSize: 50}}>Navagio <br /> Beach</h2>
                                 </div>
                             </div>
                             <div className="col-lg-3 col-sm-4">

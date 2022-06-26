@@ -2768,6 +2768,10 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     position: relative;
   }
 
+  .navbar-nav {
+    margin-top: -18px;
+  }
+
   .navbar-area .nav-container .navbar-collapse .navbar-nav {
     display: block;
     width: 100%;
@@ -3401,23 +3405,24 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 	## Banner style
 ------------------------------------------------*/
 .banner-area {
-  position: relative;
+  /* position: relative; */
+  height: 60vh;
 }
 
-.banner-slider .banner-slider-item {
-  position: relative;
-  height: 100vh;
-  display: -webkit-box;
+.banner-slider {
+  /* position: relative; */
+  height: 60vh;
+  /* display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
-  background-size: cover;
+  align-items: center; */
+  /* background-size: cover; */
 }
 
 .banner-slider .banner-slider-item .banner-inner {
-  margin-bottom: 80px;
+  margin-bottom: 10px;
 }
 
 .banner-slider .banner-slider-item .banner-inner .banner-cat {
@@ -3427,7 +3432,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 
 .banner-slider .banner-slider-item .banner-inner .banner-title {
-  font-size: 120px;
+  font-size: 30px;
   color: #ffffff;
   line-height: 1.2;
   font-weight: 700;
@@ -3470,7 +3475,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   position: absolute;
   width: 100%;
   background-size: cover;
-  height: 100%;
+  height: 70%;
   left: 0;
   right: 0;
   top: 0;
@@ -3505,7 +3510,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   top: 0;
   bottom: 0;
   width: 100%;
-  height: 100%;
+  height: 70%;
   background: var(--main-color-two);
   opacity: 0.4;
 }
@@ -4144,9 +4149,9 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 
 .banner-slider-two .banner-inner .banner-title {
-  font-size: 55px;
+  font-size: 30px;
   color: #ffffff;
-  line-height: 70px;
+  line-height: 30px;
   font-weight: 700;
   display: inline-block;
   width: 70%;
@@ -5056,7 +5061,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   left: 0;
   bottom: 0;
   width: 35%;
-  height: 100%;
+  height: 90vh;
   background: #FFB524;
   z-index: -1;
 }

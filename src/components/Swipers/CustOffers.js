@@ -42,7 +42,7 @@ const CustOffers = () => {
     }
 
     return (
-        <div className="offer-area pd-top-70">
+        <div className="offer-area pd-top-70 pd-bottom-100">
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-xl-6 col-lg-8">
