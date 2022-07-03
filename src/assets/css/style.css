@@ -714,6 +714,7 @@ ul {
 .btn-yellow {
   background: #F3941E !important;
   color: #ffffff !important;
+  text-align: center;
 }
 
 .btn-yellow:hover,
@@ -1330,6 +1331,10 @@ ul {
     --body-font-size: 15px;
     --body-line-height: 28px;
   }
+  .menu-item-has-children a{
+    text-decoration: none;
+    color: #071C55;
+  }
 
   .btn {
     font-size: 14px;
@@ -1355,6 +1360,19 @@ ul {
   :root {
     --body-font-size: 14px;
     --body-line-height: 28px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .bannerContent {
+    margin-top: -100px;
+    margin-bottom: 100px;
+    height: 90vh;
+  }
+  .bkNow {
+    width: 150px;
+    justify-content: center;
+    text-align: center;
   }
 }
 
@@ -2917,6 +2935,10 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     font-family: 'fontawesome';
   }
 
+  .menu-item-has-children a{
+    text-decoration: none;
+  }
+
   .navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu .menu-item-has-children>.sub-menu {
     left: 100%;
     top: 0;
@@ -3090,6 +3112,13 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 
 .nav-right-content ul {
   margin-bottom: 0;
+}
+.navButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
 }
 
 .nav-right-content ul li {
@@ -3410,15 +3439,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 
 .banner-slider {
-  /* position: relative; */
   height: 60vh;
-  /* display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; */
-  /* background-size: cover; */
 }
 
 .banner-slider .banner-slider-item .banner-inner {
@@ -3433,8 +3454,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 
 .banner-slider .banner-slider-item .banner-inner .banner-title {
   font-size: 30px;
-  color: #ffffff;
-  line-height: 1.2;
+  color: #fff;
   font-weight: 700;
 }
 
@@ -3510,7 +3530,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   top: 0;
   bottom: 0;
   width: 100%;
-  height: 70%;
+  height: 80%;
   background: var(--main-color-two);
   opacity: 0.4;
 }
@@ -4151,7 +4171,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .banner-slider-two .banner-inner .banner-title {
   font-size: 30px;
   color: #ffffff;
-  line-height: 30px;
+  /* line-height: 20px; */
   font-weight: 700;
   display: inline-block;
   width: 70%;

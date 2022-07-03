@@ -10,7 +10,7 @@ const CustHeader = () => {
 
     const settings = {
         slidesToShow: 1,
-        dots: true,
+        dots: false,
         slidesToScroll: 1,
         speed: 400,
         loop: true,
@@ -27,7 +27,7 @@ const CustHeader = () => {
             <div className="banner-slider">
                 <div className="banner-slider-item banner-bg-1">
                     <div className="container">
-                        <div className="row">
+                        <div className="row bannerContent">
                             <div className="col-xl-8 col-lg-9 offset-xl-2 offset-lg-1">
                                 <Slider {...settings}>
                                     <MainHeadData />
