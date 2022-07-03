@@ -1,5 +1,5 @@
 import React from "react";
-import MyLogo from '../../assets/img/sticky-logo.png';
+import MyLogo from '../../assets/img/logoMT.png';
 
 const CustNav = () => {
 
@@ -9,7 +9,7 @@ const CustNav = () => {
                 <div className="responsive-mobile-menu">
                     <div className="mobile-logo">
                         <a href="index-2.html">
-                            <img src={MyLogo} alt="logo" />
+                            <img src={MyLogo} className='myLogo' alt="logo" />
                         </a>
                     </div>
                     <button className="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#tp_main_menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,10 +39,10 @@ const CustNav = () => {
                 <div className="collapse navbar-collapse" id="tp_main_menu">
                     <div className="logo-wrapper desktop-logo">
                         <a href="index-2.html" className="main-logo">
-                            <img src={MyLogo} alt="logo" />
+                            <img src={MyLogo} className='myLogo' alt="logo" />
                         </a>
                         <a href="index-2.html" className="sticky-logo">
-                            <img src={MyLogo} alt="logo" />
+                            <img src={MyLogo} className='myLogo' alt="logo" />
                         </a>
                     </div>
                     <ul className="navbar-nav">
