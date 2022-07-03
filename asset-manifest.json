@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dev/static/css/main.5b40f2a1.css",
-    "main.js": "/dev/static/js/main.8f04ddf2.js",
+    "main.css": "/dev/static/css/main.bddd3c35.css",
+    "main.js": "/dev/static/js/main.aaa3f0a2.js",
     "static/js/787.a676f994.chunk.js": "/dev/static/js/787.a676f994.chunk.js",
     "static/media/f1.png": "/dev/static/media/f1.6cf58bac6f1e916e3e01.png",
     "static/media/BG_1.png": "/dev/static/media/BG_1.26e8148404b4aeeddb00.png",
@@ -9,6 +9,7 @@
     "static/media/fontawesome-webfont3e6e.svg?v=4.7.0": "/dev/static/media/fontawesome-webfont3e6e.c1e38fd9e0e74ba58f7a.svg",
     "static/media/line-awesomeeb4f.svg?v=1.1.": "/dev/static/media/line-awesomeeb4f.f4b3204d4678bf15ec93.svg",
     "static/media/themify9f24.svg?-fvbane": "/dev/static/media/themify9f24.f0fc8c798eac5636249c.svg",
+    "static/media/logoMT.png": "/dev/static/media/logoMT.af10308ff31747edd54c.png",
     "static/media/fontawesome-webfont3e6e.eot?v=4.7.0": "/dev/static/media/fontawesome-webfont3e6e.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfontd41d.eot": "/dev/static/media/fontawesome-webfontd41d.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfont3e6e.ttf?v=4.7.0": "/dev/static/media/fontawesome-webfont3e6e.1e59d2330b4c6deb84b3.ttf",
@@ -28,7 +29,6 @@
     "static/media/2.png": "/dev/static/media/2.92fd321d2722416e3169.png",
     "static/media/line-awesomeeb4f.html?v=1.1.": "/dev/static/media/line-awesomeeb4f.4b43b038741cb489a502.html",
     "static/media/1.png": "/dev/static/media/1.6eb6a46d769e8deab755.png",
-    "static/media/sticky-logo.png": "/dev/static/media/sticky-logo.b4535c7e97004d0a8f2e.png",
     "static/media/logo.png": "/dev/static/media/logo.156496670a75c84ca85f.png",
     "static/media/slick.svg": "/dev/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/dev/static/media/slick.a4e97f5a2a64f0ab1323.eot",
@@ -42,12 +42,12 @@
     "static/media/ui-icons_777777_256x240.html": "/dev/static/media/ui-icons_777777_256x240.7bea16a3b1c0be1bdbea.html",
     "static/media/ui-icons_cc0000_256x240.html": "/dev/static/media/ui-icons_cc0000_256x240.7bea16a3b1c0be1bdbea.html",
     "static/media/ui-icons_ffffff_256x240.html": "/dev/static/media/ui-icons_ffffff_256x240.7bea16a3b1c0be1bdbea.html",
-    "main.5b40f2a1.css.map": "/dev/static/css/main.5b40f2a1.css.map",
-    "main.8f04ddf2.js.map": "/dev/static/js/main.8f04ddf2.js.map",
+    "main.bddd3c35.css.map": "/dev/static/css/main.bddd3c35.css.map",
+    "main.aaa3f0a2.js.map": "/dev/static/js/main.aaa3f0a2.js.map",
     "787.a676f994.chunk.js.map": "/dev/static/js/787.a676f994.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b40f2a1.css",
-    "static/js/main.8f04ddf2.js"
+    "static/css/main.bddd3c35.css",
+    "static/js/main.aaa3f0a2.js"
   ]
 }
