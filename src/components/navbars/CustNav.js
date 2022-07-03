@@ -21,14 +21,14 @@ const CustNav = () => {
                     </button>
                     <div className="nav-right-content">
                         <div className="navButtons">
-                            <div className="d-list-btn-wrap btn-yellow d-list alignCenter mx-auto bkNow">
+                            {/* <div className="d-list-btn-wrap btn-yellow d-list alignCenter mx-auto bkNow">
                                 <text className="whiteAlign bold mdText" href="#">Book Now</text>
                                 <i className="fa fa-paper-plane" />
-                            </div>
-                            <div className="search">
+                            </div> */}
+                            {/* <div className="search">
                                 <i className="ti-search" />
-                            </div>
-                            <div className="notification">
+                            </div> */}
+                            <div className="notification profileIcon">
                                 <a className="signUp-btn" href="#">
                                     <i className="fa fa-user-o" />
                                 </a>
@@ -61,6 +61,9 @@ const CustNav = () => {
                         <li className="menu-item-has-children">
                             <a href="#/contactus">Contact</a>
                         </li>
+                        <div className="menu-item-has-children profileName">
+                            <a href="#/profile">Profile</a>
+                        </div>
                     </ul>
                 </div>
                 <div className="nav-right-content">
@@ -69,9 +72,9 @@ const CustNav = () => {
                             <text className="whiteAlign bold mdText" href="#">Book Now</text>
                             <i className="fa fa-paper-plane" />
                         </div>
-                        <div className="search">
+                        {/* <div className="search">
                             <i className="ti-search" />
-                        </div>
+                        </div> */}
                         <div className="notification">
                             <a className="signUp-btn" href="#">
                                 <i className="fa fa-user-o" />

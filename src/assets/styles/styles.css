@@ -274,9 +274,9 @@ a {
 
 .bkNow {
     display: flex;
-    width: 210px;
+    width: 150px;
     height: 50px;
-    background: rgba(255, 255, 255, 0.2);
+    background: #F3941E;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     align-items: center;
@@ -405,6 +405,9 @@ a {
     line-height: 22px;
     color: #FFFFFF;
 }
+.profileName {
+    display: none;
+}
 
 
 * {
@@ -440,6 +443,13 @@ a {
     .bkArrow {
         height: 20px;
         width: 30px;
+    }
+
+    .profileIcon {
+        display: none;
+    }
+    .profileName {
+        display: block;
     }
 }
 

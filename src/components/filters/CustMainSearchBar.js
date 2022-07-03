@@ -44,7 +44,7 @@ const CustMainSearchBar = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-2 col-md-4 order-12">
+            <div className="col-lg-2 col-md-4 order-12 bkNow alignCenter mx-auto">
               <a className="btn btn-yellow" href="#"><i className="ti-search" /> Search</a>
             </div>
           </div>

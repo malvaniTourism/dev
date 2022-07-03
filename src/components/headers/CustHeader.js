@@ -57,13 +57,13 @@ const CustHeader = () => {
                 <div className="banner-slider-controls">
                     <div className="slider-nav tp-control-nav" />
                     {/*slider-nav*/}
-                    <div className="tp-slider-extra slider-extra">
+                    {/* <div className="tp-slider-extra slider-extra">
                         <div className="text">
                             <span className="first">01</span>
                             <span className="devider">/</span>
                             <span className="last" />
                         </div>
-                    </div>
+                    </div> */}
                     {/*slider-extra*/}
                 </div>
             </div>
