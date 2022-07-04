@@ -4,6 +4,7 @@ import Carousel from "../../components/carousel/Carousel";
 import InTouch from "../../components/carousel/InTouch";
 import Newsletter from "../../components/carousel/Newsletter";
 import CustFooter from "../../components/footers/CustFooter";
+import ListFilter from "../../components/carousel/ListFilter";
 
 const ContactUs = () => {
 
@@ -11,7 +12,7 @@ const ContactUs = () => {
         <div>
             <CustNav />
             <Carousel />
-            <InTouch />
+            <ListFilter />
             <Newsletter />
             <CustFooter />
         </div>

@@ -40,11 +40,11 @@ const MainFooter = () => {
                                 <h4 className="widget-title">Contact us</h4>
                                 <p>
                                     <i className="fa fa-map-marker" />
-                                    <span>Manama Tower, Badda Link Road, Badda Dhaka, Bangladesh</span>
+                                    <span>Malvan, Sindhudurga, Maharashtra 416610. </span>
                                 </p>
                                 <p className="location">
                                     <i className="fa fa-envelope-o" />
-                                    <span>travelpoint@gmail.com</span>
+                                    <span>support@tourkokan.com</span>
                                 </p>
                                 <p className="telephone">
                                     <i className="fa fa-phone base-color" />
@@ -85,7 +85,7 @@ const MainFooter = () => {
             </div>
             <div className="copyright-inner">
                 <div className="copyright-text">
-                    © Viaje 2019 All rights reserved. Powered with <i className="fa fa-heart" /> by <a href="http://zwin.io/" target="_blank"><span>Zwin</span></a>
+                    © TourKokan 2019 All rights reserved. Powered with <i className="fa fa-heart" /> by <a href="#" target="_blank"><span>MTDC</span></a>
                 </div>
             </div>
         </footer>

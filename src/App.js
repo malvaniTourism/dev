@@ -8,8 +8,10 @@ import Login from './screens/auth/Login';
 import Register from './screens/auth/Register';
 import NotFound from './screens/mains/NotFound';
 import MainProd from './screens/products/MainProd';
-
+import ContactUs from './screens/pages/Contact';
+import CardDetails from './screens/pages/CardDetails';
 import AboutUs from './screens/pages/About';
+import List from './screens/pages/List';
 
 import './assets/css/bootstrap.min.css';
 import './assets/css/animate.css';
@@ -24,8 +26,7 @@ import './assets/css/themify-icons.css';
 import './assets/css/line-awesome.min.css';
 import './assets/css/style.css';
 import './assets/css/responsive.css';
-import ContactUs from './screens/pages/Contact';
-import CardDetails from './screens/pages/CardDetails';
+
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path='/aboutus' element={<AboutUs />}></Route>
         <Route path='/contactus' element={<ContactUs />}></Route>
         <Route path='/carddetails' element={<CardDetails />}></Route>
+        <Route path='/list' element={<List />}></Route>
         <Route element={<NotFound />}></Route>
       </Routes>
     </Router>
