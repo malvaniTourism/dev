@@ -26,6 +26,7 @@ import './assets/css/style.css';
 import './assets/css/responsive.css';
 import ContactUs from './screens/pages/Contact';
 import CardDetails from './screens/pages/CardDetails';
+import List from './screens/pages/List';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path='/mainProd' element={<MainProd />}></Route>
         <Route path='/aboutus' element={<AboutUs />}></Route>
         <Route path='/contactus' element={<ContactUs />}></Route>
+        <Route path='/list' element={<List />}></Route>
         <Route path='/carddetails' element={<CardDetails />}></Route>
         <Route element={<NotFound />}></Route>
       </Routes>
