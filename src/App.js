@@ -2,17 +2,6 @@
 import './assets/styles/styles.css';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 
-import Home from './screens/mains/Home';
-
-import Login from './screens/auth/Login';
-import Register from './screens/auth/Register';
-import NotFound from './screens/mains/NotFound';
-import MainProd from './screens/products/MainProd';
-import ContactUs from './screens/pages/Contact';
-import CardDetails from './screens/pages/CardDetails';
-import AboutUs from './screens/pages/About';
-import List from './screens/pages/List';
-
 import './assets/css/bootstrap.min.css';
 import './assets/css/animate.css';
 import './assets/css/magnific-popup.css';
@@ -27,6 +16,18 @@ import './assets/css/line-awesome.min.css';
 import './assets/css/style.css';
 import './assets/css/responsive.css';
 
+import Home from './screens/mains/Home';
+import Login from './screens/auth/Login';
+import Register from './screens/auth/Register';
+import NotFound from './screens/mains/NotFound';
+import MainProd from './screens/products/MainProd';
+import ContactUs from './screens/pages/Contact';
+import CardDetails from './screens/pages/CardDetails';
+import AboutUs from './screens/pages/About';
+import List from './screens/pages/List';
+import BlogList from './screens/pages/BlogList';
+import BlogDetails from './screens/pages/BlogDetails';
+
 
 function App() {
   return (
@@ -40,6 +41,8 @@ function App() {
         <Route path='/contactus' element={<ContactUs />}></Route>
         <Route path='/carddetails' element={<CardDetails />}></Route>
         <Route path='/list' element={<List />}></Route>
+        <Route path='/blogs' element={<BlogList />}></Route>
+        <Route path='/blogdetails' element={<BlogDetails />}></Route>
         <Route element={<NotFound />}></Route>
       </Routes>
     </Router>
