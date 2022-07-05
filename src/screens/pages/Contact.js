@@ -1,15 +1,19 @@
 import React from "react";
 import CustNav from "../../components/navbars/CustNav";
-import CustHeader from "../../components/headers/CustHeader";
-
+import Carousel from "../../components/carousel/Carousel";
+import InTouch from "../../components/carousel/InTouch";
+import Newsletter from "../../components/carousel/Newsletter";
+import CustFooter from "../../components/footers/CustFooter";
 
 const ContactUs = () => {
 
     return (
         <div>
             <CustNav />
-            <CustHeader />
-            Contact Us
+            <Carousel />
+            <InTouch />
+            <Newsletter />
+            <CustFooter />
         </div>
     )
 }

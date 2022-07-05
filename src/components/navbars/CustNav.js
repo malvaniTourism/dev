@@ -54,10 +54,74 @@ const CustNav = () => {
                         </li>
                         <li className="menu-item-has-children">
                             <a href="#">Pages</a>
+                            <ul className="sub-menu">
+                                <li>
+                                    <a href="tour-list.html">Tours List</a>
+                                </li>
+                                <li>
+                                    <a href="tour-list02.html">Tours List 02</a>
+                                </li>
+                                <li>
+                                    <a href="tour-list03.html">Tours List 03</a>
+                                </li>
+                                <li>
+                                    <a href="tour-details.html">Tours Details</a>
+                                </li>
+                                <li>
+                                    <a href="destination-list.html">Destination List</a>
+                                </li>
+                                <li>
+                                    <a href="destination-list02.html">Destination List 2</a>
+                                </li>
+                                <li>
+                                    <a href="destination-details.html">Destination Details</a>
+                                </li>
+                                <li>
+                                    <a href="gallery.html">Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="gallery-details.html">Gallery Details</a>
+                                </li>
+                                <li>
+                                    <a href="comming-soon.html">Comming soon</a>
+                                </li>
+                                <li>
+                                    <a href="404.html">404</a>
+                                </li>
+                                <li>
+                                    <a href="faq.html">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="user-profile.html">User Profile</a>
+                                </li>
+                            </ul>
                         </li>
+
                         <li className="menu-item-has-children">
-                            <a href="#">Blog</a>
+                            <a href="#/list">List</a>
                         </li>
+
+                        <li className="menu-item-has-children">
+                            <a href="#/blogs">Blog</a>
+                            <ul className="sub-menu">
+                                <li>
+                                    <a href="blog.html">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="blog02.html">Blog 02</a>
+                                </li>
+                                <li>
+                                    <a href="blog03.html">Blog 03</a>
+                                </li>
+                                <li>
+                                    <a href="#/blogdetails">Blog-details</a>
+                                </li>
+                                <li>
+                                    <a href="blog-details02.html">Blog Details 02</a>
+                                </li>
+                            </ul>
+                        </li>
+
                         <li className="menu-item-has-children">
                             <a href="#/contactus">Contact</a>
                         </li>

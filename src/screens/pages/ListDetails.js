@@ -3,19 +3,19 @@ import CustNav from "../../components/navbars/CustNav";
 import Carousel from "../../components/carousel/Carousel";
 import Newsletter from "../../components/carousel/Newsletter";
 import CustFooter from "../../components/footers/CustFooter";
-import ListFilter from "../../components/carousel/ListFilter";
+import TourDetails from "../../components/carousel/TourDetails";
 
-const ContactUs = () => {
+const ListDetails = () => {
 
     return (
         <div>
             <CustNav />
             <Carousel />
-            <ListFilter />
+            <TourDetails />
             <Newsletter />
             <CustFooter />
         </div>
     )
 }
 
-export default ContactUs;
+export default ListDetails;
