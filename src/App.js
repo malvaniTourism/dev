@@ -28,6 +28,7 @@ import List from './screens/pages/List';
 import BlogList from './screens/pages/BlogList';
 import BlogDetails from './screens/pages/BlogDetails';
 import ListDetails from './screens/pages/ListDetails';
+import TopRated from './screens/pages/TopRated';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <Route path='/blogs' element={<BlogList />}></Route>
         <Route path='/blogdetails' element={<BlogDetails />}></Route>
         <Route path='/listdetails' element={<ListDetails />}></Route>
+        <Route path='/top-rated' element={<TopRated />}></Route>
         <Route element={<NotFound />}></Route>
       </Routes>
     </Router>

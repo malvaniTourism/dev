@@ -100,6 +100,9 @@ const CustNav = () => {
                         <li className="menu-item-has-children">
                             <a href="#/list">List</a>
                         </li>
+                        <li className="menu-item-has-children">
+                            <a href="#/top-rated">Top Rated</a>
+                        </li>
 
                         <li className="menu-item-has-children">
                             <a href="#/blogs">Blog</a>

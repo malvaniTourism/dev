@@ -7,14 +7,7 @@ import img3 from '../../assets/img/tour-details/3.png';
 import img4 from '../../assets/img/tour-details/4.png';
 import img5 from '../../assets/img/tour-details/5.png';
 import img6 from '../../assets/img/tour-details/6.png';
-// import img7 from '../../assets/img/tour-details/7.png';
-// import img8 from '../../assets/img/tour-details/8.png';
-// import img9 from '../../assets/img/tour-details/8.png';
-// import img10 from '../../assets/img/tour-details/8.png';
-// import img11 from '../../assets/img/tour-details/8.png';
-// import img12 from '../../assets/img/tour-details/12.png';
-// import img13 from '../../assets/img/tour-details/13.png';
-// import img14 from '../../assets/img/tour-details/14.png';
+
 import img15 from '../../assets/img/icons/15.png';
 import img16 from '../../assets/img/icons/16.png';
 import img17 from '../../assets/img/icons/17.png';
@@ -26,12 +19,8 @@ import imgb1 from '../../assets/img/blog/1.png';
 import imgb8 from '../../assets/img/blog/8.png';
 import imgb9 from '../../assets/img/blog/9.png';
 
-
 import imgc2 from '../../assets/img/client/02.png';
 import imgc3 from '../../assets/img/client/3.png';
-
-
-
 
 const TourDetails = () => {
     return (
