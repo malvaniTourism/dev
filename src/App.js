@@ -30,7 +30,6 @@ import BlogDetails from './screens/pages/BlogDetails';
 import ListDetails from './screens/pages/ListDetails';
 import TopRated from './screens/pages/TopRated';
 
-
 function App() {
   return (
     <Router>
