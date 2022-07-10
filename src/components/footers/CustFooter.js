@@ -1,6 +1,6 @@
 import React from 'react';
 import BG from '../../assets/img/bg/2.png';
-import Footer from '../../assets/img/logo.png';
+import Footer from '../../assets/img/logoMT.png';
 import Img1 from '../../assets/img/instagram/1.png';
 import Img2 from '../../assets/img/instagram/2.png';
 import Img3 from '../../assets/img/instagram/3.png';

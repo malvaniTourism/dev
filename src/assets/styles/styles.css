@@ -408,7 +408,14 @@ a {
 .profileName {
     display: none;
 }
-
+.mySelect {
+    height: 45px;
+    padding-left: 20px;
+    border-width: 0px;
+}
+.mySelect:focus {
+    border-width: 0px;
+}
 
 * {
     -ms-overflow-style: none;
