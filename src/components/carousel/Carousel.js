@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import LeftArr from '../../assets/images/arrow_left.png'
 import RightArr from '../../assets/images/arrow_right.png'
 
-const Carousel = () => {
+const Carousel = (props) => {
 
     const settings = {
         slidesToShow: 1,
@@ -50,7 +50,7 @@ const Carousel = () => {
             </div>
             <div className="container">
                 <div className="banner-slider-controls">
-                    <h1 className="page-title">Contact Us</h1>
+                    <h1 className="page-title whiteBold">{props.page ? props.page : 'Contact Us'}</h1>
                 </div>
             </div>
         </div>

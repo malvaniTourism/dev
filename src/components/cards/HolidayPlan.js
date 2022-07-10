@@ -1,8 +1,10 @@
 import React from "react";
 import Thumb from '../../assets/img/destination-list/4.png'
 import Icon from '../../assets/img/icons/1.png'
+import { useNavigate } from 'react-router-dom';
 
 const HolidayPlan = () => {
+    const navigate = useNavigate();
 
     return (
         <div className="col-lg-3 col-sm-6">
@@ -11,7 +13,7 @@ const HolidayPlan = () => {
                 data-wow-duration="0.4s"
                 data-wow-delay="0.1s"
             >
-                <div className="thumb">
+                <div className="thumb" onClick={() => navigate('listdetails')}>
                     <img src={Thumb} alt="list" />
                 </div>
                 <div className="details">

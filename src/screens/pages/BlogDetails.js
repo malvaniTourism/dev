@@ -1,9 +1,9 @@
 import React from "react";
 import CustNav from "../../components/navbars/CustNav";
 import Carousel from "../../components/carousel/Carousel";
-import Newsletter from "../../components/carousel/Newsletter";
+import Newsletter from "../../components/commonComponents/Newsletter";
 import CustFooter from "../../components/footers/CustFooter";
-import BlgDetails from "../../components/carousel/BlgDetails";
+import BlogDetail from "../../components/carousel/BlogDetails";
 
 const BlogDetails = () => {
 
@@ -11,7 +11,7 @@ const BlogDetails = () => {
         <div>
             <CustNav />
             <Carousel />
-            <BlgDetails />
+            <BlogDetail />
             <Newsletter />
             <CustFooter />
         </div>

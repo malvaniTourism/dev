@@ -30,6 +30,7 @@ import BlogDetails from './screens/pages/BlogDetails';
 import ListDetails from './screens/pages/ListDetails';
 import TopRated from './screens/pages/TopRated';
 import Cities from './screens/pages/Cities';
+import TourDetails from './screens/pages/TourDetails';
 
 
 function App() {

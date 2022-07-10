@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import MyLogo from '../../assets/img/logoMT.png';
 
 const CustNav = () => {
@@ -54,13 +55,13 @@ const CustNav = () => {
                             <a>Service</a>
                             <ul className="sub-menu">
                                 <li>
-                                    <a href="#/list">Hotels/Restaurants/Rooms</a>
+                                    <Link to={'/list'} state={{ page: 'Hotels/Restaurants/Rooms' }}>Hotels/Restaurants/Rooms</Link>
                                 </li>
                                 <li>
-                                    <a href="#/list">Villas's/Raw Houses</a>
+                                    <Link to={'/list'} state={{ page: 'Villas/Raw Houses' }}>Villas/Raw Houses</Link>
                                 </li>
                                 <li>
-                                    <a href="#/list">Tour Packages</a>
+                                    <Link to={'/list'} state={{ page: 'Tour Packages' }}>Tour Packages</Link>
                                 </li>
                             </ul>
                         </li>

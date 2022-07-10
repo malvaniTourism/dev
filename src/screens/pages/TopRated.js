@@ -3,7 +3,7 @@ import React from "react";
 import CustHeader from "../../components/headers/CustHeader";
 import CustNav from "../../components/navbars/CustNav";
 import CustFooter from "../../components/footers/CustFooter";
-import TopRatedCard from "../../components/carousel/TopRatedCard";
+import TopRatedCard from "../../components/cards/TopRatedCard";
 
 const AboutUs = () => {
 

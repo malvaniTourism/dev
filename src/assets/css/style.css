@@ -147,6 +147,14 @@ a:active {
   color: inherit;
 }
 
+.alink,
+.alink:hover,
+.alink:focus,
+.alink:active {
+  text-decoration: none;
+  color: #fff;
+}
+
 pre {
   word-break: break-word;
 }
@@ -6081,6 +6089,11 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 /* -----------------------------------------------------
     single-upconing-card style
 ----------------------------------------------------- */
+.upcomming-card-slider {
+  display: flex;
+  flex-direction: row;
+}
+.single-upconing-card .details {}
 .upcomming-card-slider-1 .slick-list {
   padding-top: 40px !important;
   padding-bottom: 30px !important;
@@ -6117,6 +6130,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 
 .upcomming-card-slider-2 .single-upconing-card:hover {
   margin-top: -15px;
+  margin-bottom: 15px;
 }
 
 .upcomming-card-slider-3 {
@@ -6535,6 +6549,10 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 /* -----------------------------------------------------
     instagram-wrap style
 ----------------------------------------------------- */
+.instagram-slider {
+  display: flex;
+  flex-direction: row;
+}
 .instagram-slider .instagram-slider-item img {
   -webkit-transform: scale(1, 0.92);
   -ms-transform: scale(1, 0.92);

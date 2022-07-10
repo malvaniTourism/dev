@@ -49,7 +49,7 @@ const UpCommingHome = () => {
                     data-wow-duration="2.2s"
                     data-wow-delay="0.7s"
                 >
-                    <a className="btn btn-yellow" href="#">
+                    <a className="btn btn-yellow" href="#/listdetails">
                         View All Tours
                     </a>
                 </div>

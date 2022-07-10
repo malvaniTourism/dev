@@ -45,7 +45,7 @@ const CustMainSearchBar = () => {
               </div>
             </div>
             <div className="col-lg-2 col-md-4 order-12 alignCenter mx-auto">
-              <text className="bkNow whiteAlign alignCenter" href="#"><i className="ti-search" /> Search</text>
+              <a className="bkNow whiteAlign alignCenter alink" href="#/list"><i className="ti-search" /> Search</a>
             </div>
           </div>
         </div>

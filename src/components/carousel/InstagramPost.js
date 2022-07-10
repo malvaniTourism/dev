@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -8,52 +8,24 @@ import img3 from '../../assets/img/tour/3.png';
 import img4 from '../../assets/img/tour/4.png';
 import img5 from '../../assets/img/tour/5.png';
 import img6 from '../../assets/img/tour/6.png';
+import InstagramCard from '../cards/InstagramCard';
 
-const UpComming = () => {
+const InstagramPost = () => {
+    const [imgArr, setImgArr] = useState([img1, img2, img3, img4, img5, img6, img1])
     return (
         <div className="instagram-area pd-top-100">
             <div className="section-title text-center">
                 <h2 className="title">Instagram Post</h2>
             </div>
             <div className="instagram-slider">
-                <div className="instagram-slider-item">
-                    <a href="#">
-                        <img src={img1} alt="img" />
-                    </a>
-                </div>
-                <div className="instagram-slider-item">
-                    <a href="#">
-                        <img src={img2} alt="img" />
-                    </a>
-                </div>
-                <div className="instagram-slider-item">
-                    <a href="#">
-                        <img src={img3} alt="img" />
-                    </a>
-                </div>
-                <div className="instagram-slider-item">
-                    <a href="#">
-                        <img src={img4} alt="img" />
-                    </a>
-                </div>
-                <div className="instagram-slider-item">
-                    <a href="#">
-                        <img src={img5} alt="img" />
-                    </a>
-                </div>
-                <div className="instagram-slider-item">
-                    <a href="#">
-                        <img src={img6} alt="img" />
-                    </a>
-                </div>
-                <div className="instagram-slider-item">
-                    <a href="#">
-                        <img src={img1} alt="img" />
-                    </a>
-                </div>
+                {imgArr.map(img => {
+                    return (
+                        <InstagramCard img={img} />
+                    )
+                })}
             </div>
         </div>
     )
 }
 
-export default UpComming;
+export default InstagramPost;

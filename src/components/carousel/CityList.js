@@ -12,7 +12,7 @@ import imgdl14 from '../../assets/img/destination-list/14.png';
 import imgdl15 from '../../assets/img/destination-list/15.png';
 import imgdl16 from '../../assets/img/destination-list/16.png';
 
-import CityBanner from './CityBanner';
+import CityBanner from '../banners/CityBanner';
 
 const CityList = () => {
     return (

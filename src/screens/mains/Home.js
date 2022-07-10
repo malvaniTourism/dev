@@ -18,7 +18,7 @@ import CustMainSearchBar from "../../components/filters/CustMainSearchBar";
 import CustOffers from "../../components/Swipers/CustOffers";
 import HolidayPlans from "../../components/Swipers/HolidayPlans";
 import UpCommingHome from "../../components/carousel/UpCommingHome";
-import Newsletter from "../../components/carousel/Newsletter";
+import Newsletter from "../../components/commonComponents/Newsletter";
 
 const Home = () => {
 
@@ -32,6 +32,7 @@ const Home = () => {
             {/* <CustOffers /> */}
             <HolidayPlans />
             <UpCommingHome />
+            <InstagramPost />
             {/* <Services /> */}
             {/* <OffrsSwiper /> */}
             {/* <HolidaySwiper /> */}
@@ -39,7 +40,6 @@ const Home = () => {
             <RecentBlogs />
             <Ads />
             <OurClients />
-            {/* <InstagramPost /> */}
             <Newsletter />
             <CustFooter />
         </div>
