@@ -22,7 +22,7 @@ const CustMainSearchBar = () => {
             </div>
             <div className="col-lg-2 col-md-4 order-lg-9">
               <div className="tp-search-single-wrap float-left w-100">
-                <select className="select w-100 mySelect">
+                <select className="select w-100">
                   <option value={1}>Travel Type</option>
                   <option value={2}>Event Travel</option>
                   <option value={3}>Weekend Break</option>
@@ -44,8 +44,8 @@ const CustMainSearchBar = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-2 col-md-4 order-12 alignCenter mx-auto">
-              <text className="bkNow whiteAlign alignCenter" href="#"><i className="ti-search" /> Search</text>
+            <div className="col-lg-2 col-md-4 order-12 bkNow alignCenter mx-auto">
+              <a className="btn btn-yellow" href="#"><i className="ti-search" /> Search</a>
             </div>
           </div>
         </div>
