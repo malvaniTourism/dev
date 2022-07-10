@@ -65,7 +65,7 @@ const ListFilter = () => {
                                         Italy
                                     </p>
                                     <h4 className="title">
-                                        <a href="tour-details.html">Colosseum, Rome</a>
+                                        <a href="#/tourdetails.html">Colosseum, Rome</a>
                                     </h4>
                                     <p className="content">
                                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed

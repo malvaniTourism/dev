@@ -45,25 +45,118 @@ const CustNav = () => {
                             <img src={MyLogo} className='myLogo' alt="logo" />
                         </a>
                     </div>
+
                     <ul className="navbar-nav">
                         <li className="menu-item-has-children">
                             <a href="#">Home</a>
                         </li>
                         <li className="menu-item-has-children">
-                            <a href="#/aboutus">About Us</a>
+                            <a>Service</a>
+                            <ul className="sub-menu">
+                                <li>
+                                    <a href="#/bus">Hotels/Restaurants/Rooms</a>
+                                </li>
+                                <li>
+                                    <a href="#/private">Villas's/Raw Houses</a>
+                                </li>
+                                <li>
+                                    <a href="#/private">Tour Packages</a>
+                                </li>
+                            </ul>
                         </li>
                         <li className="menu-item-has-children">
-                            <a href="#">Pages</a>
+                            <a>Transport</a>
+                            <ul className="sub-menu">
+                                <li>
+                                    <a href="#/bus">MSRTC Bus</a>
+                                </li>
+                                <li>
+                                    <a href="#/private">Private</a>
+                                </li>
+                            </ul>
                         </li>
                         <li className="menu-item-has-children">
-                            <a href="#/list">List</a>
-                        </li>
-                        <li className="menu-item-has-children">
-                            <a href="#/blogs">Blog</a>
+                            <a href="#/cities">City</a>
                         </li>
                         <li className="menu-item-has-children">
                             <a href="#/contactus">Contact</a>
                         </li>
+                        <li className="menu-item-has-children">
+                            <a href="#/aboutus">About</a>
+                        </li>
+                        <li className="menu-item-has-children">
+                            <a>Page</a>
+                            <ul className="sub-menu">
+                                <li>
+                                    <a href="#/list">List</a>
+                                </li>
+                                <li>
+                                    <a href="#/top-rated">Top Rated</a>
+                                </li>
+                                <li>
+                                    <a href="tour-list.html">Tours List</a>
+                                </li>
+                                <li>
+                                    <a href="tour-list02.html">Tours List 02</a>
+                                </li>
+                                <li>
+                                    <a href="tour-list03.html">Tours List 03</a>
+                                </li>
+                                <li>
+                                    <a href="#/listdetails">Tours Details</a>
+                                </li>
+                                <li>
+                                    <a href="destination-list.html">Destination List</a>
+                                </li>
+                                <li>
+                                    <a href="destination-list02.html">Destination List 2</a>
+                                </li>
+                                <li>
+                                    <a href="destination-details.html">Destination Details</a>
+                                </li>
+                                <li>
+                                    <a href="gallery.html">Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="gallery-details.html">Gallery Details</a>
+                                </li>
+                                <li>
+                                    <a href="comming-soon.html">Comming soon</a>
+                                </li>
+                                <li>
+                                    <a href="404.html">404</a>
+                                </li>
+                                <li>
+                                    <a href="faq.html">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="user-profile.html">User Profile</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li className="menu-item-has-children">
+                            <a>Blogs</a>
+                            <ul className="sub-menu">
+                                <li>
+                                    <a href="#/blogs">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="blog02.html">Blog 02</a>
+                                </li>
+                                <li>
+                                    <a href="blog03.html">Blog 03</a>
+                                </li>
+                                <li>
+                                    <a href="#/blogdetails">Blog-details</a>
+                                </li>
+                                <li>
+                                    <a href="blog-details02.html">Blog Details 02</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
                         <div className="menu-item-has-children profileName">
                             <a href="#/profile">Profile</a>
                         </div>
@@ -72,8 +165,8 @@ const CustNav = () => {
                 <div className="nav-right-content">
                     <div className="navButtons">
                         <div className="d-list-btn-wrap btn-yellow d-list alignCenter mx-auto bkNow">
-                            <text className="whiteAlign bold mdText" href="#">Book Now</text>
-                            <i className="fa fa-paper-plane" />
+                            <text className="whiteAlign bold mdText" href="#">Download Now</text>
+                            {/* <i className="fa fa-paper-plane" /> */}
                         </div>
                         {/* <div className="search">
                             <i className="ti-search" />
