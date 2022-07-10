@@ -54,13 +54,13 @@ const CustNav = () => {
                             <a>Service</a>
                             <ul className="sub-menu">
                                 <li>
-                                    <a href="#/bus">Hotels/Restaurants/Rooms</a>
+                                    <a href="#/list">Hotels/Restaurants/Rooms</a>
                                 </li>
                                 <li>
-                                    <a href="#/private">Villas's/Raw Houses</a>
+                                    <a href="#/list">Villas's/Raw Houses</a>
                                 </li>
                                 <li>
-                                    <a href="#/private">Tour Packages</a>
+                                    <a href="#/list">Tour Packages</a>
                                 </li>
                             </ul>
                         </li>
@@ -68,10 +68,10 @@ const CustNav = () => {
                             <a>Transport</a>
                             <ul className="sub-menu">
                                 <li>
-                                    <a href="#/bus">MSRTC Bus</a>
+                                    <a href="#/list">MSRTC Bus</a>
                                 </li>
                                 <li>
-                                    <a href="#/private">Private</a>
+                                    <a href="#/list">Private</a>
                                 </li>
                             </ul>
                         </li>

@@ -10,7 +10,7 @@ const Cities = () => {
     return (
         <div>
             <CustNav />
-            {/* <CustHeader/> */}
+            <CustHeader/>
             <CityList />
             <CustFooter />
         </div>
