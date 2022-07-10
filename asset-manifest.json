@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/dev/static/css/main.4209e1cf.css",
+    "main.css": "/dev/static/css/main.a5a074ff.css",
     "main.js": "/dev/static/js/main.ab34dec5.js",
     "static/js/787.a676f994.chunk.js": "/dev/static/js/787.a676f994.chunk.js",
     "static/media/f1.png": "/dev/static/media/f1.6cf58bac6f1e916e3e01.png",
@@ -8,9 +8,9 @@
     "static/media/9.png": "/dev/static/media/9.8d5166643ad514da5140.png",
     "static/media/1.png": "/dev/static/media/1.6eb6a46d769e8deab755.png",
     "static/media/5.png": "/dev/static/media/5.47624017f202cd2dc3a2.png",
-    "static/media/fontawesome-webfont3e6e.svg?v=4.7.0": "/dev/static/media/fontawesome-webfont3e6e.6878d55e3615ccf40c38.svg",
-    "static/media/line-awesomeeb4f.svg?v=1.1.": "/dev/static/media/line-awesomeeb4f.6e3d85921cc783ab409b.svg",
-    "static/media/themify9f24.svg?-fvbane": "/dev/static/media/themify9f24.c4292f34297f1004471a.svg",
+    "static/media/fontawesome-webfont3e6e.svg?v=4.7.0": "/dev/static/media/fontawesome-webfont3e6e.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/line-awesomeeb4f.svg?v=1.1.": "/dev/static/media/line-awesomeeb4f.f4b3204d4678bf15ec93.svg",
+    "static/media/themify9f24.svg?-fvbane": "/dev/static/media/themify9f24.f0fc8c798eac5636249c.svg",
     "static/media/7.png": "/dev/static/media/7.6e239d7cf248c3f83019.png",
     "static/media/logoMT.png": "/dev/static/media/logoMT.af10308ff31747edd54c.png",
     "static/media/fontawesome-webfont3e6e.eot?v=4.7.0": "/dev/static/media/fontawesome-webfont3e6e.8b43027f47b20503057d.eot",
@@ -53,19 +53,19 @@
     "static/media/slick.ttf": "/dev/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/dev/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/dev/index.html",
-    "static/media/owl.video.play.html": "/dev/static/media/owl.video.play.da4037b53a6054e93c1e.html",
-    "static/media/ui-icons_444444_256x240.html": "/dev/static/media/ui-icons_444444_256x240.da4037b53a6054e93c1e.html",
-    "static/media/ui-icons_555555_256x240.html": "/dev/static/media/ui-icons_555555_256x240.da4037b53a6054e93c1e.html",
-    "static/media/ui-icons_777620_256x240.html": "/dev/static/media/ui-icons_777620_256x240.da4037b53a6054e93c1e.html",
-    "static/media/ui-icons_777777_256x240.html": "/dev/static/media/ui-icons_777777_256x240.da4037b53a6054e93c1e.html",
-    "static/media/ui-icons_cc0000_256x240.html": "/dev/static/media/ui-icons_cc0000_256x240.da4037b53a6054e93c1e.html",
-    "static/media/ui-icons_ffffff_256x240.html": "/dev/static/media/ui-icons_ffffff_256x240.da4037b53a6054e93c1e.html",
-    "main.4209e1cf.css.map": "/dev/static/css/main.4209e1cf.css.map",
+    "static/media/owl.video.play.html": "/dev/static/media/owl.video.play.7bea16a3b1c0be1bdbea.html",
+    "static/media/ui-icons_444444_256x240.html": "/dev/static/media/ui-icons_444444_256x240.7bea16a3b1c0be1bdbea.html",
+    "static/media/ui-icons_555555_256x240.html": "/dev/static/media/ui-icons_555555_256x240.7bea16a3b1c0be1bdbea.html",
+    "static/media/ui-icons_777620_256x240.html": "/dev/static/media/ui-icons_777620_256x240.7bea16a3b1c0be1bdbea.html",
+    "static/media/ui-icons_777777_256x240.html": "/dev/static/media/ui-icons_777777_256x240.7bea16a3b1c0be1bdbea.html",
+    "static/media/ui-icons_cc0000_256x240.html": "/dev/static/media/ui-icons_cc0000_256x240.7bea16a3b1c0be1bdbea.html",
+    "static/media/ui-icons_ffffff_256x240.html": "/dev/static/media/ui-icons_ffffff_256x240.7bea16a3b1c0be1bdbea.html",
+    "main.a5a074ff.css.map": "/dev/static/css/main.a5a074ff.css.map",
     "main.ab34dec5.js.map": "/dev/static/js/main.ab34dec5.js.map",
     "787.a676f994.chunk.js.map": "/dev/static/js/787.a676f994.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4209e1cf.css",
+    "static/css/main.a5a074ff.css",
     "static/js/main.ab34dec5.js"
   ]
 }
