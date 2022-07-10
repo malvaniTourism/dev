@@ -6,7 +6,7 @@ import CustFooter from "../../components/footers/CustFooter";
 import ListFilter from "../../components/filters/ListFilter";
 import { useLocation } from 'react-router-dom'
 
-const ContactUs = () => {
+const List = () => {
     const location = useLocation()
     const { page } = location.state
 
@@ -21,4 +21,4 @@ const ContactUs = () => {
     )
 }
 
-export default ContactUs;
+export default List;
