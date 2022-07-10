@@ -13,7 +13,7 @@ const OurClients = () => {
                 <div className="row justify-content-center">
                     <div className="col-xl-6 col-lg-8">
                         <div className="section-title text-center">
-                            <h2 className="title">What Our Clicnts Say</h2>
+                            <h2 className="title">What Our Clients Say</h2>
                             <p>
                                 Vivamus eget aliquam dui. Integer eu arcu vel arcu suscipit ultrices
                                 quis non mauris. Aenean scelerisque, sem eu dictum commodo, velit
