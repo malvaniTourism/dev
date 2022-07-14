@@ -31,6 +31,7 @@ import ListDetails from './screens/pages/ListDetails';
 import TopRated from './screens/pages/TopRated';
 import Cities from './screens/pages/Cities';
 import TourDetails from './screens/pages/TourDetails';
+import Vr from './screens/pages/Vr';
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
         <Route path='/listdetails' element={<ListDetails />}></Route>
         <Route path='/top-rated' element={<TopRated />}></Route>
         <Route path='/cities' element={<Cities />}></Route>
+        <Route path='/vr' element={<Vr />}></Route>
         <Route element={<NotFound />}></Route>
       </Routes>
     </Router>
