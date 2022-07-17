@@ -14,234 +14,47 @@ import img13 from '../../assets/img/blog-details/13.png';
 import img14 from '../../assets/img/blog-details/14.png';
 import img15 from '../../assets/img/blog-details/15.png';
 import img16 from '../../assets/img/others/01.png';
+import moment from "moment";
 
-const Blogs = () => {
+const Blogs = (props) => {
+
     return (
         <div className="blog-area pd-top-120">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-8">
                         <div className="row justify-content-center">
-                            <div className="col-lg-6 col-md-6">
-                                <div className="single-blog">
-                                    <div className="thumb">
-                                        <img src={img1} alt="blog" />
-                                        <a className="tag" href="#">
-                                            Europe
-                                        </a>
+                            {props.data.map(data => {
+                                return (
+                                    <div className="col-lg-6 col-md-6">
+                                        <div className="single-blog">
+                                            <div className="thumb">
+                                                <img src={img1} alt="blog" />
+                                                <a className="tag" href="#">
+                                                    Europe
+                                                </a>
+                                            </div>
+                                            <div className="single-blog-details">
+                                                <p className="date">{moment(data.created_at).format('DD MMMM YYYY')}</p>
+                                                <h4 className="title">
+                                                    <a href="blog-details.html">
+                                                        {props.name}
+                                                    </a>
+                                                </h4>
+                                                <p className="content">
+                                                    {data.description}
+                                                </p>
+                                                <a className="btn-read-more" href="#">
+                                                    <span>
+                                                        Read More
+                                                        <i className="la la-arrow-right" />
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="single-blog-details">
-                                        <p className="date">19 September 2019</p>
-                                        <h4 className="title">
-                                            <a href="blog-details.html">
-                                                Why You Shouldn Elephants France.
-                                            </a>
-                                        </h4>
-                                        <p className="content">
-                                            Praesent eu dolor eu orci vehicula euismod. Vivamus sed
-                                            sollicitudin libero, vel malesuada
-                                        </p>
-                                        <a className="btn-read-more" href="blog-details.html">
-                                            <span>
-                                                Read More
-                                                <i className="la la-arrow-right" />
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-6 col-md-6">
-                                <div className="single-blog">
-                                    <div className="thumb">
-                                        <img src={img2} alt="blog" />
-                                            Asia
-                                        <a className="tag" href="#">
-                                        </a>
-                                    </div>
-                                    <div className="single-blog-details">
-                                        <p className="date">19 September 2019</p>
-                                        <h4 className="title">
-                                            <a href="blog-details.html">Aliquam faucibus, nec commodo</a>
-                                        </h4>
-                                        <p className="content">
-                                            Praesent eu dolor eu orci vehicula euismod. Vivamus sed
-                                            sollicitudin libero, vel malesuada
-                                        </p>
-                                        <a className="btn-read-more" href="blog-details.html">
-                                            <span>
-                                                Read More
-                                                <i className="la la-arrow-right" />
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-6 col-md-6">
-                                <div className="single-blog">
-                                    <div className="thumb">
-                                        <img src={img3} alt="blog" />
-                                        <a className="tag" href="#">
-                                            Europe
-                                        </a>
-                                    </div>
-                                    <div className="single-blog-details">
-                                        <p className="date">19 September 2019</p>
-                                        <h4 className="title">
-                                            <a href="blog-details.html">
-                                                Why You Shouldn Elephants France.
-                                            </a>
-                                        </h4>
-                                        <p className="content">
-                                            Praesent eu dolor eu orci vehicula euismod. Vivamus sed
-                                            sollicitudin libero, vel malesuada
-                                        </p>
-                                        <a className="btn-read-more" href="blog-details.html">
-                                            <span>
-                                                Read More
-                                                <i className="la la-arrow-right" />
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-6 col-md-6">
-                                <div className="single-blog">
-                                    <div className="thumb">
-                                        <img src={img4} alt="blog" />
-                                        <a className="tag" href="#">
-                                            Europe
-                                        </a>
-                                    </div>
-                                    <div className="single-blog-details">
-                                        <p className="date">19 September 2019</p>
-                                        <h4 className="title">
-                                            <a href="blog-details.html">
-                                                Duis pretium gravida enim, vel maximus
-                                            </a>
-                                        </h4>
-                                        <p className="content">
-                                            Praesent eu dolor eu orci vehicula euismod. Vivamus sed
-                                            sollicitudin libero, vel malesuada
-                                        </p>
-                                        <a className="btn-read-more" href="blog-details.html">
-                                            <span>
-                                                Read More
-                                                <i className="la la-arrow-right" />
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-6 col-md-6">
-                                <div className="single-blog">
-                                    <div className="thumb">
-                                        <img src={img5} alt="blog" />
-                                        <a className="tag" href="#">
-                                            Island{" "}
-                                        </a>
-                                    </div>
-                                    <div className="single-blog-details">
-                                        <p className="date">19 September 2019</p>
-                                        <h4 className="title">
-                                            <a href="blog-details.html">Duis pretium gravida enim</a>
-                                        </h4>
-                                        <p className="content">
-                                            Praesent eu dolor eu orci vehicula euismod. Vivamus sed
-                                            sollicitudin libero, vel malesuada
-                                        </p>
-                                        <a className="btn-read-more" href="blog-details.html">
-                                            <span>
-                                                Read More
-                                                <i className="la la-arrow-right" />
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-6 col-md-6">
-                                <div className="single-blog">
-                                    <div className="thumb">
-                                        <img src={img6} alt="blog" />
-                                        <a className="tag" href="#">
-                                            Europe
-                                        </a>
-                                    </div>
-                                    <div className="single-blog-details">
-                                        <p className="date">19 September 2019</p>
-                                        <h4 className="title">
-                                            <a href="blog-details.html">
-                                                Why You Shouldn Elephants France.
-                                            </a>
-                                        </h4>
-                                        <p className="content">
-                                            Praesent eu dolor eu orci vehicula euismod. Vivamus sed
-                                            sollicitudin libero, vel malesuada
-                                        </p>
-                                        <a className="btn-read-more" href="blog-details.html">
-                                            <span>
-                                                Read More
-                                                <i className="la la-arrow-right" />
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-6 col-md-6">
-                                <div className="single-blog">
-                                    <div className="thumb">
-                                        <img src={img7} alt="blog" />
-                                        <a className="tag" href="#">
-                                            Europe
-                                        </a>
-                                    </div>
-                                    <div className="single-blog-details">
-                                        <p className="date">19 September 2019</p>
-                                        <h4 className="title">
-                                            <a href="blog-details.html">
-                                                Etiam convallis elementum sapien
-                                            </a>
-                                        </h4>
-                                        <p className="content">
-                                            Praesent eu dolor eu orci vehicula euismod. Vivamus sed
-                                            sollicitudin libero, vel malesuada
-                                        </p>
-                                        <a className="btn-read-more" href="blog-details.html">
-                                            <span>
-                                                Read More
-                                                <i className="la la-arrow-right" />
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-6 col-md-6">
-                                <div className="single-blog">
-                                    <div className="thumb">
-                                        <img src={img8} alt="blog" />
-                                        <a className="tag" href="#">
-                                            Europe
-                                        </a>
-                                    </div>
-                                    <div className="single-blog-details">
-                                        <p className="date">19 September 2019</p>
-                                        <h4 className="title">
-                                            <a href="blog-details.html">
-                                                Duis porta, ligula rhoncus euismod
-                                            </a>
-                                        </h4>
-                                        <p className="content">
-                                            Praesent eu dolor eu orci vehicula euismod. Vivamus sed
-                                            sollicitudin libero, vel malesuada
-                                        </p>
-                                        <a className="btn-read-more" href="blog-details.html">
-                                            <span>
-                                                Read More
-                                                <i className="la la-arrow-right" />
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                                )
+                            })}
                             <div className="col-lg-12  text-md-center text-left">
                                 <div className="tp-pagination text-md-center text-left d-inline-block mt-4">
                                     <ul>
