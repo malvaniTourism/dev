@@ -77,7 +77,10 @@ const CustNav = () => {
                             </ul>
                         </li>
                         <li className="menu-item-has-children">
-                            <a href="#/cities">City</a>
+                            <a href="#/cities">Cities</a>
+                        </li>
+                        <li className="menu-item-has-children">
+                            <a href="#/cities">Places</a>
                         </li>
                         <li className="menu-item-has-children">
                             <a href="#/contactus">Contact</a>
@@ -165,10 +168,10 @@ const CustNav = () => {
                 </div>
                 <div className="nav-right-content">
                     <div className="navButtons">
-                        <div className="d-list-btn-wrap btn-yellow d-list alignCenter mx-auto bkNow">
+                        {/* <div className="d-list-btn-wrap btn-yellow d-list alignCenter mx-auto bkNow">
                             <text className="whiteAlign bold mdText" href="#">Download Now</text>
-                            {/* <i className="fa fa-paper-plane" /> */}
-                        </div>
+                            <i className="fa fa-paper-plane" />
+                        </div> */}
                         {/* <div className="search">
                             <i className="ti-search" />
                         </div> */}

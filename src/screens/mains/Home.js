@@ -20,7 +20,17 @@ import HolidayPlans from "../../components/Swipers/HolidayPlans";
 import UpCommingHome from "../../components/carousel/UpCommingHome";
 import Newsletter from "../../components/commonComponents/Newsletter";
 
+import { comnPost } from '../../services/comnServ';
+
 const Home = () => {
+    var data = new FormData();
+    data.append('email', 'kamblepranav460@gmail.com');
+    data.append('password', '123456');
+
+    comnPost('auth/login', data)
+        .then(res => {
+            localStorage.setItem('apiToken', res.data.data.access_token)
+        })
 
     return (
         <div>

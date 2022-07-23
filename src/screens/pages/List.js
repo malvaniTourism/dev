@@ -7,13 +7,11 @@ import ListFilter from "../../components/filters/ListFilter";
 import { useLocation } from 'react-router-dom'
 
 const List = () => {
-    const location = useLocation()
-    const { page } = location.state
 
     return (
         <div>
             <CustNav />
-            <Carousel page={page} />
+            <Carousel page={'list'} />
             <ListFilter />
             <Newsletter />
             <CustFooter />

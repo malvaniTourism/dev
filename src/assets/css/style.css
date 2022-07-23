@@ -2790,7 +2790,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   }
 
   .navbar-area .nav-container .desktop-logo {
-    margin-right: 140px;
+    margin-right: 100px;
     position: relative;
   }
 
@@ -2800,7 +2800,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 
   .navbar-area .nav-container .navbar-collapse .navbar-nav {
     display: block;
-    width: 100%;
+    width: 70vw;
   }
 
   .navbar-area .nav-container .navbar-collapse .navbar-nav li {
@@ -3060,7 +3060,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     margin-right: 0;
     position: absolute;
     left: 0;
-    width: 115px;
+    width: 65px;
   }
 
   .nav-style-02 .dropdown-menu-btn {

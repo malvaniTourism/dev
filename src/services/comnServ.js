@@ -1,9 +1,12 @@
 import axios from "axios";
 import Path from './baseUrl'
-let token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdG91ci5wcmFuYXZrYW1ibGUuaW5cL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2NTgwNTQ1NTEsImV4cCI6MTY1ODA1ODE1MSwibmJmIjoxNjU4MDU0NTUxLCJqdGkiOiJkbHZOZ2xHVGVtaVQxNmVlIiwic3ViIjoyLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ma4r5JvIk022b79adxiKtOT174kF4hfxnmY08OZVWQI';
+// let token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdG91ci5wcmFuYXZrYW1ibGUuaW5cL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2NTg1NjU5NTUsImV4cCI6MTY1ODU2OTU1NSwibmJmIjoxNjU4NTY1OTU1LCJqdGkiOiJZSW4wUlVPTGZrUzNFdng1Iiwic3ViIjoyLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.F9ijHPLD7iv3TUE_gJyMnTGmlmED613UBKJFzQ-1Mp8';
+let token = localStorage.getItem('apiToken');
 
-export const comnGet = async (url) => {
-    const myUrl = Path.API_PATH + url;
+export const comnGet = async (url, admin) => {
+    let myUrl = admin ? Path.API_ADMIN_PATH : Path.API_PATH;
+    myUrl = myUrl + url
+    console.log('url', myUrl);
     const config = {
         headers: { Authorization: `Bearer ${token}` }
     }
