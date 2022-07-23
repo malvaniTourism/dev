@@ -187,7 +187,7 @@ const ListFilter = () => {
                             </div>
                             <div className="single-destinations-list style-three">
                                 <div className="thumb">
-                                <img src={img5} alt="list" />
+                                    <img src={img5} alt="list" />
                                 </div>
                                 <div className="details">
                                     <div className="tp-review-meta">
@@ -330,7 +330,7 @@ const ListFilter = () => {
                             </div>
                             <div className="widget_ads">
                                 <a href="#">
-                                <img src={img4} alt="img" />
+                                    <img src={img4} alt="img" />
                                 </a>
                             </div>
                         </div>

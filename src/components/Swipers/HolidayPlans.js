@@ -6,8 +6,7 @@ const HolidayPlans = () => {
     return (
         <div
             className="holiday-plan-area tp-holiday-plan-area mg-top-96"
-            style={{ backgroundImage: "url(assets/img/bg/8.png)" }}
-        >
+            style={{ backgroundImage: "url(assets/img/bg/8.png)" }}>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-xl-6 col-lg-9">

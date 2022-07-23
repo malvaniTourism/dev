@@ -10,7 +10,7 @@ const AboutUs = () => {
     return (
         <div>
             <CustNav />
-            <CustHeader/>
+            <CustHeader />
             <TopRatedCard />
             <CustFooter />
         </div>

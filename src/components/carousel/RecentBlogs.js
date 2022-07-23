@@ -27,7 +27,7 @@ const RecentBlogs = () => {
                 <div className="row justify-content-center">
                     {imgArr.map(img => {
                         return (
-                            <BlogsCard img={img}/>
+                            <BlogsCard img={img} />
                         )
                     })}
                 </div>

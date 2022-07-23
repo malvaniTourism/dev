@@ -11,7 +11,7 @@ const AboutUs = () => {
     return (
         <div>
             <CustNav />
-            <CustHeader/>
+            <CustHeader />
             <AboutCardInfo />
             <AboutCard />
             <Team />

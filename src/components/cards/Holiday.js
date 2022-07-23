@@ -32,7 +32,7 @@ const Holiday = () => {
                 </div>
                 <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                 <div>
-                    <Details navigateTo={() => navigate('carddetails')}/>
+                    <Details navigateTo={() => navigate('carddetails')} />
                 </div>
             </div>
         </div>

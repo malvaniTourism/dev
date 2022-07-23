@@ -56,7 +56,7 @@ const UpComming = () => {
                     <div className="col-lg-8">
                         <div className="upcomming-card-slider upcomming-card-slider-2 tp-common-slider-style">
                             {imgArr.map(img => {
-                                return(
+                                return (
                                     <UpcommingToursCard img={img} />
                                 )
                             })}

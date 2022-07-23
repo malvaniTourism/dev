@@ -11,10 +11,10 @@ const CustOffer = () => {
                 <div className="thumb">
                     <span className="d-list-tag">Special Offer</span>
                     <img src={Image} alt="list" />
-                        <div className="d-list-btn-wrap btn-yellow d-list alignCenter mx-auto bkNow" onClick={() => navigate('carddetails')}>
-                            <text className="whiteAlign bold mdText" href="#/carddetails">Book Now</text>
-                            <i className="fa fa-paper-plane" />
-                        </div>
+                    <div className="d-list-btn-wrap btn-yellow d-list alignCenter mx-auto bkNow" onClick={() => navigate('carddetails')}>
+                        <text className="whiteAlign bold mdText" href="#/carddetails">Book Now</text>
+                        <i className="fa fa-paper-plane" />
+                    </div>
                 </div>
                 <div className="details">
                     <h4 className="title">Greece</h4>

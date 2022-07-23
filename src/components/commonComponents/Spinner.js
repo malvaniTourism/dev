@@ -4,7 +4,7 @@ import LoadingOverlay from 'react-loading-overlay'
 const Spinner = (props) => {
 
     return (
-        <div className='mySpinner' style={{background: props.active && 'rgba(0,0,0,0.5)'}}>
+        <div className='mySpinner' style={{ background: props.active && 'rgba(0,0,0,0.5)' }}>
             <LoadingOverlay
                 active={props.active}
                 fadeSpeed={900}
@@ -16,10 +16,10 @@ const Spinner = (props) => {
                 />}
                 styles={{
                     overlay: (base) => ({
-                      ...base,
-                      background: 'rgba(255, 0, 0, 0.5)'
+                        ...base,
+                        background: 'rgba(255, 0, 0, 0.5)'
                     })
-                  }}
+                }}
             >
             </LoadingOverlay>
         </div>

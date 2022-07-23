@@ -40,7 +40,7 @@ const UpCommingHome = () => {
                 <div className="row">
                     {imgArr.map(img => {
                         return (
-                            <UpcommingHomeCard img={img}/>
+                            <UpcommingHomeCard img={img} />
                         )
                     })}
                 </div>
