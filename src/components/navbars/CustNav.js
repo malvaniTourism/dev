@@ -80,7 +80,7 @@ const CustNav = () => {
                             <a href="#/cities">Cities</a>
                         </li>
                         <li className="menu-item-has-children">
-                            <a href="#/cities">Places</a>
+                            <a href="#/places">Places</a>
                         </li>
                         <li className="menu-item-has-children">
                             <a href="#/contactus">Contact</a>

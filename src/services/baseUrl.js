@@ -1,6 +1,5 @@
 const Path = {
-    API_PATH: 'https://tour.pranavkamble.in/api/',
-    API_ADMIN_PATH: 'https://tour.pranavkamble.in/admin/api/',
+    API_PATH: 'https://tour.pranavkamble.in/',
 }
 
 export default Path;

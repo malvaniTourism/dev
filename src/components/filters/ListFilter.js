@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import img12 from '../../assets/img/destination-list/12.png';
-import map from '../../assets/img/icons/1.png';
 import img7 from '../../assets/img/destination-list/7.png';
 import img6 from '../../assets/img/destination-list/6.png';
 import img5 from '../../assets/img/destination-list/5.png';
 import img4 from '../../assets/img/others/01.png';
+import ProjectCard from '../cards/ProjectCard';
+import { comnPost } from '../../services/comnServ';
 
 const ListFilter = () => {
+    const [searchText, setSearchText] = useState('');
+    const [projects, setProjects] = useState([])
+
+    const searchProduct = (e) => {
+        e.preventDefault()
+        const data = { "string": searchText }
+
+        comnPost('api/v1/projects', data)
+            .then(res => {
+                console.log(res.data.data.data);
+                setProjects(res.data.data.data);
+            })
+            .catch(err => console.log(err))
+    }
+
     return (
         <div className="tour-list-area pd-top-120">
             <div className="container">
@@ -46,192 +61,20 @@ const ListFilter = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="tour-list-area">
-                            <div className="single-destinations-list style-three">
-                                <div className="thumb">
-                                    <img src={img12} alt="list" />
-                                </div>
-                                <div className="details">
-                                    <div className="tp-review-meta">
-                                        <i className="ic-yellow fa fa-star" />
-                                        <i className="ic-yellow fa fa-star" />
-                                        <i className="ic-yellow fa fa-star" />
-                                        <i className="ic-yellow fa fa-star" />
-                                        <i className="fa fa-star" />
-                                        <span>4.0</span>
-                                    </div>
-                                    <p className="location">
-                                        <img src={map} alt="map" />
-                                        Italy
-                                    </p>
-                                    <h4 className="title">
-                                        <a href="#/tourdetails.html">Colosseum, Rome</a>
-                                    </h4>
-                                    <p className="content">
-                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                        diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                        aliquyam erat, sed diam voluptua. At vero eos et accusam et.
-                                    </p>
-                                    <div className="list-price-meta">
-                                        <ul className="tp-list-meta d-inline-block">
-                                            <li>
-                                                <i className="fa fa-calendar-o" /> 8oct
-                                            </li>
-                                            <li>
-                                                <i className="fa fa-clock-o" /> 4 days
-                                            </li>
-                                            <li>
-                                                <i className="fa fa-star" /> 4.3
-                                            </li>
-                                        </ul>
-                                        <div className="tp-price-meta d-inline-block">
-                                            <p>Price</p>
-                                            <h2>
-                                                620 <span>$</span>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
+                        {projects[0] ?
+                            <div className="tour-list-area">
+                                {projects.map(project => {
+                                    return (
+                                        <ProjectCard project={project} />
+                                    )
+                                })}
                             </div>
-                            <div className="single-destinations-list style-three">
-                                <div className="thumb">
-                                    <img src={img7} alt="list" />
-                                </div>
-                                <div className="details">
-                                    <div className="tp-review-meta">
-                                        <i className="ic-yellow fa fa-star" />
-                                        <i className="ic-yellow fa fa-star" />
-                                        <i className="ic-yellow fa fa-star" />
-                                        <i className="ic-yellow fa fa-star" />
-                                        <i className="fa fa-star" />
-                                        <span>4.0</span>
-                                    </div>
-                                    <p className="location">
-                                        <img src={map} alt="map" />
-                                        Spain
-                                    </p>
-                                    <h4 className="title">
-                                        <a href="tour-details.html">Barcelona city beach</a>
-                                    </h4>
-                                    <p className="content">
-                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                        diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                        aliquyam erat, sed diam voluptua. At vero eos et accusa.
-                                    </p>
-                                    <div className="list-price-meta">
-                                        <ul className="tp-list-meta d-inline-block">
-                                            <li>
-                                                <i className="fa fa-calendar-o" /> 8oct
-                                            </li>
-                                            <li>
-                                                <i className="fa fa-clock-o" /> 4 days
-                                            </li>
-                                            <li>
-                                                <i className="fa fa-star" /> 4.3
-                                            </li>
-                                        </ul>
-                                        <div className="tp-price-meta d-inline-block">
-                                            <p>Price</p>
-                                            <h2>
-                                                620 <span>$</span>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
+                            :
+                            <div className="tour-list-area">
+                                <h3 className='content'>Search something to see the results!</h3>
                             </div>
-                            <div className="single-destinations-list style-three">
-                                <div className="thumb">
-                                    <img src={img6} alt="list" />
-                                </div>
-                                <div className="details">
-                                    <div className="tp-review-meta">
-                                        <i className="ic-yellow fa fa-star" />
-                                        <i className="ic-yellow fa fa-star" />
-                                        <i className="ic-yellow fa fa-star" />
-                                        <i className="ic-yellow fa fa-star" />
-                                        <i className="fa fa-star" />
-                                        <span>4.0</span>
-                                    </div>
-                                    <p className="location">
-                                        <img src={map} alt="map" />
-                                        Bangladesh
-                                    </p>
-                                    <h4 className="title">
-                                        <a href="tour-details.html">Cox's bazar Beach</a>
-                                    </h4>
-                                    <p className="content">
-                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                        diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                        aliquyam erat, sed diam voluptua. At vero eos et accusa.
-                                    </p>
-                                    <div className="list-price-meta">
-                                        <ul className="tp-list-meta d-inline-block">
-                                            <li>
-                                                <i className="fa fa-calendar-o" /> 8oct
-                                            </li>
-                                            <li>
-                                                <i className="fa fa-clock-o" /> 4 days
-                                            </li>
-                                            <li>
-                                                <i className="fa fa-star" /> 4.3
-                                            </li>
-                                        </ul>
-                                        <div className="tp-price-meta d-inline-block">
-                                            <p>Price</p>
-                                            <h2>
-                                                620 <span>$</span>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="single-destinations-list style-three">
-                                <div className="thumb">
-                                    <img src={img5} alt="list" />
-                                </div>
-                                <div className="details">
-                                    <div className="tp-review-meta">
-                                        <i className="ic-yellow fa fa-star" />
-                                        <i className="ic-yellow fa fa-star" />
-                                        <i className="ic-yellow fa fa-star" />
-                                        <i className="ic-yellow fa fa-star" />
-                                        <i className="fa fa-star" />
-                                        <span>4.0</span>
-                                    </div>
-                                    <p className="location">
-                                        <img src={map} alt="map" />
-                                        Indonesia
-                                    </p>
-                                    <h4 className="title">
-                                        <a href="tour-details.html">Bali Province</a>
-                                    </h4>
-                                    <p className="content">
-                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                        diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                        aliquyam erat, sed diam voluptua. At vero eos et accusa.
-                                    </p>
-                                    <div className="list-price-meta">
-                                        <ul className="tp-list-meta d-inline-block">
-                                            <li>
-                                                <i className="fa fa-calendar-o" /> 8oct
-                                            </li>
-                                            <li>
-                                                <i className="fa fa-clock-o" /> 4 days
-                                            </li>
-                                            <li>
-                                                <i className="fa fa-star" /> 4.3
-                                            </li>
-                                        </ul>
-                                        <div className="tp-price-meta d-inline-block">
-                                            <p>Price</p>
-                                            <h2>
-                                                620 <span>$</span>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                        }
                         <div className="text-md-center text-left">
                             <div className="tp-pagination text-md-center text-left d-inline-block mt-4">
                                 <ul>
@@ -271,9 +114,9 @@ const ListFilter = () => {
                                 <div className="widget-tour-list-search">
                                     <form className="search-form">
                                         <div className="form-group">
-                                            <input type="text" placeholder="Search" />
+                                            <input type="text" placeholder="Search" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
                                         </div>
-                                        <button className="submit-btn" type="submit">
+                                        <button className="submit-btn" type="submit" onClick={(e) => searchProduct(e)}>
                                             <i className="ti-search" />
                                         </button>
                                     </form>

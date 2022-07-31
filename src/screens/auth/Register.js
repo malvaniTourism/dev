@@ -49,7 +49,7 @@ const Register = () => {
         formData.append('password', pass);
         formData.append('password_confirmation', cPass);
 
-        comnPost('auth/register', formData)
+        comnPost('api/auth/register', formData)
             .then(res => {
                 console.log('res', res);
                 if (res.data.success) {

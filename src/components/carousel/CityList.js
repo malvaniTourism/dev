@@ -19,7 +19,7 @@ const CityList = (props) => {
 
     return (
         <div>
-            <CityBanner />
+            {/* <CityBanner /> */}
             <div className="destination-area">
                 <div className="container-bg mg-top--70">
                     <div className="container">

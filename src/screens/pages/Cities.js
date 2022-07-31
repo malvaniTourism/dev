@@ -12,7 +12,7 @@ const Cities = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        comnGet('v1/cities')
+        comnGet('api/v1/cities')
             .then(res => {
                 console.log('city', res);
                 setCities(res.data.data.data)

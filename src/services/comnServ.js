@@ -1,19 +1,14 @@
 import axios from "axios";
 import Path from './baseUrl'
-// let token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdG91ci5wcmFuYXZrYW1ibGUuaW5cL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2NTg1NjU5NTUsImV4cCI6MTY1ODU2OTU1NSwibmJmIjoxNjU4NTY1OTU1LCJqdGkiOiJZSW4wUlVPTGZrUzNFdng1Iiwic3ViIjoyLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.F9ijHPLD7iv3TUE_gJyMnTGmlmED613UBKJFzQ-1Mp8';
-let token = localStorage.getItem('apiToken');
 
-export const comnGet = async (url, admin) => {
-    let myUrl = admin ? Path.API_ADMIN_PATH : Path.API_PATH;
-    myUrl = myUrl + url
-    console.log('url', myUrl);
+export const comnGet = async (url) => {
+    let myUrl = Path.API_PATH + url;
     const config = {
-        headers: { Authorization: `Bearer ${token}` }
+        headers: { Authorization: `Bearer ${localStorage.getItem('apiToken')}` }
     }
 
     return axios.get(myUrl, config)
         .then(res => {
-            console.log('oo', res);
             return res;
         })
         .catch(err => {
@@ -25,7 +20,7 @@ export const comnPost = async (url, data) => {
     const myUrl = Path.API_PATH + url;
     const config = {
         headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${localStorage.getItem('apiToken')}`,
             "Content-Type": "multipart/form-data"
         }
     }
@@ -42,7 +37,7 @@ export const comnPost = async (url, data) => {
 export const comnPut = async (url, data) => {
     const myUrl = Path.API_PATH + url;
     const config = {
-        headers: { Authorization: `Bearer ${token}` }
+        headers: { Authorization: `Bearer ${localStorage.getItem('apiToken')}` }
     }
 
     return axios.put(myUrl, data, config)
@@ -57,7 +52,7 @@ export const comnPut = async (url, data) => {
 export const ComnDel = async (url, data) => {
     const myUrl = Path.API_PATH + url;
     const config = {
-        headers: { Authorization: `Bearer ${token}` }
+        headers: { Authorization: `Bearer ${localStorage.getItem('apiToken')}` }
     }
 
     return axios.delete(myUrl, data, config)

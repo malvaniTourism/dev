@@ -41,7 +41,7 @@ const Login = () => {
         formData.append('email', email);
         formData.append('password', pass);
         console.log(email, ' ', pass);
-        comnPost('auth/login', formData)
+        comnPost('api/auth/login', formData)
             .then(res => {
                 console.log('res', res);
                 if (res.data.success) {

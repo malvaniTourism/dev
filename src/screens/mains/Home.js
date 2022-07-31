@@ -27,7 +27,7 @@ const Home = () => {
     data.append('email', 'kamblepranav460@gmail.com');
     data.append('password', '123456');
 
-    comnPost('auth/login', data)
+    comnPost('api/auth/login', data)
         .then(res => {
             localStorage.setItem('apiToken', res.data.data.access_token)
         })

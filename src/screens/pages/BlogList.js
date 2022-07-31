@@ -14,7 +14,7 @@ const BlogList = () => {
     const [blogsData, setBlogsData] = useState([]);
 
     useEffect(() => {
-        comnGet('v1/blogs')
+        comnGet('api/v1/blogs')
             .then(res => {
                 if (res.status == 200) {
                     setBlogsData(res.data.data.data)
