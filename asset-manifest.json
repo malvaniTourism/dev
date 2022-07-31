@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dev/static/css/main.c3e6ed52.css",
-    "main.js": "/dev/static/js/main.18e44e29.js",
+    "main.css": "/dev/static/css/main.b4fdc804.css",
+    "main.js": "/dev/static/js/main.855a9f88.js",
     "static/js/787.a676f994.chunk.js": "/dev/static/js/787.a676f994.chunk.js",
     "static/media/f1.png": "/dev/static/media/f1.6cf58bac6f1e916e3e01.png",
     "static/media/alma.jpg": "/dev/static/media/alma.690bd3af6cae5291a3d2.jpg",
@@ -66,12 +66,12 @@
     "static/media/ui-icons_777777_256x240.html": "/dev/static/media/ui-icons_777777_256x240.7bea16a3b1c0be1bdbea.html",
     "static/media/ui-icons_cc0000_256x240.html": "/dev/static/media/ui-icons_cc0000_256x240.7bea16a3b1c0be1bdbea.html",
     "static/media/ui-icons_ffffff_256x240.html": "/dev/static/media/ui-icons_ffffff_256x240.7bea16a3b1c0be1bdbea.html",
-    "main.c3e6ed52.css.map": "/dev/static/css/main.c3e6ed52.css.map",
-    "main.18e44e29.js.map": "/dev/static/js/main.18e44e29.js.map",
+    "main.b4fdc804.css.map": "/dev/static/css/main.b4fdc804.css.map",
+    "main.855a9f88.js.map": "/dev/static/js/main.855a9f88.js.map",
     "787.a676f994.chunk.js.map": "/dev/static/js/787.a676f994.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c3e6ed52.css",
-    "static/js/main.18e44e29.js"
+    "static/css/main.b4fdc804.css",
+    "static/js/main.855a9f88.js"
   ]
 }
