@@ -25,7 +25,7 @@ const ListFilter = () => {
     }
 
     return (
-        <div className="tour-list-area pd-top-120">
+        <div className="tour-list-area pd-top-80">
             <div className="container">
                 <div className="row">
                     <div className="col-xl-9 col-lg-8 order-lg-12">

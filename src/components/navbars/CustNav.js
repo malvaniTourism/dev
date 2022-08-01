@@ -55,10 +55,10 @@ const CustNav = () => {
                             <a>Service</a>
                             <ul className="sub-menu">
                                 <li>
-                                    <Link to={'/list'} state={{ page: 'Hotels/Restaurants/Rooms' }}>Hotels/Restaurants/Rooms</Link>
+                                    <Link to={'/list'} state={{ page: 'Hotels/ Restaurants/ Rooms' }}>Hotels/Restaurants/Rooms</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/list'} state={{ page: 'Villas/Raw Houses' }}>Villas/Raw Houses</Link>
+                                    <Link to={'/list'} state={{ page: 'Villas/ Raw Houses' }}>Villas/Raw Houses</Link>
                                 </li>
                                 <li>
                                     <Link to={'/list'} state={{ page: 'Tour Packages' }}>Tour Packages</Link>

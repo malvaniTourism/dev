@@ -1,5 +1,5 @@
 import { Rings } from 'react-loader-spinner'
-import LoadingOverlay from 'react-loading-overlay'
+import LoadingOverlay from 'react-loading-overlay-ts';
 
 const Spinner = (props) => {
 

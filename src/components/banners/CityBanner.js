@@ -2,8 +2,6 @@ import React from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import imgo15 from '../../assets/img/others/15.png';
-
 import imgbg1 from "../../assets/img/bg/1.png";
 
 const CityBanner = () => {
@@ -16,11 +14,9 @@ const CityBanner = () => {
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="breadcrumb-inner">
-                            <h1 className="page-title">Cities</h1>
+                            <h1 className="page-title">Places</h1>
                             <ul className="page-list">
-                                <li>
-                                    <a href="index-2.html">Home</a>
-                                </li>
+                                <li>Home</li>
                                 <li>Cities</li>
                             </ul>
                         </div>

@@ -2777,6 +2777,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   -moz-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .navbar-area-fixed {

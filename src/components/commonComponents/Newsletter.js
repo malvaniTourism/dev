@@ -1,9 +1,9 @@
 import React from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import touch from '../../assets/img/others/11.png';
 
 const Newsletter = () => {
+
     return (
         <div className="newslatter-area pd-top-108">
             <div className="container">

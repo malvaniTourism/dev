@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react";
 import CustHeader from "../../components/headers/CustHeader";
 import CustNav from "../../components/navbars/CustNav";
 import CustFooter from "../../components/footers/CustFooter";
-import CityList from "../../components/carousel/CityList";
 import { comnGet } from "../../services/comnServ";
 import Spinner from "../../components/commonComponents/Spinner";
+import PlaceList from "../../components/carousel/PlaceList";
+import CityBanner from "../../components/banners/CityBanner";
 
 const Places = () => {
     const [places, setPlaces] = useState([]);
@@ -18,14 +19,14 @@ const Places = () => {
                 setPlaces(res.data.data.data)
                 setIsLoading(false)
             })
-    }, [])
+    }, []);
 
     return (
         <div>
             <Spinner active={isLoading} />
             <CustNav />
-            <CustHeader />
-            <CityList cities={places} />
+            <CityBanner />
+            <PlaceList cities={places} />
             <CustFooter />
         </div>
     )

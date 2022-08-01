@@ -5,6 +5,7 @@ import Newsletter from "../../components/commonComponents/Newsletter";
 import CustFooter from "../../components/footers/CustFooter";
 import ListFilter from "../../components/filters/ListFilter";
 import { useLocation } from 'react-router-dom'
+import ProductHeader from "../../components/headers/ProductHeader";
 
 const List = () => {
     const location = useLocation()
@@ -13,7 +14,8 @@ const List = () => {
     return (
         <div>
             <CustNav />
-            <Carousel page={page ?? 'list'} />
+            {/* <Carousel page={page ?? 'list'} /> */}
+            <ProductHeader page={page ?? 'list'} />
             <ListFilter />
             <Newsletter />
             <CustFooter />
