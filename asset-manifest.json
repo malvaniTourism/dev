@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dev/static/css/main.b4fdc804.css",
-    "main.js": "/dev/static/js/main.855a9f88.js",
+    "main.css": "/dev/static/css/main.5cfdc651.css",
+    "main.js": "/dev/static/js/main.a014fb22.js",
     "static/js/787.a676f994.chunk.js": "/dev/static/js/787.a676f994.chunk.js",
     "static/media/f1.png": "/dev/static/media/f1.6cf58bac6f1e916e3e01.png",
     "static/media/alma.jpg": "/dev/static/media/alma.690bd3af6cae5291a3d2.jpg",
@@ -23,10 +23,9 @@
     "static/media/line-awesomeeb4f.eot?v=1.1.": "/dev/static/media/line-awesomeeb4f.3400fa38b566632e63a7.eot",
     "static/media/line-awesomeeb4f.ttf?v=1.1.": "/dev/static/media/line-awesomeeb4f.09dc31126068bedb290b.ttf",
     "static/media/8.png": "/dev/static/media/8.905009e8de3e52481042.png",
-    "static/media/6.png": "/dev/static/media/6.8348a90a3379da20a49e.png",
-    "static/media/4.png": "/dev/static/media/4.8a7c7b665446f0cb0afb.png",
     "static/media/fontawesome-webfont3e6e.woff?v=4.7.0": "/dev/static/media/fontawesome-webfont3e6e.f691f37e57f04c152e23.woff",
     "static/media/10.png": "/dev/static/media/10.810e5cc394e60ac751c0.png",
+    "static/media/6.png": "/dev/static/media/6.8348a90a3379da20a49e.png",
     "static/media/31.png": "/dev/static/media/31.4ab25cdfd94972f77cb6.png",
     "static/media/16.png": "/dev/static/media/16.e5704627a80523f64623.png",
     "static/media/13.png": "/dev/static/media/13.1a5f1021a8577a9ed085.png",
@@ -39,6 +38,7 @@
     "static/media/11.png": "/dev/static/media/11.90556959b2361a333e1a.png",
     "static/media/fontawesome-webfont3e6e.html?v=4.7.0": "/dev/static/media/fontawesome-webfont3e6e.20fd1704ea223900efa9.html",
     "static/media/12.png": "/dev/static/media/12.b08a934e4230926c25c9.png",
+    "static/media/4.png": "/dev/static/media/4.8a7c7b665446f0cb0afb.png",
     "static/media/33.png": "/dev/static/media/33.4d82869beb285909cfa9.png",
     "static/media/29.png": "/dev/static/media/29.4c834c407d9b0576ae7f.png",
     "static/media/32.png": "/dev/static/media/32.c28100e82599200a3822.png",
@@ -66,12 +66,12 @@
     "static/media/ui-icons_777777_256x240.html": "/dev/static/media/ui-icons_777777_256x240.7bea16a3b1c0be1bdbea.html",
     "static/media/ui-icons_cc0000_256x240.html": "/dev/static/media/ui-icons_cc0000_256x240.7bea16a3b1c0be1bdbea.html",
     "static/media/ui-icons_ffffff_256x240.html": "/dev/static/media/ui-icons_ffffff_256x240.7bea16a3b1c0be1bdbea.html",
-    "main.b4fdc804.css.map": "/dev/static/css/main.b4fdc804.css.map",
-    "main.855a9f88.js.map": "/dev/static/js/main.855a9f88.js.map",
+    "main.5cfdc651.css.map": "/dev/static/css/main.5cfdc651.css.map",
+    "main.a014fb22.js.map": "/dev/static/js/main.a014fb22.js.map",
     "787.a676f994.chunk.js.map": "/dev/static/js/787.a676f994.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4fdc804.css",
-    "static/js/main.855a9f88.js"
+    "static/css/main.5cfdc651.css",
+    "static/js/main.a014fb22.js"
   ]
 }
