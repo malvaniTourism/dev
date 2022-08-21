@@ -69,10 +69,10 @@ const CustNav = () => {
                             <a>Transport</a>
                             <ul className="sub-menu">
                                 <li>
-                                    <a href="#/list">MSRTC Bus</a>
+                                    <Link to={'/list'} state={{ page: 'MSRTC Bus' }}>MSRTC Bus</Link>
                                 </li>
                                 <li>
-                                    <a href="#/list">Private</a>
+                                    <Link to={'/list'} state={{ page: 'Private Bus' }}>Private</Link>
                                 </li>
                             </ul>
                         </li>

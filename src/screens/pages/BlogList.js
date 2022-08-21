@@ -8,6 +8,8 @@ import Blogs from "../../components/commonComponents/Blogs";
 
 import { comnGet } from '../../services/comnServ';
 import Spinner from "../../components/commonComponents/Spinner";
+import Background from "../../assets/img/bg/10.png";
+import ProductHeader from "../../components/headers/ProductHeader";
 
 const BlogList = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -29,7 +31,7 @@ const BlogList = () => {
         <div>
             <Spinner active={isLoading} />
             <CustNav />
-            <Carousel page={'Blogs'} />
+            <ProductHeader page={'Blogs'} background={Background} />
             <Blogs data={blogsData} />
             <Newsletter />
             <CustFooter />

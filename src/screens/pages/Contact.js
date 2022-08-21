@@ -4,13 +4,15 @@ import Carousel from "../../components/carousel/Carousel";
 import InTouch from "../../components/commonComponents/InTouch";
 import Newsletter from "../../components/commonComponents/Newsletter";
 import CustFooter from "../../components/footers/CustFooter";
+import ProductHeader from "../../components/headers/ProductHeader";
+import Background from "../../assets/img/bg/12.png";
 
 const ContactUs = () => {
 
     return (
         <div>
             <CustNav />
-            <Carousel />
+            <ProductHeader page={'Contact Us'} background={Background} />
             <InTouch />
             <Newsletter />
             <CustFooter />

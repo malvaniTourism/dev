@@ -6,6 +6,7 @@ import CustFooter from "../../components/footers/CustFooter";
 import ListFilter from "../../components/filters/ListFilter";
 import { useLocation } from 'react-router-dom'
 import ProductHeader from "../../components/headers/ProductHeader";
+import Background from "../../assets/img/banner/4.png";
 
 const List = () => {
     const location = useLocation()
@@ -15,7 +16,7 @@ const List = () => {
         <div>
             <CustNav />
             {/* <Carousel page={page ?? 'list'} /> */}
-            <ProductHeader page={page ?? 'list'} />
+            <ProductHeader page={page ?? 'list'} background={Background} />
             <ListFilter />
             <Newsletter />
             <CustFooter />

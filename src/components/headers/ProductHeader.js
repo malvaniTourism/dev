@@ -1,10 +1,10 @@
 import React from 'react'
 
-const ProductHeader = ({ page }) => {
-
+const ProductHeader = ({ page, background }) => {
+ 
     return (
         <div>
-            <div className='detPageImgDiv'>
+            <div className='detPageImgDiv' style={{backgroundImage: `url(${background})`}}>
                 <text className='detPageHead'>{page}</text>
                 <text className='detPageSubHead'>Special offers & Discounts on the Best hotels!</text>
                 <div>
