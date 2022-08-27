@@ -19,7 +19,7 @@ import CustOffers from "../../components/Swipers/CustOffers";
 import HolidayPlans from "../../components/Swipers/HolidayPlans";
 import UpCommingHome from "../../components/carousel/UpCommingHome";
 import Newsletter from "../../components/commonComponents/Newsletter";
-
+import BookNow from "../../components/buttons/BookNow";
 import { comnPost } from '../../services/comnServ';
 
 const Home = () => {
@@ -37,6 +37,8 @@ const Home = () => {
             <CustNav />
             <CustHeader />
             <CustMainSearchBar />
+            <BookNow />
+
             {/* <UpComming /> */}
             <OurServices />
             {/* <CustOffers /> */}
