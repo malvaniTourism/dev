@@ -30,7 +30,7 @@ const CustNav = () => {
                                 <i className="ti-search" />
                             </div> */}
                             <div className="notification profileIcon">
-                                <a className="signUp-btn" href="#">
+                                <a className="signUp-btn" href="#/profile">
                                     <i className="fa fa-user-o" />
                                 </a>
                             </div>
@@ -134,7 +134,7 @@ const CustNav = () => {
                                     <a href="faq.html">FAQ</a>
                                 </li>
                                 <li>
-                                    <a href="user-profile.html">User Profile</a>
+                                    <a href="#/profile">User Profile</a>
                                 </li>
                             </ul>
                         </li>
@@ -176,7 +176,7 @@ const CustNav = () => {
                             <i className="ti-search" />
                         </div> */}
                         <div className="notification">
-                            <a className="signUp-btn" href="#">
+                            <a className="signUp-btn" href="#/profile">
                                 <i className="fa fa-user-o" />
                             </a>
                         </div>

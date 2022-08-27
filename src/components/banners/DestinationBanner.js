@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import imgbg1 from "../../assets/img/bg/1.png";
 
-const CityBanner = () => {
+const CityBanner = ({ page }) => {
     return (
         <div
             className="breadcrumb-area style-two jarallax"
@@ -14,10 +14,10 @@ const CityBanner = () => {
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="breadcrumb-inner">
-                            <h1 className="page-title">Places</h1>
+                            <h1 className="page-title">{page}</h1>
                             <ul className="page-list">
                                 <li>Home</li>
-                                <li>Cities</li>
+                                <li>{page}</li>
                             </ul>
                         </div>
                     </div>

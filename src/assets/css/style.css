@@ -315,6 +315,44 @@ code {
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
+.destBannerMain {
+  display: flex;
+  flex-direction: row;
+  margin-top: -100px;
+}
+.destinations-details-main-slider .d-details-main-slider-item img {
+  border-radius: 23px;
+  height: auto;
+  width: 60vw;
+}
+.destinations-details-main-slider-controls {
+  position: absolute;
+  left: 100px;
+  bottom: 100px;
+  width: 190px;
+}
+
+.destinations-details-main-slider-controls .slider-nav {
+  margin-bottom: 100px;
+}
+
+.destinations-details-main-slider-controls .slider-nav .slick-arrow {
+  display: block;
+  margin-bottom: 30px;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.destinations-details-main-slider-controls .slider-nav .slick-arrow:hover {
+  border-color: var(--main-color-one);
+}
+
+.destinations-details-main-slider-controls .tp-slider-extra .last {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.destinations-details-main-slider-controls .d-list-progress {
+  background-color: rgba(255, 255, 255, 0.7);
+}
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -1381,6 +1419,23 @@ ul {
     width: 150px;
     justify-content: center;
     text-align: center;
+  }
+}
+@media all and (max-width: 450px) {
+  .destBannerMain {
+    width: 68vw;
+    margin-left: 17vw;
+    margin-top: -60px;
+  }
+}
+@media all and (min-width: 1200px) and (max-width: 1500px) {
+  .destBannerMain {
+    margin-top: -140px;
+  }
+}
+@media all and (max-width: 800px) and (min-width: 450px) {
+  .destBannerMain {
+    margin-top: -90px;
   }
 }
 
@@ -7173,38 +7228,6 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   border-radius: 23px;
 }
 
-.destinations-details-main-slider .d-details-main-slider-item img {
-  border-radius: 23px;
-}
-
-.destinations-details-main-slider-controls {
-  position: absolute;
-  left: 100px;
-  bottom: 100px;
-  width: 190px;
-}
-
-.destinations-details-main-slider-controls .slider-nav {
-  margin-bottom: 100px;
-}
-
-.destinations-details-main-slider-controls .slider-nav .slick-arrow {
-  display: block;
-  margin-bottom: 30px;
-  border-color: rgba(255, 255, 255, 0.6);
-}
-
-.destinations-details-main-slider-controls .slider-nav .slick-arrow:hover {
-  border-color: var(--main-color-one);
-}
-
-.destinations-details-main-slider-controls .tp-slider-extra .last {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.destinations-details-main-slider-controls .d-list-progress {
-  background-color: rgba(255, 255, 255, 0.7);
-}
 
 /* -----------------------------------------------------
     destinations-client-review-slider style

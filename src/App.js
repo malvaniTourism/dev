@@ -33,6 +33,8 @@ import Cities from './screens/pages/Cities';
 import Places from './screens/pages/Places';
 import TourDetails from './screens/pages/TourDetails';
 import Vr from './screens/pages/Vr';
+import Profile from './screens/pages/Profile';
+import DestinationDetails from './screens/pages/DestinationDetails';
 
 
 function App() {
@@ -54,6 +56,10 @@ function App() {
         <Route path='/cities' element={<Cities />}></Route>
         <Route path='/places' element={<Places />}></Route>
         <Route path='/vr' element={<Vr />}></Route>
+        <Route path='/profile' element={<Profile />}></Route>
+        <Route path='/tourdetails' element={<TourDetails />}></Route>
+        <Route path='cities/details' element={<DestinationDetails />}></Route>
+        <Route path='places/details' element={<DestinationDetails />}></Route>
         <Route element={<NotFound />}></Route>
       </Routes>
     </Router>

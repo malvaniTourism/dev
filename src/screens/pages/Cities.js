@@ -6,6 +6,7 @@ import CustFooter from "../../components/footers/CustFooter";
 import CityList from "../../components/carousel/CityList";
 import { comnGet } from "../../services/comnServ";
 import Spinner from "../../components/commonComponents/Spinner";
+import DestinationBanner from "../../components/banners/DestinationBanner";
 
 const Cities = () => {
     const [cities, setCities] = useState([]);
@@ -24,7 +25,7 @@ const Cities = () => {
         <div>
             <Spinner active={isLoading} />
             <CustNav />
-            <CustHeader />
+            <DestinationBanner page={'Cities'} />
             <CityList cities={cities} />
             <CustFooter />
         </div>
