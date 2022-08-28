@@ -21,7 +21,7 @@ const ListFilter = () => {
                 console.log(res.data.data.data);
                 setProjects(res.data.data.data);
             })
-            .catch(err => console.log(err))
+            .catch(err => console.error(err))
     }
 
     return (
@@ -75,43 +75,24 @@ const ListFilter = () => {
                             </div>
 
                         }
-                        <div className="text-md-center text-left">
-                            <div className="tp-pagination text-md-center text-left d-inline-block mt-4">
-                                <ul>
-                                    <li>
-                                        <a className="prev page-numbers" href="#">
-                                            <i className="la la-long-arrow-left" />
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <span className="page-numbers">1</span>
-                                    </li>
-                                    <li>
-                                        <span className="page-numbers current">2</span>
-                                    </li>
-                                    <li>
-                                        <a className="page-numbers" href="#">
-                                            3
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a className="page-numbers" href="#">
-                                            4
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a className="next page-numbers" href="#">
-                                            <i className="la la-long-arrow-right" />
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                     <div className="col-xl-3 col-lg-4 order-lg-1">
                         <div className="sidebar-area">
                             <div className="widget tour-list-widget">
+                                <div className="single-widget-search-input-title">
+                                    <i className="fa fa-plus-circle" /> Type
+                                </div>
+                                <div className="single-widget-search-input">
+                                    <select className="select w-100 custom-select">
+                                        <option value={1}>Hotels/ Restaurants</option>
+                                        <option value={2}>Vilas/ Raw Houses</option>
+                                        <option value={3}>Tour Packages</option>
+                                    </select>
+                                </div>
                                 <div className="widget-tour-list-search">
+                                <div className="single-widget-search-input-title">
+                                    <i className="fa fa-search" /> Search
+                                </div>
                                     <form className="search-form">
                                         <div className="form-group">
                                             <input type="text" placeholder="Search" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
@@ -127,17 +108,6 @@ const ListFilter = () => {
                                     </div>
                                     <div className="single-widget-search-input">
                                         <input type="text" placeholder="Tour List Destination" />
-                                    </div>
-                                    <div className="single-widget-search-input-title">
-                                        <i className="fa fa-plus-circle" /> Travel Type
-                                    </div>
-                                    <div className="single-widget-search-input">
-                                        <select className="select w-100 custom-select">
-                                            <option value={1}>Tour List Destination</option>
-                                            <option value={2}>two</option>
-                                            <option value={3}>Three</option>
-                                            <option value={3}>Four</option>
-                                        </select>
                                     </div>
                                     <div className="single-widget-search-input-title">
                                         <i className="fa fa-calendar-minus-o" /> Departing

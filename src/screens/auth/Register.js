@@ -63,9 +63,7 @@ const Register = () => {
                     }, 3000)
                 }
             })
-            .catch(err => {
-                console.log('err', err);
-            })
+            .catch(err => console.error('err', err))
     }
 
     return (

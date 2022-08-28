@@ -16,11 +16,12 @@ const DestinationDetails = () => {
 
     console.log(location);
     useEffect(() => {
-        comnGet(`admin/api/${location.state.name}/${location.state.id}`)
+        comnGet(`api/v1/${location.state.name}/${location.state.id}`)
             .then(res => {
-                setData(res.data.data[0])
+                console.log(res.data.data);
+                setData(res.data.data)
             })
-            .catch(err => console.log(err))
+            .catch(err => console.error(err))
     }, []);
 
     return (
@@ -36,7 +37,7 @@ const DestinationDetails = () => {
                             <p>{data.tag_line}</p>
                         </div>
                         <div class="col-lg-6">
-                            <p>{data.famous_for}</p>
+                            <p>{data.description}</p>
                         </div>
                         <div class="col-lg-6">
                             <p>It accounts for about 16% of the world's human population. The continent is surrounded by the Mediterranean Sea to the Africa is the world's second largest and second most-populous continent. At about 30.3 million km² including djacent islands.</p>

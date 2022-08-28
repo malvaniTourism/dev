@@ -8,12 +8,8 @@ export const comnGet = async (url) => {
     }
 
     return axios.get(myUrl, config)
-        .then(res => {
-            return res;
-        })
-        .catch(err => {
-            return err;
-        })
+        .then(res => res)
+        .catch(err => err)
 };
 
 export const comnPost = async (url, data) => {
@@ -26,12 +22,8 @@ export const comnPost = async (url, data) => {
     }
 
     return axios.post(myUrl, data, config)
-        .then(res => {
-            return res;
-        })
-        .catch(err => {
-            return err;
-        })
+        .then(res => res)
+        .catch(err => err)
 };
 
 export const comnPut = async (url, data) => {
@@ -41,12 +33,8 @@ export const comnPut = async (url, data) => {
     }
 
     return axios.put(myUrl, data, config)
-        .then(res => {
-            return res;
-        })
-        .catch(err => {
-            return err;
-        })
+        .then(res => res)
+        .catch(err => err)
 };
 
 export const ComnDel = async (url, data) => {
@@ -56,10 +44,6 @@ export const ComnDel = async (url, data) => {
     }
 
     return axios.delete(myUrl, data, config)
-        .then(res => {
-            return res;
-        })
-        .catch(err => {
-            return err;
-        })
+        .then(res => res)
+        .catch(err => err)
 };
