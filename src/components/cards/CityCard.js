@@ -23,7 +23,7 @@ const CityCard = (props) => {
                     </div>
                     <h3 className="title">{props.city.name}</h3>
                     <p className="content">{props.city.tag_line}</p><br />
-                    <p className="content"><h4><b>Description</b></h4>{props.city.famous_for ? props.city.famous_for : props.city.description}</p>
+                    <p className="content"><h5><b>Description</b></h5>{props.city.description}</p>
                     <div className="btn btn-gray mx-auto alignCenter" onClick={() => props.onClick(props.city.id)}>
                         <span>
                             Explore

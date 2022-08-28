@@ -37,8 +37,6 @@ const Home = () => {
             <CustNav />
             <CustHeader />
             <CustMainSearchBar />
-            <BookNow />
-
             {/* <UpComming /> */}
             <OurServices />
             {/* <CustOffers /> */}

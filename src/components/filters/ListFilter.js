@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import img7 from '../../assets/img/destination-list/7.png';
@@ -12,13 +12,24 @@ import { selectType } from '../../actions/commonActions';
 
 const ListFilter = (props) => {
     const [searchText, setSearchText] = useState('');
-    const [projects, setProjects] = useState([])
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        getProductData();
+    }, [])
 
     const searchProduct = (e) => {
-        e.preventDefault()
-        const data = { "string": searchText }
+        e.preventDefault();
+        getProductData();
+    }
 
-        comnPost('api/v1/projects', data)
+    const getProductData = () => {
+        var formData = new FormData();
+
+        formData.append('string', searchText);
+        formData.append('table_name', 'projects')
+
+        comnPost('api/v1/search', formData)
             .then(res => {
                 console.log(res.data.data.data);
                 setProjects(res.data.data.data);
