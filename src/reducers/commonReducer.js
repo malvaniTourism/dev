@@ -1,10 +1,12 @@
 import {
     CustId,
+    SelectProduct,
 } from '../actions/types';
 
 const initialState = {
     prevState: [],
     CustId: {},
+    selectedProduct: 'Hotels/ Restaurants'
 };
 
 const commonReducer = (state = initialState, action) => {
@@ -14,6 +16,11 @@ const commonReducer = (state = initialState, action) => {
                 ...state,
                 cred: action.payload
             };
+        case SelectProduct:
+            return {
+                ...state,
+                selectedProduct: action.payload
+            }
         default:
             return state;
     }

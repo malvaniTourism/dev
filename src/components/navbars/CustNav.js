@@ -52,8 +52,8 @@ const CustNav = () => {
                             <a href="#">Home</a>
                         </li>
                         <li className="menu-item-has-children">
-                            <a>Service</a>
-                            <ul className="sub-menu">
+                            <a href="#/list">Service</a>
+                            {/* <ul className="sub-menu">
                                 <li>
                                     <Link to={'/list'} state={{ page: 'Hotels/ Restaurants/ Rooms' }}>Hotels/Restaurants/Rooms</Link>
                                 </li>
@@ -63,7 +63,7 @@ const CustNav = () => {
                                 <li>
                                     <Link to={'/list'} state={{ page: 'Tour Packages' }}>Tour Packages</Link>
                                 </li>
-                            </ul>
+                            </ul> */}
                         </li>
                         <li className="menu-item-has-children">
                             <a>Transport</a>

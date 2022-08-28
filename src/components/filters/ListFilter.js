@@ -7,8 +7,10 @@ import img5 from '../../assets/img/destination-list/5.png';
 import img4 from '../../assets/img/others/01.png';
 import ProjectCard from '../cards/ProjectCard';
 import { comnPost } from '../../services/comnServ';
+import { connect } from 'react-redux';
+import { selectType } from '../../actions/commonActions';
 
-const ListFilter = () => {
+const ListFilter = (props) => {
     const [searchText, setSearchText] = useState('');
     const [projects, setProjects] = useState([])
 
@@ -22,6 +24,11 @@ const ListFilter = () => {
                 setProjects(res.data.data.data);
             })
             .catch(err => console.error(err))
+    }
+
+    const selectType = (e) => {
+        console.log(e.target.value);
+        props.selectType(e.target.value)
     }
 
     return (
@@ -83,10 +90,10 @@ const ListFilter = () => {
                                     <i className="fa fa-plus-circle" /> Type
                                 </div>
                                 <div className="single-widget-search-input">
-                                    <select className="select w-100 custom-select">
-                                        <option value={1}>Hotels/ Restaurants</option>
-                                        <option value={2}>Vilas/ Raw Houses</option>
-                                        <option value={3}>Tour Packages</option>
+                                    <select className="select w-100 custom-select" onChange={(e) => selectType(e)} value={props.selectedProduct}>
+                                        <option value="Hotels/ Restaurants">Hotels/ Restaurants</option>
+                                        <option value="Vilas/ Raw Houses">Vilas/ Raw Houses</option>
+                                        <option value="Tour Packages">Tour Packages</option>
                                     </select>
                                 </div>
                                 <div className="widget-tour-list-search">
@@ -154,4 +161,18 @@ const ListFilter = () => {
     )
 }
 
-export default ListFilter;
+const mapStateToProps = state => {
+    return {
+        selectedProduct: state.commonState.selectedProduct
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        selectType: (data) => {
+            dispatch(selectType(data))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListFilter);

@@ -4,19 +4,17 @@ import Carousel from "../../components/carousel/Carousel";
 import Newsletter from "../../components/commonComponents/Newsletter";
 import CustFooter from "../../components/footers/CustFooter";
 import ListFilter from "../../components/filters/ListFilter";
-import { useLocation } from 'react-router-dom'
 import ProductHeader from "../../components/headers/ProductHeader";
 import Background from "../../assets/img/banner/4.png";
+import { connect } from "react-redux";
 
-const List = () => {
-    const location = useLocation()
-    const { page } = location.state
+const List = (props) => {
 
     return (
         <div>
             <CustNav />
             {/* <Carousel page={page ?? 'list'} /> */}
-            <ProductHeader page={page ?? 'list'} background={Background} />
+            <ProductHeader page={props.selectedProduct ?? 'list'} background={Background} />
             <ListFilter />
             <Newsletter />
             <CustFooter />
@@ -24,4 +22,16 @@ const List = () => {
     )
 }
 
-export default List;
+const mapStateToProps = state => {
+    return {
+        selectedProduct: state.commonState.selectedProduct
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(List);
