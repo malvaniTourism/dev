@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Services from "../../components/banners/Services";
 import UpComming from "../../components/carousel/UpComming";
 import Ads from "../../components/carousel/Ads";
@@ -20,17 +20,31 @@ import HolidayPlans from "../../components/Swipers/HolidayPlans";
 import UpCommingHome from "../../components/carousel/UpCommingHome";
 import Newsletter from "../../components/commonComponents/Newsletter";
 import BookNow from "../../components/buttons/BookNow";
-import { comnPost } from '../../services/comnServ';
+import { comnGet, comnPost } from '../../services/comnServ';
 
 const Home = () => {
-    var data = new FormData();
-    data.append('email', 'kamblepranav460@gmail.com');
-    data.append('password', '123456');
+    const [data, setData] = useState([])
 
-    comnPost('api/auth/login', data)
-        .then(res => {
-            localStorage.setItem('apiToken', res.data.data.access_token)
-        })
+    useEffect(() => {
+        var data = new FormData();
+        data.append('email', 'kamblepranav460@gmail.com');
+        data.append('password', '123456');
+
+        comnPost('api/auth/login', data)
+            .then(res => {
+                localStorage.setItem('apiToken', res.data.data.access_token)
+            })
+            .then(() => getData())
+    }, [])
+
+    const getData = () => {
+        comnGet('api/v1/landingpage')
+            .then(res => {
+                setData(res.data.data)
+                console.log(res.data.data);
+            })
+            .catch(err => console.error(err))
+    }
 
     return (
         <div>
@@ -41,13 +55,13 @@ const Home = () => {
             <OurServices />
             {/* <CustOffers /> */}
             <HolidayPlans />
-            <UpCommingHome />
-            <InstagramPost />
+            <UpCommingHome data={data.projects} />
+            <InstagramPost data={data.cities} />
             {/* <Services /> */}
             {/* <OffrsSwiper /> */}
             {/* <HolidaySwiper /> */}
             {/* <CafeSwiper /> */}
-            <RecentBlogs />
+            <RecentBlogs data={data?.blogs?.slice(0, 3)} />
             <Ads />
             <OurClients />
             <Newsletter />

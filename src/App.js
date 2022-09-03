@@ -50,7 +50,7 @@ function App() {
         <Route path='/carddetails' element={<CardDetails />}></Route>
         <Route path='/list' element={<List />}></Route>
         <Route path='/blogs' element={<BlogList />}></Route>
-        <Route path='/blogdetails' element={<BlogDetails />}></Route>
+        <Route path='blogs/blogdetails' element={<BlogDetails />}></Route>
         <Route path='/listdetails' element={<ListDetails />}></Route>
         <Route path='/top-rated' element={<TopRated />}></Route>
         <Route path='/cities' element={<Cities />}></Route>

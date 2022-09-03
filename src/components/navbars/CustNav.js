@@ -68,11 +68,14 @@ const CustNav = () => {
                         <li className="menu-item-has-children">
                             <a>Transport</a>
                             <ul className="sub-menu">
-                                <li>
+                                {/* <li>
                                     <Link to={'/list'} state={{ page: 'MSRTC Bus' }}>MSRTC Bus</Link>
                                 </li>
                                 <li>
                                     <Link to={'/list'} state={{ page: 'Private Bus' }}>Private</Link>
+                                </li> */}
+                                <li>
+                                    <Link to={'#'} state={{ page: 'MSRTC Bus' }}>Coming Soon</Link>
                                 </li>
                             </ul>
                         </li>

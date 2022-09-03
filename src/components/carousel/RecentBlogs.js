@@ -7,7 +7,7 @@ import img2 from '../../assets/img/blog/2.png';
 import img3 from '../../assets/img/blog/3.png';
 import BlogsCard from '../cards/BlogsCard';
 
-const RecentBlogs = () => {
+const RecentBlogs = ({ data }) => {
     const [imgArr, setImgArr] = useState([img1, img2, img3])
     return (
         <div className="blog-area pd-top-108">
@@ -24,13 +24,15 @@ const RecentBlogs = () => {
                         </div>
                     </div>
                 </div>
-                <div className="row justify-content-center">
-                    {imgArr.map(img => {
-                        return (
-                            <BlogsCard img={img} />
-                        )
-                    })}
-                </div>
+                {data &&
+                    <div className="row justify-content-center">
+                        {data.map(data => {
+                            return (
+                                <BlogsCard data={data} />
+                            )
+                        })}
+                    </div>
+                }
             </div>
         </div>
     )

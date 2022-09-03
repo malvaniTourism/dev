@@ -12,7 +12,7 @@ const upcommingToursCard = (props) => {
             </div>
             <div className="tp-price-meta">
                 <h2>
-                    620 <small>$</small>
+                    620 <small>₹</small>
                 </h2>
                 <p>Price</p>
             </div>

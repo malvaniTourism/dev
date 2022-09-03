@@ -26,8 +26,8 @@ const CustOffer = () => {
                     </ul>
                     <div className="tp-price-meta tp-price-meta-cl">
                         <p>Price</p>
-                        <h2>620 <small>$</small></h2>
-                        <del>620<span>$</span></del>
+                        <h2>620 <small>₹</small></h2>
+                        <del>620<span>₹</span></del>
                     </div>
                 </div>
             </div>

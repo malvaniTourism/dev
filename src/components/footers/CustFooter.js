@@ -28,7 +28,7 @@ const MainFooter = () => {
                                         <a className="twitter" href="#" target="_blank"><i className="fa fa-twitter  " /></a>
                                     </li>
                                     <li>
-                                        <a className="pinterest" href="#" target="_blank"><i className="fa fa-instagram" /></a>
+                                        <a className="instagram" href="https://instagram.com/the_kokan_trip?igshid=YmMyMTA2M2Y=" target="_blank"><i className="fa fa-instagram" /></a>
                                     </li>
                                 </ul>
                             </div>
@@ -60,11 +60,13 @@ const MainFooter = () => {
                             <h4 className="widget-title">Quick Link</h4>
                             <ul className="widget_nav_menu">
                                 <li><a href="#">Home</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Destination</a></li>
-                                <li><a href="#">Tours</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="#/list">Service</a></li>
+                                <li><a href="#">Transport</a></li>
+                                <li><a href="#/cities">Cities</a></li>
+                                <li><a href="#/places">Places</a></li>
+                                <li><a href="#/contactus">Contact</a></li>
+                                <li><a href="#/aboutus">About</a></li>
+                                <li><a href="#/blogs">Blogs</a></li>
                             </ul>
                         </div>
                     </div>

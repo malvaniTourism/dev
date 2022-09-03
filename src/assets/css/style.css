@@ -138,6 +138,12 @@ a {
   color: var(--paragraph-color);
 }
 
+li a {
+  color: inherit;
+  text-decoration: none;
+  color: var(--paragraph-color);
+}
+
 a,
 a:hover,
 a:focus,

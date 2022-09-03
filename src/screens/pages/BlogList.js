@@ -10,10 +10,12 @@ import { comnGet } from '../../services/comnServ';
 import Spinner from "../../components/commonComponents/Spinner";
 import Background from "../../assets/img/bg/10.png";
 import ProductHeader from "../../components/headers/ProductHeader";
+import { useNavigate } from 'react-router-dom';
 
 const BlogList = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [blogsData, setBlogsData] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         comnGet('api/v1/blogs')
@@ -27,12 +29,16 @@ const BlogList = () => {
             })
     }, []);
 
+    const onClick = (id) => {
+        navigate('blogdetails', { state: { id } });
+    }
+
     return (
         <div>
             <Spinner active={isLoading} />
             <CustNav />
             <ProductHeader page={'Blogs'} background={Background} />
-            <Blogs data={blogsData} />
+            <Blogs data={blogsData} onClick={(id) => onClick(id)} />
             <Newsletter />
             <CustFooter />
         </div>

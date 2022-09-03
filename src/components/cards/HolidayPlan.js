@@ -25,7 +25,7 @@ const HolidayPlan = () => {
                     <p className="content">7 Days Tour on 2 person</p>
                     <div className="tp-price-meta">
                         <h2>
-                            620 <small>$</small>
+                            620 <small>₹</small>
                         </h2>
                     </div>
                 </div>

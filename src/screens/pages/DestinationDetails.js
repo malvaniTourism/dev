@@ -9,6 +9,9 @@ import { useLocation } from "react-router-dom";
 import { comnGet } from "../../services/comnServ";
 import Newsletter from "../../components/commonComponents/Newsletter";
 import CustFooter from "../../components/footers/CustFooter";
+import TripPlanCard from "../../components/cards/TripPlanCard";
+import VisitsCarousel from "../../components/carousel/VisitsCarousel";
+import Review from "../../components/commonComponents/Review";
 
 const DestinationDetails = () => {
     const [data, setData] = useState([])
@@ -41,6 +44,18 @@ const DestinationDetails = () => {
                         </div>
                         <div class="col-lg-6">
                             <p>It accounts for about 16% of the world's human population. The continent is surrounded by the Mediterranean Sea to the Africa is the world's second largest and second most-populous continent. At about 30.3 million km² including djacent islands.</p>
+                        </div>
+                    </div>
+
+                    <h4 class="single-page-small-title">Based On Traveller Visits and Local Insights</h4>
+                    <VisitsCarousel />
+
+                    <div class="trip-plan-area">
+                        <h4 class="single-page-small-title">Plan a trip</h4>
+                        <div class="row justify-content-center">
+                            <TripPlanCard />
+                            <TripPlanCard />
+                            <TripPlanCard />
                         </div>
                     </div>
 
@@ -85,6 +100,8 @@ const DestinationDetails = () => {
                             </div>
                         </div>
                     </div>
+
+                    <Review />
                 </div>
             </div>
 

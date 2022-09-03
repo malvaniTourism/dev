@@ -10,7 +10,7 @@ import img32 from '../../assets/img/destination-list/32.png';
 import img33 from '../../assets/img/destination-list/33.png';
 import UpcommingHomeCard from '../cards/UpcommingHomeCard';
 
-const UpCommingHome = () => {
+const UpCommingHome = ({ data }) => {
     const [imgArr, setImgArr] = useState([img28, img29, img30, img31, img32, img33])
     return (
         <div className="upcomming-tour pd-top-65 pd-bottom-120">
@@ -23,7 +23,7 @@ const UpCommingHome = () => {
                                 data-wow-duration="0.6s"
                                 data-wow-delay="0.1s"
                             >
-                                Upcoming Tours
+                                Food Fiesta
                             </h2>
                             <p
                                 className="wow animated fadeInUp"
@@ -37,20 +37,22 @@ const UpCommingHome = () => {
                         </div>
                     </div>
                 </div>
-                <div className="row">
-                    {imgArr.map(img => {
-                        return (
-                            <UpcommingHomeCard img={img} />
-                        )
-                    })}
-                </div>
+                {data &&
+                    <div className="row">
+                        {data.map(data => {
+                            return (
+                                <UpcommingHomeCard data={data} />
+                            )
+                        })}
+                    </div>
+                }
                 <div
                     className="innerbtn-wrap text-center wow animated fadeInUp"
                     data-wow-duration="2.2s"
                     data-wow-delay="0.7s"
                 >
                     <a className="btn btn-yellow" href="#/listdetails">
-                        View All Tours
+                        View All
                     </a>
                 </div>
             </div>

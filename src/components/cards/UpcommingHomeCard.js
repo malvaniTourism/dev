@@ -1,7 +1,7 @@
 import React from "react";
 import img28 from '../../assets/img/destination-list/28.png';
 
-const UpcommingHomeCard = (props) => {
+const UpcommingHomeCard = ({ data }) => {
 
     return (
         <div className="col-xl-4 col-md-6">
@@ -13,20 +13,20 @@ const UpcommingHomeCard = (props) => {
                 <div
                     className="shadow"
                     style={{
-                        backgroundImage: `url(${props.img})`
+                        backgroundImage: `url(₹{img28})`
                     }}
                 >
                     <img src={img28} alt="img" />
                 </div>
                 <div className="tp-price-meta">
                     <h2>
-                        620 <span>$</span>
+                        620 <span>₹</span>
                     </h2>
                     <p>Price</p>
                 </div>
                 <div className="details">
                     <h3 className="title">
-                        <text href="#">Machu Picchu</text>
+                        <text href="#">{data.speciality}</text>
                     </h3>
                     <div className="tp-review-meta">
                         <i className="ic-yellow fa fa-star" />
@@ -37,7 +37,7 @@ const UpcommingHomeCard = (props) => {
                         <span>4.0</span>
                     </div>
                 </div>
-                <div className="location">Peru</div>
+                <div className="location">{data.name}</div>
             </div>
         </div>
     )

@@ -3,8 +3,7 @@ import Path from "../../services/baseUrl";
 
 const CityCard = (props) => {
 
-    let imgUrl = props.city.bg_image_url.slice(6)
-    imgUrl = Path.API_PATH + `/storage` + imgUrl
+    let imgUrl = Path.API_PATH + props.city.bg_image_url
 
     return (
         <div className="col-lg-4 col-md-6">

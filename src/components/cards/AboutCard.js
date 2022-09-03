@@ -131,7 +131,7 @@ const AboutCard = () => {
                                                 </p>
                                                 <p>Price</p>
                                                 <h2>
-                                                    620 <span>$</span>
+                                                    620 <span>₹</span>
                                                 </h2>
                                             </li>
                                         </ul>
@@ -187,7 +187,7 @@ const AboutCard = () => {
                                                 </p>
                                                 <p>Price</p>
                                                 <h2>
-                                                    720 <span>$</span>
+                                                    720 <span>₹</span>
                                                 </h2>
                                             </li>
                                         </ul>
@@ -243,7 +243,7 @@ const AboutCard = () => {
                                                 </p>
                                                 <p>Price</p>
                                                 <h2>
-                                                    310 <span>$</span>
+                                                    310 <span>₹</span>
                                                 </h2>
                                             </li>
                                         </ul>
@@ -299,7 +299,7 @@ const AboutCard = () => {
                                                 </p>
                                                 <p>Price</p>
                                                 <h2>
-                                                    540 <span>$</span>
+                                                    540 <span>₹</span>
                                                 </h2>
                                             </li>
                                         </ul>
@@ -355,7 +355,7 @@ const AboutCard = () => {
                                                 </p>
                                                 <p>Price</p>
                                                 <h2>
-                                                    620 <span>$</span>
+                                                    620 <span>₹</span>
                                                 </h2>
                                             </li>
                                         </ul>
@@ -411,7 +411,7 @@ const AboutCard = () => {
                                                 </p>
                                                 <p>Price</p>
                                                 <h2>
-                                                    720 <span>$</span>
+                                                    720 <span>₹</span>
                                                 </h2>
                                             </li>
                                         </ul>
@@ -467,7 +467,7 @@ const AboutCard = () => {
                                                 </p>
                                                 <p>Price</p>
                                                 <h2>
-                                                    310 <span>$</span>
+                                                    310 <span>₹</span>
                                                 </h2>
                                             </li>
                                         </ul>
@@ -523,7 +523,7 @@ const AboutCard = () => {
                                                 </p>
                                                 <p>Price</p>
                                                 <h2>
-                                                    540 <span>$</span>
+                                                    540 <span>₹</span>
                                                 </h2>
                                             </li>
                                         </ul>

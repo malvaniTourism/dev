@@ -2,7 +2,7 @@ import React from "react";
 import img12 from '../../assets/img/destination-list/12.png';
 import map from '../../assets/img/icons/1.png';
 
-const ProductCard = ({project}) => {
+const ProjectCard = ({project}) => {
 
     return (
         <div className="single-destinations-list style-three">
@@ -23,7 +23,7 @@ const ProductCard = ({project}) => {
                     Italy
                 </p>
                 <h4 className="title">
-                    <a href="#/tourdetails.html">{project.name}</a>
+                    <text>{project.name}</text>
                 </h4>
                 <p className="content">{project.description}</p>
                 <p className="content"><b>Our Speciality:</b> {project.speciality}</p>
@@ -43,7 +43,7 @@ const ProductCard = ({project}) => {
                     <div className="tp-price-meta d-inline-block">
                         <p>Price</p>
                         <h2>
-                            {project.start_price} <span>$</span>
+                            {project.start_price} <span>₹</span>
                         </h2>
                     </div>
                 </div>
@@ -52,4 +52,4 @@ const ProductCard = ({project}) => {
     )
 };
 
-export default ProductCard;
+export default ProjectCard;

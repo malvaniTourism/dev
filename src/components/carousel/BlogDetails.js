@@ -1,6 +1,7 @@
 import React from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import moment from 'moment';
 import img1 from '../../assets/img/blog-details/1.png';
 import img2 from '../../assets/img/blog-details/2.png';
 import img3 from '../../assets/img/blog-details/3.png';
@@ -18,7 +19,8 @@ import img14 from '../../assets/img/blog-details/14.png';
 import img15 from '../../assets/img/blog-details/15.png';
 import img16 from '../../assets/img/others/01.png';
 
-const BlgDetails = () => {
+const BlogDetails = ({ data }) => {
+
     return (
         <div className="blog-details-area pd-top-120">
             <div className="container">
@@ -29,20 +31,9 @@ const BlgDetails = () => {
                                 <img src={img1} alt="blog" />
                             </div>
                             <div className="single-blog-details">
-                                <p className="date mb-0">19 September 2019</p>
-                                <h3 className="title">Why You Shouldn’t Ride Elephants France.</h3>
-                                <p className="content mb-0">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-                                    erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                                    sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                                    amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                    invidunt ut labore et dolore magna aliquyam erat, sed diam
-                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-                                    dolor sit amet.
-                                </p>
+                                <p className="date mb-0">{moment(data.created_at).format('DD MMMM YYYY')}</p>
+                                <h3 className="title">{data.name}</h3>
+                                <p className="content mb-0">{data.description}</p>
                             </div>
                         </div>
                         {/* details-blockquote-start */}
@@ -501,4 +492,4 @@ const BlgDetails = () => {
     )
 }
 
-export default BlgDetails;
+export default BlogDetails;

@@ -10,6 +10,7 @@ import img16 from '../../assets/img/others/01.png';
 import moment from "moment";
 
 const Blogs = (props) => {
+    console.log('blog', props);
 
     return (
         <div className="blog-area pd-top-120">
@@ -30,19 +31,19 @@ const Blogs = (props) => {
                                             <div className="single-blog-details">
                                                 <p className="date">{moment(data.created_at).format('DD MMMM YYYY')}</p>
                                                 <h4 className="title">
-                                                    <a href="blog-details.html">
-                                                        {props.name}
-                                                    </a>
+                                                    <text href="blog-details.html">
+                                                        {data.name}
+                                                    </text>
                                                 </h4>
                                                 <p className="content">
                                                     {data.description}
                                                 </p>
-                                                <a className="btn-read-more" href="#">
+                                                <div className="btn-read-more" onClick={() => props.onClick(data.id)}>
                                                     <span>
                                                         Read More
                                                         <i className="la la-arrow-right" />
                                                     </span>
-                                                </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -121,7 +121,7 @@ const TourDetails = () => {
                                     <div className="tp-price-meta">
                                         <p>Price</p>
                                         <h2>
-                                            775 <small>$</small>
+                                            775 <small>₹</small>
                                         </h2>
                                     </div>
                                 </div>
