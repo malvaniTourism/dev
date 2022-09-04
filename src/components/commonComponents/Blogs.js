@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import img1 from '../../assets/img/blog/1.png';
@@ -8,9 +8,26 @@ import img14 from '../../assets/img/blog-details/14.png';
 import img15 from '../../assets/img/blog-details/15.png';
 import img16 from '../../assets/img/others/01.png';
 import moment from "moment";
+import { comnGet, comnPost } from '../../services/comnServ';
+import Path from '../../services/baseUrl';
 
 const Blogs = (props) => {
-    console.log('blog', props);
+    const [categories, setCategories] = useState([])
+    const [projects, setProjects] = useState([])
+
+    useEffect(() => {
+        comnGet('api/v1/categories')
+            .then(res => {
+                setCategories(res.data.data.data)
+            })
+            .catch(err => console.error(err))
+
+        comnPost('api/v1/projects')
+            .then(res => {
+                setProjects(res.data.data.data)
+            })
+            .catch(err => console.error(err))
+    }, [])
 
     return (
         <div className="blog-area pd-top-120">
@@ -98,73 +115,33 @@ const Blogs = (props) => {
                             <div className="widget widget_categories">
                                 <h2 className="widget-title">Category</h2>
                                 <ul>
-                                    <li>
-                                        <a href="#">Software</a> 33
-                                    </li>
-                                    <li>
-                                        <a href="#">App Landing</a> 81
-                                    </li>
-                                    <li>
-                                        <a href="#">Saas Landing</a> 12
-                                    </li>
-                                    <li>
-                                        <a href="#">Design Studio</a> 17
-                                    </li>
-                                    <li>
-                                        <a href="#">Business Studio</a> 21
-                                    </li>
-                                    <li>
-                                        <a href="#">Product Showcase</a> 62
-                                    </li>
+                                    {categories?.map(cat => {
+                                        return (
+                                            <li>
+                                                <a href="#">{cat.name}</a> {cat.id}
+                                            </li>
+                                        )
+                                    })}
                                 </ul>
                             </div>
                             <div className="widget widget-recent-post">
                                 <h2 className="widget-title">Recent Post</h2>
                                 <ul>
-                                    <li>
-                                        <div className="media">
-                                            <img src={img12} alt="widget" />
-                                            <div className="media-body">
-                                                <span className="post-date">20 July 2019</span>
-                                                <h6 className="title">
-                                                    <a href="#">Duis neque vel elit pharetra vestibulu</a>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="media">
-                                            <img src={img13} alt="widget" />
-                                            <div className="media-body">
-                                                <span className="post-date">21 July 2019</span>
-                                                <h6 className="title">
-                                                    <a href="#">Praesent eu dolor eu orci vehicula</a>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="media">
-                                            <img src={img14} alt="widget" />
-                                            <div className="media-body">
-                                                <span className="post-date">14 July 2019</span>
-                                                <h6 className="title">
-                                                    <a href="#">Aenean non accumsan ante. Duis</a>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="media">
-                                            <img src={img15} alt="widget" />
-                                            <div className="media-body">
-                                                <span className="post-date">20 July 2019</span>
-                                                <h6 className="title">
-                                                    <a href="#">Pellentesque habitant morbi</a>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    {projects?.map(proj => {
+                                        return (
+                                            <li>
+                                                <div className="media" onClick={() => props.getLatestProject(proj.name)}>
+                                                    <img src={Path.API_PATH + proj.fevicon} alt="widget" className='blogsPostImg' />
+                                                    <div className="media-body">
+                                                        <span className="post-date">{moment(proj.created_at).format('DD MMMM YYYY')}</span>
+                                                        <h6 className="title">
+                                                            <a>{proj.name}</a>
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        )
+                                    })}
                                 </ul>
                             </div>
                             <div className="widget widget_tag_cloud">

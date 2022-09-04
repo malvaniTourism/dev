@@ -445,6 +445,17 @@ a {
     height: 174px;
 }
 
+.cardDetailsDiv {
+    height: 400px
+}
+.greyBtn {
+    max-height: 40px
+}
+.blogsPostImg {
+    width: 109px;
+    height: 77px;
+    border-radius: 5px;
+}
 * {
     -ms-overflow-style: none;
 }

@@ -1,7 +1,9 @@
 import React from "react";
 import img28 from '../../assets/img/destination-list/28.png';
+import Path from "../../services/baseUrl";
 
 const UpcommingHomeCard = ({ data }) => {
+    let Img = Path.API_PATH + data.fevicon
 
     return (
         <div className="col-xl-4 col-md-6">
@@ -12,11 +14,8 @@ const UpcommingHomeCard = ({ data }) => {
             >
                 <div
                     className="shadow"
-                    style={{
-                        backgroundImage: `url(₹{img28})`
-                    }}
                 >
-                    <img src={img28} alt="img" />
+                    <img src={Img} alt="img" style={{minHeight: 218}} />
                 </div>
                 <div className="tp-price-meta">
                     <h2>

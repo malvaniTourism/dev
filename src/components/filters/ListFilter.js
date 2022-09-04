@@ -15,7 +15,7 @@ const ListFilter = (props) => {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        getProductData();
+        getProductData(props.projName);
     }, [])
 
     const searchProduct = (e) => {
@@ -23,10 +23,10 @@ const ListFilter = (props) => {
         getProductData();
     }
 
-    const getProductData = () => {
+    const getProductData = (name) => {
         var formData = new FormData();
 
-        formData.append('string', searchText);
+        formData.append('string', searchText || name);
         formData.append('table_name', 'projects')
 
         comnPost('api/v1/search', formData)

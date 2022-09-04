@@ -33,12 +33,16 @@ const BlogList = () => {
         navigate('blogdetails', { state: { id } });
     }
 
+    const getLatestProject = (name) => {
+        navigate('/list', { state: { name } })
+    }
+
     return (
         <div>
             <Spinner active={isLoading} />
             <CustNav />
             <ProductHeader page={'Blogs'} background={Background} />
-            <Blogs data={blogsData} onClick={(id) => onClick(id)} />
+            <Blogs data={blogsData} onClick={(id) => onClick(id)} getLatestProject={(name) => getLatestProject(name)} />
             <Newsletter />
             <CustFooter />
         </div>

@@ -11,19 +11,21 @@ const CityCard = (props) => {
                 <div className="thumb">
                     <img className="city-img" height={280} src={imgUrl} alt="img" />
                 </div>
-                <div className="details">
-                    <div className="tp-review-meta">
+                <div className="details cardDetailsDiv" style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
+                    {/* <div className="tp-review-meta">
                         <i className="ic-yellow fa fa-star" />
                         <i className="ic-yellow fa fa-star" />
                         <i className="ic-yellow fa fa-star" />
                         <i className="ic-yellow fa fa-star" />
                         <i className="fa fa-star" />
                         <span>4.0</span>
-                    </div>
+                    </div> */}
+                    <div style={{flex: 2}}>
                     <h3 className="title">{props.city.name}</h3>
                     <p className="content">{props.city.tag_line}</p><br />
                     <p className="content"><h5><b>Description</b></h5>{props.city.description}</p>
-                    <div className="btn btn-gray mx-auto alignCenter" onClick={() => props.onClick(props.city.id)}>
+                    </div>
+                    <div className="btn btn-gray mx-auto alignCenter greyBtn" style={{flex: 1}} onClick={() => props.onClick(props.city.id)}>
                         <span>
                             Explore
                             <i className="la la-arrow-right" />
