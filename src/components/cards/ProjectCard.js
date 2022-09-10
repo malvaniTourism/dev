@@ -7,7 +7,7 @@ const ProjectCard = ({ project }) => {
     const navigate = useNavigate();
     const getId = () => {
         const id = project.id
-        navigate('tourdetails', { state: { id } });
+        navigate('/tourdetails', { state: { id } });
     }
 
     return (
@@ -29,11 +29,13 @@ const ProjectCard = ({ project }) => {
                     Italy
                 </p>
                 <h4 className="title">
-                    <a href="#/tourdetails.html">{project.name}</a>
+                    <text>{project.name}</text>
                 </h4>
                 <p className="content">{project.description}</p>
                 <p className="content"><b>Our Speciality:</b> {project.speciality}</p>
-                <a className="content" href={project.domain_name}>{project.domain_name}</a>
+                <a className="content" href={project.domain_name}
+                // onClick={()=> window.open(project.domain_name, '_blank', 'noopener,noreferrer')}
+                >{project.domain_name}</a>
                 <div className="list-price-meta">
                     <ul className="tp-list-meta d-inline-block">
                         <li>

@@ -1922,7 +1922,9 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   margin-left: 0;
   font-size: 16px;
 }
-
+.comment-reply {
+  margin-left: 50px;
+}
 .comments-area .reply-title,
 .comments-area .comment-reply-title {
   font-size: 26px;
