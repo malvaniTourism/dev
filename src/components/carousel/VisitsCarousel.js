@@ -1,40 +1,56 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import LeftArr from '../../assets/images/arrow_left.png'
 import RightArr from '../../assets/images/arrow_right.png'
-import img from '../../assets/img/others/3.png'
-import img1 from '../../assets/img/others/2.png'
-import img2 from '../../assets/img/others/4.png'
 import VisitsCard from "../cards/VisitsCard";
 
 const VisitsCarousel = () => {
+    const [slides, setSlides] = useState(3);
+    const [isMobile, setIsMobile] = useState(false)
+    useEffect(() => {
+        window.addEventListener('resize', getDimension)
+        return () => {
+            window.removeEventListener('resize', getDimension)
+        }
+    }, [slides])
+
+    const getDimension = () => {
+        console.log('log', window.innerWidth);
+        if (window.innerWidth <= 600) {
+            console.log('less');
+            setIsMobile(true)
+            setSlides(1)
+        } else {
+            setIsMobile(false)
+            setSlides(3)
+        }
+    }
     const settings = {
-        slidesToShow: 3,
-        dots: false,
+        dots: isMobile,
+        arrows: !isMobile,
+        infinite: true,
+        speed: 500,
+        slidesToShow: slides,
         slidesToScroll: 1,
-        speed: 400,
-        loop: true,
-        fade: true,
         autoplay: true,
         autoplaySpeed: 2000,
+        className: 'mySlider',
         nextArrow: <img alt="arr-img" className="bkArrow" src={LeftArr} height={60} width={60} />,
         prevArrow: <img alt="arr-img" className="bkArrow" src={RightArr} height={60} width={60} />
-        // appendDots: $(".banner-slider-dots"),
     };
 
     return (
-        <div class="destinations-client-review-slider tp-common-slider-style">
-            <div class="d-client-review-slider-item">
-                <Slider {...settings}>
-                    <VisitsCard />
-                        <VisitsCard />
-                        <VisitsCard />
-                        <VisitsCard />
-                </Slider>
-            </div>
+        <div>
+            <Slider {...settings}>
+                <VisitsCard />
+                <VisitsCard />
+                <VisitsCard />
+                <VisitsCard />
+            </Slider>
         </div>
-    )
-};
+    );
+}
 
 export default VisitsCarousel;

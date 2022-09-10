@@ -1,11 +1,17 @@
 import React from "react";
 import img12 from '../../assets/img/destination-list/12.png';
 import map from '../../assets/img/icons/1.png';
+import { useNavigate } from 'react-router-dom';
 
-const ProjectCard = ({project}) => {
+const ProjectCard = ({ project }) => {
+    const navigate = useNavigate();
+    const getId = () => {
+        const id = project.id
+        navigate('tourdetails', { state: { id } });
+    }
 
     return (
-        <div className="single-destinations-list style-three">
+        <div className="single-destinations-list style-three" onClick={() => getId()}>
             <div className="thumb">
                 <img src={img12} alt="list" />
             </div>
@@ -23,7 +29,7 @@ const ProjectCard = ({project}) => {
                     Italy
                 </p>
                 <h4 className="title">
-                    <text>{project.name}</text>
+                    <a href="#/tourdetails.html">{project.name}</a>
                 </h4>
                 <p className="content">{project.description}</p>
                 <p className="content"><b>Our Speciality:</b> {project.speciality}</p>

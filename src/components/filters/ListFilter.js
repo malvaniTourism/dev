@@ -9,10 +9,12 @@ import ProjectCard from '../cards/ProjectCard';
 import { comnPost } from '../../services/comnServ';
 import { connect } from 'react-redux';
 import { selectType } from '../../actions/commonActions';
+import { useNavigate } from 'react-router-dom';
 
 const ListFilter = (props) => {
     const [searchText, setSearchText] = useState('');
     const [projects, setProjects] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         getProductData(props.projName);
@@ -25,6 +27,7 @@ const ListFilter = (props) => {
 
     const getProductData = (name) => {
         var formData = new FormData();
+        // navigate('tourdetails', { state: { name: 'place', id } });
 
         formData.append('string', searchText || name);
         formData.append('table_name', 'projects')
@@ -108,9 +111,9 @@ const ListFilter = (props) => {
                                     </select>
                                 </div>
                                 <div className="widget-tour-list-search">
-                                <div className="single-widget-search-input-title">
-                                    <i className="fa fa-search" /> Search
-                                </div>
+                                    <div className="single-widget-search-input-title">
+                                        <i className="fa fa-search" /> Search
+                                    </div>
                                     <form className="search-form">
                                         <div className="form-group">
                                             <input type="text" placeholder="Search" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
