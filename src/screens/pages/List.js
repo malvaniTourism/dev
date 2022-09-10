@@ -17,7 +17,7 @@ const List = (props) => {
             <CustNav />
             {/* <Carousel page={page ?? 'list'} /> */}
             <ProductHeader page={props.selectedProduct ?? 'list'} background={Background} />
-            <ListFilter projName={location.state.name} />
+            <ListFilter projName={location.state?.name||''} />
             <Newsletter />
             <CustFooter />
         </div>
