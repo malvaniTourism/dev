@@ -19,7 +19,7 @@ const CityList = (props) => {
     const navigate = useNavigate();
 
     const getDetails = (id) => {
-        navigate('details', { state: { name: 'city', id } });
+        navigate('/city/details', { state: { name: 'city', id } });
     }
 
     return (

@@ -26,6 +26,7 @@ const Home = () => {
     const [data, setData] = useState([])
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         var data = new FormData();
         data.append('email', 'kamblepranav460@gmail.com');
         data.append('password', '123456');

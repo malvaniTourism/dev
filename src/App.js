@@ -58,8 +58,8 @@ function App() {
         <Route path='/vr' element={<Vr />}></Route>
         <Route path='/profile' element={<Profile />}></Route>
         <Route path='/tourdetails' element={<TourDetails />}></Route>
-        <Route path='cities/details' element={<DestinationDetails />}></Route>
-        <Route path='places/details' element={<DestinationDetails />}></Route>
+        <Route path='city/details' element={<DestinationDetails />}></Route>
+        <Route path='place/details' element={<DestinationDetails />}></Route>
         <Route element={<NotFound />}></Route>
       </Routes>
     </Router>

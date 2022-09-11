@@ -4,6 +4,7 @@ import LoadingOverlay from 'react-loading-overlay-ts';
 const Spinner = (props) => {
 
     return (
+    // return ReactDOM.createPortal(
         <div className='mySpinner' style={{ background: props.active && 'rgba(0,0,0,0.5)' }}>
             <LoadingOverlay
                 active={props.active}
@@ -23,6 +24,7 @@ const Spinner = (props) => {
             >
             </LoadingOverlay>
         </div>
+        // document.getElementById('mySpinner')
     )
 };
 

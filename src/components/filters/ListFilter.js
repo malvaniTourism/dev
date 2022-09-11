@@ -8,16 +8,19 @@ import img4 from '../../assets/img/others/01.png';
 import ProjectCard from '../cards/ProjectCard';
 import { comnPost } from '../../services/comnServ';
 import { connect } from 'react-redux';
-import { selectType } from '../../actions/commonActions';
+import { saveSearchString, selectType } from '../../actions/commonActions';
 import { useNavigate } from 'react-router-dom';
 
 const ListFilter = (props) => {
-    const [searchText, setSearchText] = useState('');
+    const [searchText, setSearchText] = useState(props.searchString);
     const [projects, setProjects] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
         getProductData(props.projName);
+        window.onpopstate = e => {
+            props.saveSearchString('')
+         }
     }, [])
 
     const searchProduct = (e) => {
@@ -43,6 +46,11 @@ const ListFilter = (props) => {
     const selectType = (e) => {
         console.log(e.target.value);
         props.selectType(e.target.value)
+    }
+
+    const saveSearchString = (value) => {
+        setSearchText(value)
+        props.saveSearchString(value)
     }
 
     return (
@@ -116,7 +124,7 @@ const ListFilter = (props) => {
                                     </div>
                                     <form className="search-form">
                                         <div className="form-group">
-                                            <input type="text" placeholder="Search" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
+                                            <input type="text" placeholder="Search" value={searchText} onChange={(e) => saveSearchString(e.target.value)} />
                                         </div>
                                         <button className="submit-btn" type="submit" onClick={(e) => searchProduct(e)}>
                                             <i className="ti-search" />
@@ -177,7 +185,8 @@ const ListFilter = (props) => {
 
 const mapStateToProps = state => {
     return {
-        selectedProduct: state.commonState.selectedProduct
+        selectedProduct: state.commonState.selectedProduct,
+        searchString: state.commonState.searchString
     }
 }
 
@@ -185,6 +194,9 @@ const mapDispatchToProps = dispatch => {
     return {
         selectType: (data) => {
             dispatch(selectType(data))
+        },
+        saveSearchString: data => {
+            dispatch(saveSearchString(data))
         }
     }
 }

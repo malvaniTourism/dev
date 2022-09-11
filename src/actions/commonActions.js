@@ -1,18 +1,28 @@
 import {
     CustId,
-    SelectProduct
+    SelectProduct,
+    SaveString,
 } from './types';
 
-export const saveData = data => {
+const saveData = data => {
     return {
         type: CustId,
         payload: data
     }
 }
 
-export const selectType = data => {
+const selectType = data => {
     return {
         type: SelectProduct,
         payload: data
     }
 }
+
+const saveSearchString = data => {
+    return {
+        type: SaveString,
+        payload: data
+    }
+}
+
+export { saveData, selectType, saveSearchString }
