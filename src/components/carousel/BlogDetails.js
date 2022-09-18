@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import moment from 'moment';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
 import img1 from '../../assets/img/blog-details/1.png';
 import img2 from '../../assets/img/blog-details/2.png';
 import img3 from '../../assets/img/blog-details/3.png';
@@ -18,8 +20,35 @@ import img13 from '../../assets/img/blog-details/13.png';
 import img14 from '../../assets/img/blog-details/14.png';
 import img15 from '../../assets/img/blog-details/15.png';
 import img16 from '../../assets/img/others/01.png';
+import CommentsCard from '../cards/CommentsCard';
+import CommentsForm from '../cards/CommentsForm';
 
-const BlogDetails = ({ data }) => {
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '70vw',
+    bgcolor: 'background.paper',
+    border: '1px solid #000',
+    borderRadius: 5,
+    boxShadow: 24,
+    p: 4,
+};
+
+const BlogDetails = ({ data, openComment, isPosted }) => {
+    const [parentId, setParentId] = useState('');
+    const [open, setOpen] = useState(false);
+
+    openComment = (e) => {
+        setParentId(e)
+        setOpen(true)
+    }
+
+    const onCommentSuccess = () => {
+        isPosted(true)
+        setOpen(false)
+    } 
 
     return (
         <div className="blog-details-area pd-top-120">
@@ -272,117 +301,37 @@ const BlogDetails = ({ data }) => {
                             <h4 className="comments-title">Comments</h4>
                             <ul className="comment-list">
                                 <li>
-                                    <div className="single-comment-wrap">
-                                        <div className="thumb">
-                                            <img src={img9} alt="img" />
-                                        </div>
-                                        <div className="content">
-                                            <h4 className="title">Tyler Bailey</h4>
-                                            <span className="date">17 SEP 2019</span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                                                justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-                                                sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-                                                ipsum dolor sit amet, consetetur sadipscing elitr
-                                            </p>
-                                            <a href="#" className="reply btn btn-yellow">
-                                                <span>
-                                                    <i className="fa fa-reply" />
-                                                    Reply
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <ul className="children">
-                                        <li>
-                                            <div className="single-comment-wrap">
-                                                <div className="thumb">
-                                                    <img src={img10} alt="img" />
-                                                </div>
-                                                <div className="content">
-                                                    <h4 className="title">Laurie</h4>
-                                                    <span className="date">17 SEP 2019</span>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                                        sed diam nonumy eirmod tempor invidunt ut labore et
-                                                        dolore magna aliquyam erat, sed diam voluptua. At vero
-                                                        eos et accusam et justo duo dolores et ea rebum. Stet
-                                                        clita kasd gubergren
-                                                    </p>
-                                                    <a href="#" className="reply btn btn-yellow">
-                                                        <span>
-                                                            <i className="fa fa-reply" />
-                                                            Reply
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                    {data.comments?.map(comment => {
+                                        return (
+                                            <div>
+                                                <CommentsCard data={comment} openComment={(e) => openComment(e)} />
+                                                {comment.comments?.map(reply => {
+                                                    return (
+                                                        <ul className="children">
+                                                            <li>
+                                                                <CommentsCard data={reply} openComment={(e) => openComment(e)} />
+                                                            </li>
+                                                        </ul>
+                                                    )
+                                                })}
                                             </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <div className="single-comment-wrap">
-                                        <div className="thumb">
-                                            <img src={img11} alt="img" />
-                                        </div>
-                                        <div className="content">
-                                            <h4 className="title">Eliza Jordan</h4>
-                                            <span className="date">17 SEP 2019</span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                                                justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-                                                sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-                                                ipsum dolor sit amet, consetetur sadipscing elitr
-                                            </p>
-                                            <a href="#" className="reply btn btn-yellow">
-                                                <span>
-                                                    <i className="fa fa-reply" />
-                                                    Reply
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
+                                        )
+                                    })}
                                 </li>
                             </ul>
                         </div>
                         {/* comments-area-end */}
                         {/* blog-comment-area start */}
-                        <div className="blog-comment-area">
-                            <form className="tp-form-wrap bg-gray tp-form-wrap-one">
-                                <h4 className="single-page-small-title">Write A Coment.</h4>
-                                <div className="row">
-                                    <div className="col-lg-6 col-md-6">
-                                        <label className="single-input-wrap">
-                                            <span className="single-input-title">Name</span>
-                                            <input type="text" />
-                                        </label>
-                                    </div>
-                                    <div className="col-lg-6 col-md-6">
-                                        <label className="single-input-wrap">
-                                            <span className="single-input-title">Email</span>
-                                            <input type="text" />
-                                        </label>
-                                    </div>
-                                    <div className="col-lg-12">
-                                        <label className="single-input-wrap">
-                                            <span className="single-input-title">comments</span>
-                                            <textarea defaultValue={""} />
-                                        </label>
-                                    </div>
-                                    <div className="col-12">
-                                        <a className="btn btn-yellow" href="#">
-                                            Send Comment
-                                        </a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                        <Modal
+                            open={open}
+                            onClose={() => setOpen(false)}
+                            aria-labelledby="modal-modal-title"
+                            aria-describedby="modal-modal-description"
+                        >
+                            <Box sx={style}>
+                                <CommentsForm type={'comment'} tableName={'Blog'} postId={data.id} parentId={parentId} isPosted={() => onCommentSuccess()} />
+                            </Box>
+                        </Modal>
                         {/* blog-comment-area start */}
                     </div>
                     <div className="col-lg-4">

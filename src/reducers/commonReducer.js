@@ -3,6 +3,7 @@ import {
     SelectProduct,
     SaveString,
     searchString,
+    SaveLoginUser,
 } from '../actions/types';
 
 const initialState = {
@@ -10,6 +11,7 @@ const initialState = {
     CustId: {},
     selectedProduct: 'Hotels/ Restaurants',
     searchString: '',
+    loginUser: []
 };
 
 const commonReducer = (state = initialState, action) => {
@@ -28,6 +30,11 @@ const commonReducer = (state = initialState, action) => {
             return {
                 ...state,
                 searchString: action.payload
+            }
+        case SaveLoginUser:
+            return {
+                ...state,
+                loginUser: action.payload
             }
         default:
             return state;

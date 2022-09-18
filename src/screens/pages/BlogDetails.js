@@ -10,22 +10,24 @@ import { useLocation } from "react-router-dom";
 import { comnGet } from "../../services/comnServ";
 
 const BlogDetails = () => {
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
+    const [posted, setIsPosted] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
         comnGet('api/v1/blog/' + location.state.id)
         .then(res => {
             setData(res.data.data)
+            setIsPosted(false)
         })
         .catch(err => console.error(err))
-    }, [])
+    }, [posted])
 
     return (
         <div>
             <CustNav />
             <ProductHeader page={'Blogs'} background={Background} />
-            <BlogDetail data={data} />
+            <BlogDetail data={data} isPosted={setIsPosted} />
             <Newsletter />
             <CustFooter />
         </div>

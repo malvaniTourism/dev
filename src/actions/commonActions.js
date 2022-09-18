@@ -2,6 +2,7 @@ import {
     CustId,
     SelectProduct,
     SaveString,
+    SaveLoginUser,
 } from './types';
 
 const saveData = data => {
@@ -25,4 +26,11 @@ const saveSearchString = data => {
     }
 }
 
-export { saveData, selectType, saveSearchString }
+const saveLoginUser = data => {
+    return {
+        type: SaveLoginUser,
+        payload: data
+    }
+}
+
+export { saveData, selectType, saveSearchString, saveLoginUser }

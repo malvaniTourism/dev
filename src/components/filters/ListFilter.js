@@ -32,7 +32,7 @@ const ListFilter = (props) => {
         var formData = new FormData();
         // navigate('tourdetails', { state: { name: 'place', id } });
 
-        formData.append('string', searchText || name);
+        formData.append('string', searchText || name || '');
         formData.append('table_name', 'projects')
 
         comnPost('api/v1/search', formData)

@@ -21,8 +21,10 @@ import UpCommingHome from "../../components/carousel/UpCommingHome";
 import Newsletter from "../../components/commonComponents/Newsletter";
 import BookNow from "../../components/buttons/BookNow";
 import { comnGet, comnPost } from '../../services/comnServ';
+import { connect } from "react-redux";
+import { saveLoginUser } from "../../actions/commonActions";
 
-const Home = () => {
+const Home = (props) => {
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -34,6 +36,7 @@ const Home = () => {
         comnPost('api/auth/login', data)
             .then(res => {
                 localStorage.setItem('apiToken', res.data.data.access_token)
+                props.saveLoginUser(res.data.data.user)
             })
             .then(() => getData())
     }, [])
@@ -71,4 +74,18 @@ const Home = () => {
     )
 };
 
-export default Home;
+const mapStateToProps = state => {
+    return {
+        loginUser: state.commonState.loginUser,
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        saveLoginUser: data => {
+             dispatch(saveLoginUser(data))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
