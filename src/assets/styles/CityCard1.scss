@@ -1,0 +1,55 @@
+.card-container {
+    border-radius   : 20px !important;
+    position        : relative !important;
+    text-align      : left !important;
+    max-width       : 330px !important;
+    height          : 500px !important;
+    margin-top      : 20px;
+    background-color: #f6f5fc !important;
+
+    .top-left {
+        color   : aliceblue;
+        position: absolute;
+        top     : 8px;
+        left    : 20px;
+    }
+
+    .top-right {
+        position: absolute;
+        top     : 8px;
+        right   : 16px;
+        color   : white;
+
+        .add-favorites-icon {
+            width : 25px;
+            height: 25px;
+        }
+    }
+
+    .bottom-left {
+        cursor  : pointer;
+        position: absolute;
+        bottom  : -5px;
+        left    : 4px;
+    }
+
+    .bottom-right {
+        position: absolute;
+        bottom  : 8px;
+        right   : 16px;
+    }
+
+    }
+
+.cardcontainer-img {
+    transition: transform 1s;
+    padding: 10px;
+}
+
+.cardcontainer-img:hover {
+    transform: scale(1.1);
+}
+
+.card-container:hover {
+    box-shadow: 2px 2px 4px 2px rgb(213, 216, 208) !important;
+}

@@ -4,6 +4,8 @@ import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { useNavigate } from 'react-router-dom';
 
 import CityCard from '../cards/CityCard';
+import CityCard1 from '../cards/CityCard1';
+import "../../assets/styles/CityCard1.scss"
 
 const PlaceList = (props) => {
     const [value, setValue] = React.useState('1');
@@ -33,7 +35,8 @@ const PlaceList = (props) => {
                             <TabPanel value="1" className="row justify-content-center">
                                 {props.cities.map(city => {
                                     return (
-                                        <CityCard city={city} onClick={(id) => getDetails(id)} />
+                                        // <CityCard city={city} onClick={(id) => getDetails(id)} />
+                                        <CityCard1  city={city} onClick={(id) => getDetails(id)}/>
                                     )
                                 })}
                             </TabPanel>
