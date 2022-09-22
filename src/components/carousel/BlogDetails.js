@@ -48,7 +48,7 @@ const BlogDetails = ({ data, openComment, isPosted }) => {
     const onCommentSuccess = () => {
         isPosted(true)
         setOpen(false)
-    } 
+    }
 
     return (
         <div className="blog-details-area pd-top-120">
@@ -299,6 +299,12 @@ const BlogDetails = ({ data, openComment, isPosted }) => {
                         {/* comments-area-start */}
                         <div className="comments-area">
                             <h4 className="comments-title">Comments</h4>
+                            <div className="reply btn btn-yellow" onClick={() => openComment()}>
+                                <span>
+                                    {/* <i className="fa fa-reply" /> */}
+                                    Add a comment
+                                </span>
+                            </div>
                             <ul className="comment-list">
                                 <li>
                                     {data.comments?.map(comment => {

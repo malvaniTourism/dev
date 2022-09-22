@@ -3,7 +3,7 @@ import img12 from '../../assets/img/destination-list/12.png';
 import map from '../../assets/img/icons/1.png';
 import { useNavigate } from 'react-router-dom';
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, color }) => {
     const navigate = useNavigate();
     const getId = () => {
         const id = project.id
@@ -11,7 +11,7 @@ const ProjectCard = ({ project }) => {
     }
 
     return (
-        <div className="single-destinations-list style-three" onClick={() => getId()}>
+        <div className="single-destinations-list style-three" style={{borderColor: color, boxShadow: `1px 1px 7px ${color}`}} onClick={() => getId()}>
             <div className="thumb">
                 <img src={img12} alt="list" />
             </div>
@@ -32,7 +32,7 @@ const ProjectCard = ({ project }) => {
                     <text>{project.name}</text>
                 </h4>
                 <p className="content">{project.description}</p>
-                <p className="content"><b>Our Speciality:</b> {project.speciality}</p>
+                {/* <p className="content"><b>Our Speciality:</b> {project.speciality}</p> */}
                 <a className="content" href={project.domain_name}
                 // onClick={()=> window.open(project.domain_name, '_blank', 'noopener,noreferrer')}
                 >{project.domain_name}</a>

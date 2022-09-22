@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import GoogleMapReact from 'google-map-react';
 import img1 from '../../assets/img/tour-details/1.png';
 import img2 from '../../assets/img/tour-details/2.png';
 import img3 from '../../assets/img/tour-details/3.png';
@@ -24,6 +25,16 @@ import imgc3 from '../../assets/img/client/3.png';
 import CustNav from '../../components/navbars/CustNav';
 import { useLocation } from "react-router-dom";
 import { comnGet } from "../../services/comnServ";
+import Path from "../../services/baseUrl";
+import CustFooter from '../../components/footers/CustFooter';
+
+const mapProps = {
+    center: {
+        lat: 10.99835602,
+        lng: 77.01502627
+    },
+    zoom: 11
+};
 
 const TourDetails = () => {
     const [data, setData] = useState([])
@@ -45,7 +56,7 @@ const TourDetails = () => {
                 <div className="tour-details-gallery">
                     <div className="container-bg bg-dark-blue">
                         <div className="container">
-                            <div className="gallery-filter-area row">
+                            <div className="gallery-filter-area row" style={{ marginTop: 20 }}>
                                 <div className="gallery-sizer col-1" />
                                 {/* gallery-item */}
                                 <div className="tp-gallery-item col-md-5 col-sm-6 mb-10">
@@ -64,46 +75,17 @@ const TourDetails = () => {
                                         </div>
                                     </div>
                                 </div>
-                                {/* gallery-item */}
-                                <div className="tp-gallery-item col-md-3 col-sm-6">
-                                    <div className="tp-gallery-item-img">
-                                        <a href="#" data-effect="mfp-zoom-in">
-                                            <img src={img2} alt="image" />
-                                        </a>
-                                    </div>
-                                </div>
-                                {/* gallery-item */}
-                                <div className="tp-gallery-item col-lg-2 col-md-4 col-sm-6">
-                                    <div className="tp-gallery-item-img">
-                                        <a href="#" data-effect="mfp-zoom-in">
-                                            <img src={img3} alt="image" />
-                                        </a>
-                                    </div>
-                                </div>
-                                {/* gallery-item */}
-                                <div className="tp-gallery-item col-lg-2 col-md-4 col-sm-6">
-                                    <div className="tp-gallery-item-img">
-                                        <a href="#" data-effect="mfp-zoom-in">
-                                            <img src={img4} alt="image" />
-                                        </a>
-                                    </div>
-                                </div>
-                                {/* gallery-item */}
-                                <div className="tp-gallery-item col-lg-2 col-md-4 col-sm-6">
-                                    <div className="tp-gallery-item-img">
-                                        <a href="#" data-effect="mfp-zoom-in">
-                                            <img src={img5} alt="image" />
-                                        </a>
-                                    </div>
-                                </div>
-                                {/* gallery-item */}
-                                <div className="tp-gallery-item col-lg-2 col-md-4 col-sm-6">
-                                    <div className="tp-gallery-item-img">
-                                        <a href="#" data-effect="mfp-zoom-in">
-                                            <img src={img6} alt="image" />
-                                        </a>
-                                    </div>
-                                </div>
+                                {data.photos?.slice(0, 5).map(photo => {
+                                    return (
+                                        <div className="tp-gallery-item col-lg-3 col-md-4 col-sm-6">
+                                            <div className="tp-gallery-item-img">
+                                                <a href="#" data-effect="mfp-zoom-in">
+                                                    <img src={Path.API_PATH + photo.url} alt="image" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
                             </div>
                             <div className="row">
                                 <div className="col-xl-3 col-lg-4">
@@ -112,8 +94,8 @@ const TourDetails = () => {
                                             <i className="fa fa-map-marker" />
                                             {data?.city?.name}
                                         </p>
-                                        <h4 className="title">Bali Province</h4>
-                                        <p className="content">3 days 2 person</p>
+                                        <h4 className="title">{data.name}</h4>
+                                        <p className="content">{data.project_meta}</p>
                                         <div className="tp-review-meta">
                                             <i className="ic-yellow fa fa-star" />
                                             <i className="ic-yellow fa fa-star" />
@@ -138,7 +120,7 @@ const TourDetails = () => {
                                         <div className="tp-price-meta">
                                             <p>Price</p>
                                             <h2>
-                                                {data?.start_price} <small>$</small>
+                                                {data?.start_price} <small>₹</small>
                                             </h2>
                                         </div>
                                     </div>
@@ -171,26 +153,10 @@ const TourDetails = () => {
                                 <h4 className="single-page-small-title">Description</h4>
                                 <p>
                                     {data?.description}
-
-                                    From its distinct half-hour time zone to its occasional June
-                                    snowshower, Newfoundland runs on its own time. By August, the summer
-                                    crowds have dwindled, berries hang ripe and heavy on their stems,
-                                    and the landscape is ablaze with wildflowers. Join us at the peak of
-                                    Newfoundland’s late summer season as we wind our way through the
-                                    famously Celtic stretch of coastline known as the Irish Loop,
-                                    exploring its unique history, folklore, cuisine, and breathtaking
-                                    seaside scenery. We’ll enjoy dinners made from freshly foraged
-                                    ingredients on a quiet dock, chat with a boat-builder in the midst
-                                    of making a vessel, and learn how to craft heritage cheese from
-                                    local experts while surrounded by an adorable, bleating tribe of
-                                    tiny baby goats. As we make our way along the Loop, we’ll encounter
-                                    countless characters, places, and stories that give this corner of
-                                    the island its charm, tenacity, and unique flair.
                                 </p>
                                 <p>
                                     {" "}
                                     {data?.description}
-
                                     This trip is offered by Atlas Obscura. Once you've reserved your
                                     spot, our team will be in touch to help you prepare for the trip.
                                     Please note that flights to and from St. John's are not included in
@@ -326,9 +292,10 @@ const TourDetails = () => {
                                 <div className="host-area">
                                     <div className="single-host-wrap text-center">
                                         <div className="thumb">
-                                            <img src={imgc2} alt="img" />
+                                            <img src={Path.API_PATH + data.user?.profile_picture} alt="img" />
                                         </div>
-                                        <h4>Mike At Atlas Obscura Trips</h4>
+                                        <h4>{data.user?.name}</h4>
+                                        <a href={data.user?.email}>{data.user?.email}</a>
                                         <p>
                                             I'm your Atlas Obscura Trip Coordinator. Since 2016, Atlas
                                             Obscura has been offering unusual trips to the world’s most
@@ -347,6 +314,20 @@ const TourDetails = () => {
                                             Contact Host
                                         </a>
                                     </div>
+                                </div>
+                                <div style={{ height: '100vh', width: '100%' }}>
+                                    <GoogleMapReact
+                                        bootstrapURLKeys={{ key: "AIzaSyDh0r4d43_4Jms5sGWfSTQjHO9QXEj_Qvw" }}
+                                        defaultCenter={mapProps.center}
+                                        defaultZoom={mapProps.zoom}
+                                    >
+                                        {/* <AnyReactComponent
+                                            lat={59.955413}
+                                            lng={30.337844}
+                                            text="My Marker"
+                                        /> */}
+                                        <text>map</text>
+                                    </GoogleMapReact>
                                 </div>
                                 <div className="service-location-map">
                                     <h4 className="single-page-small-title">Service Location</h4>
@@ -542,6 +523,7 @@ const TourDetails = () => {
                     </div>
                 </div>
             </div>
+            <CustFooter />
         </div>
     )
 }

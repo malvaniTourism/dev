@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import img1 from '../../assets/img/blog/1.png';
@@ -27,7 +29,11 @@ const Blogs = (props) => {
                 setProjects(res.data.data.data)
             })
             .catch(err => console.error(err))
-    }, [])
+    }, []);
+
+    const changePage = (event, value) => {
+        props.setPage(value)
+    }
 
     return (
         <div className="blog-area pd-top-120">
@@ -41,9 +47,9 @@ const Blogs = (props) => {
                                         <div className="single-blog">
                                             <div className="thumb">
                                                 <img src={img1} alt="blog" />
-                                                <a className="tag" href="#">
+                                                <text className="tag">
                                                     Europe
-                                                </a>
+                                                </text>
                                             </div>
                                             <div className="single-blog-details">
                                                 <p className="date">{moment(data.created_at).format('DD MMMM YYYY')}</p>
@@ -66,38 +72,9 @@ const Blogs = (props) => {
                                     </div>
                                 )
                             })}
-                            <div className="col-lg-12  text-md-center text-left">
-                                <div className="tp-pagination text-md-center text-left d-inline-block mt-4">
-                                    <ul>
-                                        <li>
-                                            <a className="prev page-numbers" href="#">
-                                                <i className="la la-long-arrow-left" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <span className="page-numbers">1</span>
-                                        </li>
-                                        <li>
-                                            <span className="page-numbers current">2</span>
-                                        </li>
-                                        <li>
-                                            <a className="page-numbers" href="#">
-                                                3
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className="page-numbers" href="#">
-                                                4
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className="next page-numbers" href="#">
-                                                <i className="la la-long-arrow-right" />
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <Stack spacing={2} style={{alignItems: 'center'}} >
+                                <Pagination variant="outlined" color="secondary" size='large' count={props.pageCount} onChange={changePage} showFirstButton showLastButton />
+                            </Stack>
                         </div>
                     </div>
                     <div className="col-lg-4">

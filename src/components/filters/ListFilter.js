@@ -11,28 +11,38 @@ import { connect } from 'react-redux';
 import { saveSearchString, selectType } from '../../actions/commonActions';
 import { useNavigate } from 'react-router-dom';
 
+const cities = ["Devgad", "Dodamarg", "Kankavli", "Kudal", "Malvan", "Sawantwadi", "Vaibhavwadi", "Vengurla"]
+
 const ListFilter = (props) => {
     const [searchText, setSearchText] = useState(props.searchString);
     const [projects, setProjects] = useState([]);
+    const [city, setCity] = useState();
+    const [color, setColor] = useState('#EBA55D');
+    const [asc, setAsc] = useState(true)
+
     const navigate = useNavigate();
 
     useEffect(() => {
         getProductData(props.projName);
         window.onpopstate = e => {
             props.saveSearchString('')
-         }
+        }
     }, [])
 
     const searchProduct = (e) => {
         e.preventDefault();
-        getProductData();
+        getProductData(searchText);
+    }
+
+    const changeCity = (value) => {
+        setCity(value)
+        getProductData(value)
     }
 
     const getProductData = (name) => {
         var formData = new FormData();
-        // navigate('tourdetails', { state: { name: 'place', id } });
 
-        formData.append('string', searchText || name || '');
+        formData.append('string', name || '');
         formData.append('table_name', 'projects')
 
         comnPost('api/v1/search', formData)
@@ -44,13 +54,24 @@ const ListFilter = (props) => {
     }
 
     const selectType = (e) => {
-        console.log(e.target.value);
-        props.selectType(e.target.value)
+        props.selectType(e.target.value);
+        if (e.target.value == 'Hotels/ Restaurants') setColor('#EBA55D')
+        if (e.target.value == 'Vilas/ Raw Houses') setColor('#A2B9EE')
+        if (e.target.value == 'Tour Packages') setColor('#9CEE8C')
     }
 
     const saveSearchString = (value) => {
         setSearchText(value)
         props.saveSearchString(value)
+    }
+
+    const sortData = () => {
+        if (asc) {
+            projects.sort((a, b) => (a.name > b.name) ? 1 : -1)
+        } else {
+            projects.sort((a, b) => (a.name > b.name) ? -1 : 1)
+        }
+        setAsc(!asc)
     }
 
     return (
@@ -82,10 +103,10 @@ const ListFilter = (props) => {
                                         <input type="text" placeholder="Price High to Low" />
                                     </label>
                                 </div>
-                                <div className="col-xl-3 col-sm-6">
+                                <div className="col-xl-3 col-sm-6" onClick={() => sortData()}>
                                     <label className="single-input-wrap">
                                         <i className="fa fa-paper-plane" />
-                                        <input type="text" placeholder="Name (A - Z)" />
+                                        <input disabled type="text" style={{ borderColor: asc ? '#9CEE8C' : '#EBA55D' }} placeholder={`${asc ? 'Name (A - Z)' : 'Name (Z - A)'}`} />
                                     </label>
                                 </div>
                             </div>
@@ -94,7 +115,7 @@ const ListFilter = (props) => {
                             <div className="tour-list-area">
                                 {projects.map(project => {
                                     return (
-                                        <ProjectCard project={project} />
+                                        <ProjectCard color={color} project={project} />
                                     )
                                 })}
                             </div>
@@ -108,16 +129,6 @@ const ListFilter = (props) => {
                     <div className="col-xl-3 col-lg-4 order-lg-1">
                         <div className="sidebar-area">
                             <div className="widget tour-list-widget">
-                                <div className="single-widget-search-input-title">
-                                    <i className="fa fa-plus-circle" /> Type
-                                </div>
-                                <div className="single-widget-search-input">
-                                    <select className="select w-100 custom-select" onChange={(e) => selectType(e)} value={props.selectedProduct}>
-                                        <option value="Hotels/ Restaurants">Hotels/ Restaurants</option>
-                                        <option value="Vilas/ Raw Houses">Vilas/ Raw Houses</option>
-                                        <option value="Tour Packages">Tour Packages</option>
-                                    </select>
-                                </div>
                                 <div className="widget-tour-list-search">
                                     <div className="single-widget-search-input-title">
                                         <i className="fa fa-search" /> Search
@@ -131,14 +142,30 @@ const ListFilter = (props) => {
                                         </button>
                                     </form>
                                 </div>
+                                <div className="single-widget-search-input-title">
+                                    <i className="fa fa-plus-circle" /> Category
+                                </div>
+                                <div className="single-widget-search-input">
+                                    <select className="select w-100 custom-select" onChange={(e) => selectType(e)} value={props.selectedProduct}>
+                                        <option value="Hotels/ Restaurants">Hotels/ Restaurants</option>
+                                        <option value="Vilas/ Raw Houses">Vilas/ Raw Houses</option>
+                                        <option value="Tour Packages">Tour Packages</option>
+                                    </select>
+                                </div>
                                 <div className="widget-tour-list-meta">
                                     <div className="single-widget-search-input-title">
-                                        <i className="fa fa-dot-circle-o" /> Where From?
+                                        <i className="fa fa-dot-circle-o" /> City
                                     </div>
                                     <div className="single-widget-search-input">
-                                        <input type="text" placeholder="Tour List Destination" />
+                                        <select className="select w-100 custom-select" onChange={(e) => changeCity(e.target.value)} value={city}>
+                                            {cities.map(city => {
+                                                return (
+                                                    <option value={city}>{city}</option>
+                                                )
+                                            })}
+                                        </select>
                                     </div>
-                                    <div className="single-widget-search-input-title">
+                                    {/* <div className="single-widget-search-input-title">
                                         <i className="fa fa-calendar-minus-o" /> Departing
                                     </div>
                                     <div className="single-widget-search-input">
@@ -167,7 +194,7 @@ const ListFilter = (props) => {
                                             <label htmlFor="amount">Price: </label>
                                             <input type="text" id="amount" readOnly="" />
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                             <div className="widget_ads">

@@ -36,6 +36,7 @@ const Home = (props) => {
         comnPost('api/auth/login', data)
             .then(res => {
                 localStorage.setItem('apiToken', res.data.data.access_token)
+                localStorage.setItem('user_id', res.data.data.user.id)
                 props.saveLoginUser(res.data.data.user)
             })
             .then(() => getData())

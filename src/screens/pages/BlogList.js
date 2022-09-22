@@ -15,19 +15,28 @@ import { useNavigate } from 'react-router-dom';
 const BlogList = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [blogsData, setBlogsData] = useState([]);
+    const [page, setPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(0)
+
     const navigate = useNavigate();
 
     useEffect(() => {
-        comnGet('api/v1/blogs')
+        getBlogs(page);
+    }, [page]);
+
+    const getBlogs = (page) => {
+        console.log(page);
+        comnGet(`api/v1/blogs?page=${page}`)
             .then(res => {
                 if (res.status == 200) {
                     setBlogsData(res.data.data.data)
                     setIsLoading(false)
+                    setTotalPages(res.data.data.last_page)
                 } else {
                     setIsLoading(false)
                 }
             })
-    }, []);
+    }
 
     const onClick = (id) => {
         navigate('blogdetails', { state: { id } });
@@ -42,7 +51,7 @@ const BlogList = () => {
             <Spinner active={isLoading} />
             <CustNav />
             <ProductHeader page={'Blogs'} background={Background} />
-            <Blogs data={blogsData} onClick={(id) => onClick(id)} getLatestProject={(name) => getLatestProject(name)} />
+            <Blogs data={blogsData} pageCount={totalPages} setPage={(v) => setPage(v)} onClick={(id) => onClick(id)} getLatestProject={(name) => getLatestProject(name)} />
             <Newsletter />
             <CustFooter />
         </div>

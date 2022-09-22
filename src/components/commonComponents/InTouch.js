@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import touch from '../../assets/img/others/11.png';
+import { comnPost } from '../../services/comnServ';
 
 const InTouch = () => {
+    const [name, setName] = useState('');
+    const [number, setNumber] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+
+    const sendMessage = () => {
+        var formData = new FormData();
+        formData.append('user_id', localStorage.getItem('user_id'));
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('phone', number);
+        formData.append('contact_meta', '')
+        formData.append('message', message);
+
+        comnPost('v1/api/contact', formData)
+        .then(res => {
+            console.log('res', res);
+        })
+        .catch(err => console.error(err))
+    }
+
     return (
         <div className="contact-area pd-top-108">
             <div className="container">
@@ -31,32 +53,32 @@ const InTouch = () => {
                                 <div className="col-md-6">
                                     <label className="single-input-wrap style-two">
                                         <span className="single-input-title">Name</span>
-                                        <input type="text" />
+                                        <input type="text" onChange={(e) => setName(e.target.value)} />
                                     </label>
                                 </div>
                                 <div className="col-md-6">
                                     <label className="single-input-wrap style-two">
                                         <span className="single-input-title">Number</span>
-                                        <input type="text" />
+                                        <input type="tel" onChange={(e) => setNumber(e.target.value)} maxLength={10} />
                                     </label>
                                 </div>
                                 <div className="col-lg-12">
                                     <label className="single-input-wrap style-two">
                                         <span className="single-input-title">Email</span>
-                                        <input type="text" />
+                                        <input type="email" onChange={(e) => setEmail(e.target.value)} />
                                     </label>
                                 </div>
                                 <div className="col-lg-12">
                                     <label className="single-input-wrap style-two">
                                         <span className="single-input-title">Message</span>
-                                        <textarea defaultValue={""} />
+                                        <textarea defaultValue={""} onChange={(e) => setMessage(e.target.value)} />
                                     </label>
                                 </div>
                                 <div className="col-12">
                                     {/* <a className="btn btn-yellow" href="#">
                                         Send Message
                                     </a> */}
-                                    <div className="d-list-btn-wrap btn-yellow d-list alignCenter mx-auto bkNow">
+                                    <div className="d-list-btn-wrap btn-yellow d-list alignCenter mx-auto bkNow" onClick={() => sendMessage()}>
                                         <text className="whiteAlign bold mdText" href="#">Send Message</text>
                                         <i className="fa fa-paper-plane" />
                                     </div>
