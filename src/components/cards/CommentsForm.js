@@ -8,14 +8,12 @@ const CommentsForm = ({ type, parentId, tableName, postId, isPosted, ...props })
     console.log('login--',props.loginUser);
 
     const postComment = () => {
-        
-        let data = {
-            "parent_id": parentId || '',
-            "user_id": props.loginUser.id,
-            "comment": content,
-            "commentable_type": tableName,
-            "commentable_id": postId
-        }
+        let data = new FormData();
+        data.append('parent_id', parentId || '');
+        data.append('user_id', props.loginUser.id);
+        data.append('comment', content);
+        data.append('commentable_type', tableName);
+        data.append('commentable_id', postId);
 
         console.log('payload - ', data);
         comnPost('api/v1/comment', data)

@@ -14,27 +14,61 @@ import VisitsCarousel from "../../components/carousel/VisitsCarousel";
 import Review from "../../components/commonComponents/Review";
 import CitySingleCard from "../../components/cards/CitySingleCard";
 import Spinner from "../../components/commonComponents/Spinner";
+import CommentsCard from '../../components/cards/CommentsCard';
+import CommentsForm from '../../components/cards/CommentsForm';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
 
-const DestinationDetails = () => {
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '70vw',
+    bgcolor: 'background.paper',
+    border: '1px solid #000',
+    borderRadius: 5,
+    boxShadow: 24,
+    p: 4,
+};
+
+const DestinationDetails = ({ openComment, isPosted }) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const location = useLocation();
     const navigate = useNavigate();
+    const [parentId, setParentId] = useState('');
+    const [open, setOpen] = useState(false);
 
     console.log(location);
     useEffect(() => {
         window.scrollTo(0, 0)
         setIsLoading(true)
-        comnGet(`api/v1/${location.state.name}/${location.state.id}`)
+        getData();
+    }, [location.state]);
+
+    const getData = () => {
+        comnGet(`api/v1/${location.state.name.toLowerCase()}/${location.state.id}`)
             .then(res => {
                 setData(res.data.data);
                 setIsLoading(false)
             })
             .catch(err => console.error(err))
-    }, [location.state]);
+    }
 
     const showDetails = (name, id) => {
         navigate(`/${name}/details`, { state: { name, id } });
+    }
+
+    openComment = (e) => {
+        setParentId(e)
+        setOpen(true)
+    }
+
+    const onCommentSuccess = () => {
+        isPosted(true)
+        setOpen(false)
+        getData();
     }
 
     return (
@@ -132,7 +166,45 @@ const DestinationDetails = () => {
                         </div>
                     </div>
 
-                    <Review />
+                    <div className="comments-area">
+                        <h4 className="comments-title">Comments</h4>
+                        <div className="reply btn btn-yellow" onClick={() => openComment()}>
+                            <span>
+                                {/* <i className="fa fa-reply" /> */}
+                                Add a comment
+                            </span>
+                        </div>
+                        <ul className="comment-list">
+                            <li>
+                                {data.comments?.map(comment => {
+                                    return (
+                                        <div>
+                                            <CommentsCard data={comment} openComment={(e) => openComment(e)} />
+                                            {comment.comments?.map(reply => {
+                                                return (
+                                                    <ul className="children">
+                                                        <li>
+                                                            <CommentsCard data={reply} openComment={(e) => openComment(e)} />
+                                                        </li>
+                                                    </ul>
+                                                )
+                                            })}
+                                        </div>
+                                    )
+                                })}
+                            </li>
+                        </ul>
+                    </div>
+                    <Modal
+                        open={open}
+                        onClose={() => setOpen(false)}
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description"
+                    >
+                        <Box sx={style}>
+                            <CommentsForm type={'comment'} tableName={location.state.name} postId={data.id} parentId={parentId} isPosted={() => onCommentSuccess()} />
+                        </Box>
+                    </Modal>
                 </div>
             </div>
 

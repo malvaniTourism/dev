@@ -27,6 +27,10 @@ import { useLocation } from "react-router-dom";
 import { comnGet } from "../../services/comnServ";
 import Path from "../../services/baseUrl";
 import CustFooter from '../../components/footers/CustFooter';
+import CommentsCard from '../../components/cards/CommentsCard';
+import CommentsForm from '../../components/cards/CommentsForm';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
 
 const mapProps = {
     center: {
@@ -36,18 +40,50 @@ const mapProps = {
     zoom: 11
 };
 
-const TourDetails = () => {
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '70vw',
+    bgcolor: 'background.paper',
+    border: '1px solid #000',
+    borderRadius: 5,
+    boxShadow: 24,
+    p: 4,
+};
+
+let projectMeta = ''
+const TourDetails = ({ openComment, isPosted }) => {
     const [data, setData] = useState([])
     const location = useLocation();
+    const [parentId, setParentId] = useState('');
+    const [open, setOpen] = useState(false);
     //project/5
     useEffect(() => {
+        getData();
+        // projectMeta = JSON.parse(JSON.stringify(data.project_meta))
+    }, []);
+
+    const getData = () => {
         comnGet(`api/v1/project/${location.state.id}`)
             .then(res => {
                 console.log(res.data.data);
                 setData(res.data.data);
             })
             .catch(err => console.error(err))
-    }, []);
+    }
+
+    openComment = (e) => {
+        setParentId(e)
+        setOpen(true)
+    }
+
+    const onCommentSuccess = () => {
+        isPosted(true)
+        setOpen(false)
+        getData();
+    }
 
     return (
         <div>
@@ -95,7 +131,7 @@ const TourDetails = () => {
                                             {data?.city?.name}
                                         </p>
                                         <h4 className="title">{data.name}</h4>
-                                        <p className="content">{data.project_meta}</p>
+                                        {/* <p className="content">{data.project_meta}</p> */}
                                         <div className="tp-review-meta">
                                             <i className="ic-yellow fa fa-star" />
                                             <i className="ic-yellow fa fa-star" />
@@ -291,8 +327,8 @@ const TourDetails = () => {
                                 </div>
                                 <div className="host-area">
                                     <div className="single-host-wrap text-center">
-                                        <div className="thumb">
-                                            <img src={Path.API_PATH + data.user?.profile_picture} alt="img" />
+                                        <div>
+                                            <img className="profilePicture" src={Path.API_PATH + data.user?.profile_picture} alt="img" />
                                         </div>
                                         <h4>{data.user?.name}</h4>
                                         <a href={data.user?.email}>{data.user?.email}</a>
@@ -310,9 +346,6 @@ const TourDetails = () => {
                                             advocate, and self relic, Felicity is most on the barrens
                                             cutting heather to dye wool or hanging off the edge
                                         </p>
-                                        <a className="btn btn-yellow" href="#">
-                                            Contact Host
-                                        </a>
                                     </div>
                                 </div>
                                 <div style={{ height: '100vh', width: '100%' }}>
@@ -335,127 +368,45 @@ const TourDetails = () => {
                                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d649788.5753409272!2d-0.5724199684037448!3d52.92186340524542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604d94c3b82ab%3A0x62077a554c8e9a8e!2sPetty%20France%2C%20Westminster%2C%20London%2C%20UK!5e0!3m2!1sen!2sbd!4v1572346566908!5m2!1sen!2sbd" />
                                     </div>
                                 </div>
-                                <div className="comments-area tour-details-review-area">
-                                    <h4 className="comments-title">Reviews</h4>
-                                    <ul className="comment-list mb-0">
-
-                                        {
-
-
-                                            data?.comments?.map(comment => {
+                                <div className="comments-area">
+                                    <h4 className="comments-title">Comments</h4>
+                                    <div className="reply btn btn-yellow" onClick={() => openComment()}>
+                                        <span>
+                                            {/* <i className="fa fa-reply" /> */}
+                                            Add a comment
+                                        </span>
+                                    </div>
+                                    <ul className="comment-list">
+                                        <li>
+                                            {data.comments?.map(comment => {
                                                 return (
                                                     <div>
-
-                                                        <li>
-                                                            <div className="single-comment-wrap">
-                                                                <div className="thumb">
-                                                                    <img src={comment.users.profile_picture} alt="img" />
-                                                                </div>
-                                                                <div className="content">
-                                                                    <h4 className="title">{comment.users.name}</h4>
-                                                                    <span className="date">{comment.users.created_at}</span>
-                                                                    <div className="tp-review-meta">
-                                                                        <i className="ic-yellow fa fa-star" />
-                                                                        <i className="ic-yellow fa fa-star" />
-                                                                        <i className="ic-yellow fa fa-star" />
-                                                                        <i className="ic-yellow fa fa-star" />
-                                                                        <i className="ic-yellow fa fa-star" />
-                                                                    </div>
-                                                                    <p>{comment.comment}</p>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <div>
-                                                            {
-                                                                comment.comments?.map(comment => {
-                                                                    return (
-                                                                        <div className="comment-reply">
-                                                                            <li>
-                                                                                <div className="single-comment-wrap">
-                                                                                    <div className="thumb">
-                                                                                        <img src={comment.users.profile_picture} alt="img" />
-                                                                                    </div>
-                                                                                    <div className="content">
-                                                                                        <h4 className="title">{comment.users.name}</h4>
-                                                                                        <span className="date">{comment.users.created_at}</span>
-                                                                                        <div className="tp-review-meta">
-                                                                                            <i className="ic-yellow fa fa-star" />
-                                                                                            <i className="ic-yellow fa fa-star" />
-                                                                                            <i className="ic-yellow fa fa-star" />
-                                                                                            <i className="ic-yellow fa fa-star" />
-                                                                                            <i className="ic-yellow fa fa-star" />
-                                                                                        </div>
-                                                                                        <p>{comment.comment}</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                        </div>
-                                                                    )
-                                                                })}
-
-                                                        </div>
+                                                        <CommentsCard data={comment} openComment={(e) => openComment(e)} />
+                                                        {comment.comments?.map(reply => {
+                                                            return (
+                                                                <ul className="children">
+                                                                    <li>
+                                                                        <CommentsCard data={reply} openComment={(e) => openComment(e)} />
+                                                                    </li>
+                                                                </ul>
+                                                            )
+                                                        })}
                                                     </div>
-
                                                 )
-
-                                            }
-                                            )
-                                        }
-
-
-
+                                            })}
+                                        </li>
                                     </ul>
-                                    <div className="btn-wrapper text-right mt-3">
-                                        <a className="btn-read-more" href="#">
-                                            <span>
-                                                More Review
-                                                <i className="la la-arrow-right" />
-                                            </span>
-                                        </a>
-                                    </div>
                                 </div>
-                                <div className="location-review-area">
-                                    <form className="tp-form-wrap bg-gray tp-form-wrap-one">
-                                        <div className="row">
-                                            <div className="col-lg-6">
-                                                <h4 className="single-page-small-title">Write A Review</h4>
-                                            </div>
-                                            <div className="col-lg-6">
-                                                <div className="tp-review-meta text-lg-right">
-                                                    <span className="mr-3 ml-0">Assigned Rating</span>
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-6">
-                                                <label className="single-input-wrap">
-                                                    <span className="single-input-title">Name</span>
-                                                    <input type="text" />
-                                                </label>
-                                            </div>
-                                            <div className="col-lg-6">
-                                                <label className="single-input-wrap">
-                                                    <span className="single-input-title">Email</span>
-                                                    <input type="text" />
-                                                </label>
-                                            </div>
-                                            <div className="col-lg-12">
-                                                <label className="single-input-wrap">
-                                                    <span className="single-input-title">Comments</span>
-                                                    <textarea defaultValue={""} />
-                                                </label>
-                                            </div>
-                                            <div className="col-12">
-                                                <a className="btn btn-yellow" href="#">
-                                                    Send
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
+                                <Modal
+                                    open={open}
+                                    onClose={() => setOpen(false)}
+                                    aria-labelledby="modal-modal-title"
+                                    aria-describedby="modal-modal-description"
+                                >
+                                    <Box sx={style}>
+                                        <CommentsForm type={'comment'} tableName={'Project'} postId={data.id} parentId={parentId} isPosted={() => onCommentSuccess()} />
+                                    </Box>
+                                </Modal>
                             </div>
                         </div>
                         <div className="col-lg-4">

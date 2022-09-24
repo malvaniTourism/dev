@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import img7 from '../../assets/img/destination-list/7.png';
@@ -18,7 +20,9 @@ const ListFilter = (props) => {
     const [projects, setProjects] = useState([]);
     const [city, setCity] = useState();
     const [color, setColor] = useState('#EBA55D');
-    const [asc, setAsc] = useState(true)
+    const [asc, setAsc] = useState(true);
+    const [page, setPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(0)
 
     const navigate = useNavigate();
 
@@ -45,10 +49,11 @@ const ListFilter = (props) => {
         formData.append('string', name || '');
         formData.append('table_name', 'projects')
 
-        comnPost('api/v1/search', formData)
+        comnPost(`api/v1/search?page=${page}`, formData)
             .then(res => {
                 console.log(res.data.data.data);
                 setProjects(res.data.data.data);
+                setTotalPages(res.data.data.last_page)
             })
             .catch(err => console.error(err))
     }
@@ -72,6 +77,11 @@ const ListFilter = (props) => {
             projects.sort((a, b) => (a.name > b.name) ? -1 : 1)
         }
         setAsc(!asc)
+    }
+
+    const changePage = (event, value) => {
+        window.scroll(0, 0)
+        setPage(value)
     }
 
     return (
@@ -147,6 +157,7 @@ const ListFilter = (props) => {
                                 </div>
                                 <div className="single-widget-search-input">
                                     <select className="select w-100 custom-select" onChange={(e) => selectType(e)} value={props.selectedProduct}>
+                                        <option value="">Select Category</option>
                                         <option value="Hotels/ Restaurants">Hotels/ Restaurants</option>
                                         <option value="Vilas/ Raw Houses">Vilas/ Raw Houses</option>
                                         <option value="Tour Packages">Tour Packages</option>
@@ -158,6 +169,7 @@ const ListFilter = (props) => {
                                     </div>
                                     <div className="single-widget-search-input">
                                         <select className="select w-100 custom-select" onChange={(e) => changeCity(e.target.value)} value={city}>
+                                            <option value="">Select City</option>
                                             {cities.map(city => {
                                                 return (
                                                     <option value={city}>{city}</option>
@@ -205,6 +217,9 @@ const ListFilter = (props) => {
                         </div>
                     </div>
                 </div>
+                <Stack spacing={2} style={{ alignItems: 'center' }} >
+                    <Pagination variant="outlined" color="secondary" size='large' count={props.pageCount} onChange={changePage} showFirstButton showLastButton />
+                </Stack>
             </div>
         </div>
     )

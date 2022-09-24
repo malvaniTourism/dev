@@ -16,7 +16,7 @@ const PlaceList = (props) => {
     };
 
     const getDetails = (id) => {
-        navigate('/place/details', { state: { name: 'place', id } });
+        navigate('/place/details', { state: { name: 'Place', id } });
     }
 
     return (

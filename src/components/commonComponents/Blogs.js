@@ -32,6 +32,7 @@ const Blogs = (props) => {
     }, []);
 
     const changePage = (event, value) => {
+        window.scroll(0, 0)
         props.setPage(value)
     }
 

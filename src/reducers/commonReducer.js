@@ -9,7 +9,7 @@ import {
 const initialState = {
     prevState: [],
     CustId: {},
-    selectedProduct: 'Hotels/ Restaurants',
+    selectedProduct: 'Select Category',
     searchString: '',
     loginUser: []
 };
