@@ -7,8 +7,8 @@ import CityCard from '../cards/CityCard';
 import CityCard1 from '../cards/CityCard1';
 import "../../assets/styles/CityCard1.scss"
 
-const PlaceList = (props) => {
-    const [value, setValue] = React.useState('1');
+const PlaceList = ({ places }) => {
+    const [value, setValue] = React.useState(0);
     const navigate = useNavigate();
 
     const handleChange = (event, newValue) => {
@@ -27,21 +27,24 @@ const PlaceList = (props) => {
                         <TabContext value={value}>
                             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                                 <TabList onChange={handleChange} aria-label="lab API tabs example">
-                                    <Tab label="Item One" value="1" />
-                                    <Tab label="Item Two" value="2" />
-                                    <Tab label="Item Three" value="3" />
+                                    {places.map((place, index) => {
+                                        return (
+                                            <Tab label={place.name} value={index} />
+                                        )
+                                    })}
                                 </TabList>
                             </Box>
-                            <TabPanel value="1" className="row justify-content-center">
-                                {props.cities.map(city => {
-                                    return (
-                                        // <CityCard city={city} onClick={(id) => getDetails(id)} />
-                                        <CityCard1  city={city} onClick={(id) => getDetails(id)}/>
-                                    )
-                                })}
-                            </TabPanel>
-                            <TabPanel value="2">Item Two</TabPanel>
-                            <TabPanel value="3">Item Three</TabPanel>
+                            {places.map((place, index) => {
+                                return (
+                                    <TabPanel value={index} className="row justify-content-center">
+                                        {place.places.map(place => {
+                                            return (
+                                                <CityCard1 city={place} onClick={(id) => getDetails(id)} />
+                                            )
+                                        })}
+                                    </TabPanel>
+                                )
+                            })}
                         </TabContext>
                         <div className="col-12">
                             <div className="btn-wrapper text-center">

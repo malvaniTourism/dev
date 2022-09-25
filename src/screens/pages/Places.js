@@ -13,9 +13,8 @@ const Places = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        comnGet('api/v1/places')
+        comnGet('api/v1/placecategories')
             .then(res => {
-                console.log('city', res);
                 setPlaces(res.data.data.data)
                 setIsLoading(false)
             })
@@ -26,7 +25,7 @@ const Places = () => {
             <Spinner active={isLoading} />
             <CustNav />
             <DestinationBanner page={'Places'} />
-            <PlaceList cities={places} />
+            <PlaceList places={places} />
             <CustFooter />
         </div>
     )

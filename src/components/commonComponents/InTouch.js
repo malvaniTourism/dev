@@ -16,12 +16,17 @@ const InTouch = () => {
         formData.append('name', name);
         formData.append('email', email);
         formData.append('phone', number);
-        formData.append('contact_meta', '')
         formData.append('message', message);
+        formData.append('contactable_type', 'Projects');
+        formData.append('contactable_id', '4');
 
-        comnPost('v1/api/contact', formData)
+        comnPost('api/v1/contact', formData)
         .then(res => {
             console.log('res', res);
+            setName('')
+            setEmail('')
+            setNumber('')
+            setMessage('')
         })
         .catch(err => console.error(err))
     }
