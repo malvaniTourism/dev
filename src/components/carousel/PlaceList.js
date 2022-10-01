@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Tab } from '@mui/material';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { useNavigate } from 'react-router-dom';
-
+import PlaceIcon from '@mui/icons-material/Place';
 import CityCard from '../cards/CityCard';
 import CityCard1 from '../cards/CityCard1';
 import "../../assets/styles/CityCard1.scss"
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
-const PlaceList = ({ places }) => {
-    const [value, setValue] = React.useState(0);
+const PlaceList = ({ places, setPage, pageCount }) => {
+    const [value, setValue] = useState(0);
     const navigate = useNavigate();
 
     const handleChange = (event, newValue) => {
@@ -29,7 +31,7 @@ const PlaceList = ({ places }) => {
                                 <TabList onChange={handleChange} aria-label="lab API tabs example">
                                     {places.map((place, index) => {
                                         return (
-                                            <Tab label={place.name} value={index} />
+                                            <Tab icon={<PlaceIcon />} iconPosition="start" label={place.name} value={index} />
                                         )
                                     })}
                                 </TabList>
@@ -47,14 +49,18 @@ const PlaceList = ({ places }) => {
                             })}
                         </TabContext>
                         <div className="col-12">
-                            <div className="btn-wrapper text-center">
+                            {/* <div className="btn-wrapper text-center">
                                 <a className="btn btn-yellow mt-4" href="#">
                                     <span>
                                         Load More
                                         <i className="la la-arrow-right" />
                                     </span>
                                 </a>
-                            </div>
+                            </div> */}
+
+                            <Stack spacing={2} style={{ alignItems: 'center' }} >
+                                <Pagination variant="outlined" color="secondary" size='large' count={pageCount} onChange={setPage(value)} showFirstButton showLastButton />
+                            </Stack>
                         </div>
                     </div>
                 </div>

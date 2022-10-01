@@ -10,22 +10,25 @@ import DestinationBanner from "../../components/banners/DestinationBanner";
 
 const Places = () => {
     const [places, setPlaces] = useState([]);
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true);
+    const [page, setPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1)
 
     useEffect(() => {
-        comnGet('api/v1/placecategories')
+        comnGet(`api/v1/placecategories?page=${page}`)
             .then(res => {
-                setPlaces(res.data.data.data)
-                setIsLoading(false)
+                setPlaces(res.data.data.data);
+                setIsLoading(false);
+                setTotalPages(res.data.data.last_page);
             })
-    }, []);
+    }, [page]);
 
     return (
         <div>
             <Spinner active={isLoading} />
             <CustNav />
             <DestinationBanner page={'Places'} />
-            <PlaceList places={places} />
+            <PlaceList places={places} setPage={(v) => setPage(v)} pageCount={totalPages} />
             <CustFooter />
         </div>
     )

@@ -15,10 +15,10 @@ const CityBanner = ({ page }) => {
                     <div className="col-lg-12">
                         <div className="breadcrumb-inner">
                             <h1 className="page-title">{page}</h1>
-                            <ul className="page-list">
+                            {/* <ul className="page-list">
                                 <li>Home</li>
                                 <li>{page}</li>
-                            </ul>
+                            </ul> */}
                         </div>
                     </div>
                 </div>

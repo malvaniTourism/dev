@@ -26,7 +26,7 @@ const CityList = (props) => {
         <div>
             <div className="destination-area">
                 <div className="container-bg mg-top--70">
-                    <div className="container">
+                    <div className="container" style={{marginTop: -230}}>
                         <div className="row justify-content-center">
                             {props.cities.map(city => {
                                 return (

@@ -1741,7 +1741,8 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 
 .breadcrumb-area.style-two {
-  padding: 188px 0 182px;
+  padding: 100px 0 230px;
+  height: 50%;
 }
 
 .breadcrumb-area.style-three {

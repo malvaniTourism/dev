@@ -157,7 +157,7 @@ const ListFilter = (props) => {
                                 </div>
                                 <div className="single-widget-search-input">
                                     <select className="select w-100 custom-select" onChange={(e) => selectType(e)} value={props.selectedProduct}>
-                                        <option value="">Select Category</option>
+                                        {/* <option value="">Select Category</option> */}
                                         <option value="Hotels/ Restaurants">Hotels/ Restaurants</option>
                                         <option value="Vilas/ Raw Houses">Vilas/ Raw Houses</option>
                                         <option value="Tour Packages">Tour Packages</option>
