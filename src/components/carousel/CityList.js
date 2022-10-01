@@ -13,7 +13,7 @@ import imgdl14 from '../../assets/img/destination-list/14.png';
 import imgdl15 from '../../assets/img/destination-list/15.png';
 import imgdl16 from '../../assets/img/destination-list/16.png';
 
-import CityCard from '../cards/CityCard';
+import CityCard1 from '../cards/CityCard1';
 
 const CityList = (props) => {
     const navigate = useNavigate();
@@ -30,7 +30,7 @@ const CityList = (props) => {
                         <div className="row justify-content-center">
                             {props.cities.map(city => {
                                 return (
-                                    <CityCard city={city} onClick={(id) => getDetails(id)} />
+                                    <CityCard1  city={city} onClick={(id) => getDetails(id)}/>
                                 )
                             })}
                             <div className="col-12">

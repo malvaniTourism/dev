@@ -2,16 +2,12 @@
     border-radius   : 20px !important;
     position        : relative !important;
     text-align      : left !important;
-    max-width       : 330px !important;
-    height          : 500px !important;
+    max-width       : 400px !important;
+    height          : 600px !important;
     margin-top      : 20px;
-    background-color: #f6f5fc !important;
-
-    .top-left {
-        color   : aliceblue;
-        position: absolute;
-        top     : 8px;
-        left    : 20px;
+    // background-color: #f6f5fc !important;
+    .content{
+        font-size: 100% !important;
     }
 
     .top-right {
@@ -39,11 +35,12 @@
         right   : 16px;
     }
 
-    }
+}
 
 .cardcontainer-img {
     transition: transform 1s;
-    padding: 10px;
+    padding   : 6px;
+    height: 45%;
 }
 
 .cardcontainer-img:hover {
@@ -51,5 +48,35 @@
 }
 
 .card-container:hover {
-    box-shadow: 2px 2px 4px 2px rgb(213, 216, 208) !important;
+    box-shadow: 18px 8px 30px 8px rgb(213, 216, 208) !important;
+    
+}
+
+.ribbon {
+   position: absolute;
+   left: -15px; 
+   top: -7px;
+   z-index: 1;
+   overflow: hidden;
+   width: 95px; 
+   height: 120px; 
+   text-align: right;
+}
+.ribbon span {
+   font-size: 10px;
+   color: #fff; 
+   text-transform: uppercase; 
+   text-align: center;
+   font-weight: bold; 
+   line-height: 22px;
+   transform: rotate(320deg);
+   -webkit-transform: rotate(320deg); /* Needed for Safari */
+   width: 120px; 
+   display: block;
+   background: #79A70A;
+   background: linear-gradient(#9BC90D 0%, #79A70A 100%);
+   box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+   position: absolute;
+   top: 22px; 
+   left: -15px;
 }
