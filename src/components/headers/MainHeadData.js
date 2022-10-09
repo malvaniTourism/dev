@@ -1,9 +1,10 @@
 import React from "react";
+import Img from '../../assets/img/banner/11.jpg'
 
 const MainHeadData = () => {
 
     return (
-        <div className="banner-bg-1" style={{ height: 500 }}>
+        <div className="banner-bg-1" style={{ backgroundImage: `url(${Img})`, height: 500 }}>
             <div className="container">
                 <div className="row">
                     <div className="col-xl-8 col-lg-9 offset-xl-2 offset-lg-1">
@@ -16,7 +17,7 @@ const MainHeadData = () => {
                             </div>
                             <div className="col-lg-3 col-sm-4">
                                 <div className="video-popup-btn s-animate-video">
-                                    <a href="https://www.youtube.com/watch?v=c7XEhXZ_rsk" className="video-play-btn mfp-iframe"><i className="fa fa-play" /></a>
+                                    <a href="" className="video-play-btn mfp-iframe"><i className="fa fa-play" /></a>
                                 </div>
                             </div>
                             <div className="col-lg-12 banner-tour-package">

@@ -21,7 +21,7 @@ import img14 from '../../assets/img/blog-details/14.png';
 import img15 from '../../assets/img/blog-details/15.png';
 import img16 from '../../assets/img/others/01.png';
 import CommentsCard from '../cards/CommentsCard';
-import CommentsForm from '../cards/CommentsForm';
+import CommentsForm from '../commonComponents/CommentsForm';
 
 const style = {
     position: 'absolute',
@@ -36,7 +36,7 @@ const style = {
     p: 4,
 };
 
-const BlogDetails = ({ data, openComment, isPosted }) => {
+const BlogDetails = ({ data, openComment, isPosted, setIsLoading }) => {
     const [parentId, setParentId] = useState('');
     const [open, setOpen] = useState(false);
 
@@ -335,7 +335,7 @@ const BlogDetails = ({ data, openComment, isPosted }) => {
                             aria-describedby="modal-modal-description"
                         >
                             <Box sx={style}>
-                                <CommentsForm type={'comment'} tableName={'Blog'} postId={data.id} parentId={parentId} isPosted={() => onCommentSuccess()} />
+                                <CommentsForm type={'comment'} tableName={'Blog'} postId={data.id} parentId={parentId} isPosted={() => onCommentSuccess()} setIsLoading={(value) => setIsLoading(value)} />
                             </Box>
                         </Modal>
                         {/* blog-comment-area start */}

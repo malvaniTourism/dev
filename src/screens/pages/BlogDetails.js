@@ -8,10 +8,12 @@ import ProductHeader from "../../components/headers/ProductHeader";
 import Background from "../../assets/img/bg/10.png";
 import { useLocation } from "react-router-dom";
 import { comnGet } from "../../services/comnServ";
+import Spinner from "../../components/commonComponents/Spinner";
 
 const BlogDetails = () => {
     const [data, setData] = useState([]);
     const [posted, setIsPosted] = useState(false);
+    const [isLoading, setIsLoading] = useState(true)
     const location = useLocation();
 
     useEffect(() => {
@@ -19,16 +21,18 @@ const BlogDetails = () => {
         .then(res => {
             setData(res.data.data)
             setIsPosted(false)
+            setIsLoading(false)
         })
         .catch(err => console.error(err))
     }, [posted])
 
     return (
         <div>
+            <Spinner active={isLoading} />
             <CustNav />
             <ProductHeader page={'Blogs'} background={Background} />
-            <BlogDetail data={data} isPosted={setIsPosted} />
-            <Newsletter />
+            <BlogDetail data={data} isPosted={setIsPosted} setIsLoading={(value) => setIsLoading(value)} />
+            {/* <Newsletter /> */}
             <CustFooter />
         </div>
     )

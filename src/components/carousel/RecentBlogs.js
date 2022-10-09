@@ -16,16 +16,11 @@ const RecentBlogs = ({ data }) => {
                     <div className="col-xl-6 col-lg-8">
                         <div className="section-title text-center">
                             <h2 className="title">Recent Blog Posts</h2>
-                            <p>
-                                Lorem Ipsum is simply dummy text the printing and typesetting
-                                industry. Lorem Ipsum has been the industry's standard dummy text
-                                ever since the 1500s,
-                            </p>
                         </div>
                     </div>
                 </div>
                 {data &&
-                    <div className="row justify-content-center">
+                    <div className="overflowX">
                         {data.map(data => {
                             return (
                                 <BlogsCard data={data} />

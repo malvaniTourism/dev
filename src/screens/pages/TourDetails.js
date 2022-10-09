@@ -24,13 +24,14 @@ import imgc2 from '../../assets/img/client/02.png';
 import imgc3 from '../../assets/img/client/3.png';
 import CustNav from '../../components/navbars/CustNav';
 import { useLocation } from "react-router-dom";
-import { comnGet } from "../../services/comnServ";
+import { comnGet, comnPost } from "../../services/comnServ";
 import Path from "../../services/baseUrl";
 import CustFooter from '../../components/footers/CustFooter';
 import CommentsCard from '../../components/cards/CommentsCard';
-import CommentsForm from '../../components/cards/CommentsForm';
+import CommentsForm from '../../components/commonComponents/CommentsForm';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
+import Spinner from "../../components/commonComponents/Spinner";
 
 const mapProps = {
     center: {
@@ -59,6 +60,11 @@ const TourDetails = ({ openComment, isPosted }) => {
     const location = useLocation();
     const [parentId, setParentId] = useState('');
     const [open, setOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    const [name, setName] = useState('');
+    const [number, setNumber] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
     //project/5
     useEffect(() => {
         getData();
@@ -70,6 +76,7 @@ const TourDetails = ({ openComment, isPosted }) => {
             .then(res => {
                 console.log(res.data.data);
                 setData(res.data.data);
+                setIsLoading(false)
             })
             .catch(err => console.error(err))
     }
@@ -80,14 +87,46 @@ const TourDetails = ({ openComment, isPosted }) => {
     }
 
     const onCommentSuccess = () => {
-        isPosted(true)
+        console.log('succ');
         setOpen(false)
         getData();
+    }
+
+    const sendMessage = () => {
+        let formData = new FormData();
+        formData.append('user_id', localStorage.getItem('user_id'));
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('phone', number);
+        formData.append('message', message);
+        formData.append('contactable_type', 'Projects');
+        formData.append('contactable_id', '4');
+
+        let data = {
+            'user_id': '2',
+            'name': 'name',
+            'email': 'email',
+            'phone': 'phone',
+            'message': 'message',
+            'contactable_type': 'Projects',
+            'conta ctable_id': '4',
+        }
+
+        comnPost('api/v1/contact', formData)
+            .then(res => {
+                console.log('res', res);
+                setName('')
+                setEmail('')
+                setNumber('')
+                setMessage('')
+            })
+            .catch(err => console.error(err))
     }
 
     return (
         <div>
             <CustNav />
+            <Spinner active={isLoading} />
             <div className="tour-details-area mg-top--70">
                 <div className="tour-details-gallery">
                     <div className="container-bg bg-dark-blue">
@@ -101,7 +140,7 @@ const TourDetails = ({ openComment, isPosted }) => {
                                             <img src={img1} alt="image" />
                                             <div className="video-popup-btn">
                                                 <a
-                                                    href="https://www.youtube.com/watch?v=c7XEhXZ_rsk"
+                                                    href=""
                                                     className="video-play-btn mfp-iframe"
                                                     tabIndex={0}
                                                 >
@@ -404,7 +443,7 @@ const TourDetails = ({ openComment, isPosted }) => {
                                     aria-describedby="modal-modal-description"
                                 >
                                     <Box sx={style}>
-                                        <CommentsForm type={'comment'} tableName={'Project'} postId={data.id} parentId={parentId} isPosted={() => onCommentSuccess()} />
+                                        <CommentsForm type={'comment'} tableName={'Projects'} postId={data.id} parentId={parentId} isPosted={() => onCommentSuccess()} setIsLoading={(value) => setIsLoading(value)} />
                                     </Box>
                                 </Modal>
                             </div>
@@ -432,35 +471,14 @@ const TourDetails = ({ openComment, isPosted }) => {
                                             <input type="text" placeholder="Phone" />
                                         </div>
                                         <div className="single-widget-search-input-title">
-                                            <i className="fa fa-calendar-minus-o" /> Date
-                                        </div>
-                                        <div className="single-widget-search-input">
-                                            <input
-                                                type="text"
-                                                className="departing-date custom-select"
-                                                placeholder="Departing"
-                                            />
-                                        </div>
-                                        <div className="single-widget-search-input-title">
-                                            <i className="fa fa-calendar-minus-o" /> Date
-                                        </div>
-                                        <div className="single-widget-search-input">
-                                            <input
-                                                type="text"
-                                                className="returning-date custom-select"
-                                                placeholder="Returning"
-                                            />
-                                        </div>
-                                        <div className="single-widget-search-input-title">
                                             <i className="fa fa-keyboard-o" /> Message
                                         </div>
                                         <div className="single-widget-search-input">
                                             <textarea placeholder="Type" defaultValue={""} />
                                         </div>
-                                        <div className="text-lg-center text-left">
-                                            <a className="btn btn-yellow" href="#">
-                                                Book Now <i className="fa fa-paper-plane" />
-                                            </a>
+                                        <div className="d-list-btn-wrap btn-yellow d-list alignCenter mx-auto bkNow" onClick={() => sendMessage()}>
+                                            <text className="whiteAlign bold mdText" href="#">Send Message</text>
+                                            <i className="fa fa-paper-plane" />
                                         </div>
                                     </div>
                                 </div>

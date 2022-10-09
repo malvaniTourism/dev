@@ -60,7 +60,8 @@ const ListFilter = (props) => {
 
     const selectType = (e) => {
         props.selectType(e.target.value);
-        if (e.target.value == 'Hotels/ Restaurants') setColor('#EBA55D')
+        if (e.target.value == 'Hotels') setColor('#EBA55D')
+        if (e.target.value == 'Restaurants') setColor('#FFDB15')
         if (e.target.value == 'Vilas/ Raw Houses') setColor('#A2B9EE')
         if (e.target.value == 'Tour Packages') setColor('#9CEE8C')
     }
@@ -158,7 +159,8 @@ const ListFilter = (props) => {
                                 <div className="single-widget-search-input">
                                     <select className="select w-100 custom-select" onChange={(e) => selectType(e)} value={props.selectedProduct}>
                                         {/* <option value="">Select Category</option> */}
-                                        <option value="Hotels/ Restaurants">Hotels/ Restaurants</option>
+                                        <option value="Hotels">Hotels</option>
+                                        <option value="Restaurants">Restaurants</option>
                                         <option value="Vilas/ Raw Houses">Vilas/ Raw Houses</option>
                                         <option value="Tour Packages">Tour Packages</option>
                                     </select>

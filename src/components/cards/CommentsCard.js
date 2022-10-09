@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from 'react'
 import img9 from '../../assets/img/blog-details/8.png';
 
@@ -10,10 +11,10 @@ const CommentsCard = ({ data, openComment }) => {
             </div>
             <div className="content">
                 <h4 className="title">{data.users.name}</h4>
-                <span className="date">{data.users.created_at}</span>
+                <span className="date">{moment(data.users.created_at).format('DD MMMM yyyy')}</span>
                 <p>{data.comment}</p>
                 <div className="reply btn btn-yellow" onClick={() => openComment(data.id)}>
-                    <span>
+                    <span >
                         <i className="fa fa-reply" />
                         Reply
                     </span>

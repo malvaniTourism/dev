@@ -8,7 +8,7 @@ const upcommingToursCard = (props) => {
                 className="shadow"
                 style={{ backgroundImage: "url(assets/img/tour/8.png)" }}
             >
-                <img src={props.img} alt="img" />
+                <img className="myUpcomCard" src={props.img} alt="img" />
             </div>
             <div className="tp-price-meta">
                 <h2>
@@ -16,7 +16,7 @@ const upcommingToursCard = (props) => {
                 </h2>
                 <p>Price</p>
             </div>
-            <div className="details">
+            <div className="details myDetails">
                 <h3 className="title">
                     <a className="alink" href="#">Rome</a>
                 </h3>

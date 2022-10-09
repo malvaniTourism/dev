@@ -24,10 +24,10 @@ import imgbg11 from '../../assets/img/bg/11.png';
 import UpcommingToursCard from '../cards/UpcommingToursCard';
 
 const UpComming = () => {
-    const [imgArr, setImgArr] = useState([imgt3, imgt7, imgt8, imgt9])
+    const [imgArr, setImgArr] = useState([imgt7, imgt3, imgt8, imgt9])
     return (
         <div
-            className="upcomming-tour upcomming-tour-bg pd-top-75 pd-bottom-120"
+            className="upcomming-tour upcomming-tour-bg pd-top-75"
             style={{ backgroundImage: `url(${imgbg11})` }}
         >
             <div className="container">
@@ -54,7 +54,7 @@ const UpComming = () => {
                         </div>
                     </div>
                     <div className="col-lg-8">
-                        <div className="upcomming-card-slider upcomming-card-slider-2 tp-common-slider-style">
+                        <div className="upcomming-card-slider upcomming-card-slider-2 tp-common-slider-style overflowX">
                             {imgArr.map(img => {
                                 return (
                                     <UpcommingToursCard img={img} />

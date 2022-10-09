@@ -14,7 +14,7 @@ const ContactUs = () => {
             <CustNav />
             <ProductHeader page={'Contact Us'} background={Background} />
             <InTouch />
-            <Newsletter />
+            {/* <Newsletter /> */}
             <CustFooter />
         </div>
     )

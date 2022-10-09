@@ -11,7 +11,7 @@ const InTouch = () => {
     const [message, setMessage] = useState('');
 
     const sendMessage = () => {
-        var formData = new FormData();
+        let formData = new FormData();
         formData.append('user_id', localStorage.getItem('user_id'));
         formData.append('name', name);
         formData.append('email', email);
@@ -19,6 +19,16 @@ const InTouch = () => {
         formData.append('message', message);
         formData.append('contactable_type', 'Projects');
         formData.append('contactable_id', '4');
+
+        let data = {
+            'user_id': '2',
+            'name': 'name',
+            'email': 'email',
+            'phone': 'phone',
+            'message': 'message',
+            'contactable_type': 'Projects',
+            'conta ctable_id': '4',
+        }
 
         comnPost('api/v1/contact', formData)
         .then(res => {

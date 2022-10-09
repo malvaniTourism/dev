@@ -14,7 +14,7 @@ const InstagramPost = (props) => {
     console.log(props);
     const [imgArr, setImgArr] = useState([img1, img2, img3, img4, img5, img6, img1])
     return (
-        <div className="instagram-area pd-top-100">
+        <div className="instagram-area pd-top-80">
             <div className="section-title text-center">
                 <h2 className="title">Instagram Post</h2>
             </div>

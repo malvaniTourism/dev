@@ -52,7 +52,7 @@ const BlogList = () => {
             <CustNav />
             <ProductHeader page={'Blogs'} background={Background} />
             <Blogs data={blogsData} pageCount={totalPages} setPage={(v) => setPage(v)} onClick={(id) => onClick(id)} getLatestProject={(name) => getLatestProject(name)} />
-            <Newsletter />
+            {/* <Newsletter /> */}
             <CustFooter />
         </div>
     )

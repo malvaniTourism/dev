@@ -23,9 +23,14 @@ import BookNow from "../../components/buttons/BookNow";
 import { comnGet, comnPost } from '../../services/comnServ';
 import { connect } from "react-redux";
 import { saveLoginUser } from "../../actions/commonActions";
-
+import FlipCard from "../../components/cards/FlipCard";
+import FoodCardFront from "../../components/cards/FoodCardFront";
+import FoodFiesta from "../../components/carousel/FoodFiesta";
+import CarouselHeader from "../../components/headers/CarouselHeader";
+//₹
 const Home = (props) => {
     const [data, setData] = useState([])
+    const [food, setFood] = useState([])
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -46,30 +51,37 @@ const Home = (props) => {
         comnGet('api/v1/landingpage')
             .then(res => {
                 setData(res.data.data)
-                console.log(res.data.data);
+                console.log('landing data--',res.data.data);
             })
             .catch(err => console.error(err))
+
+        comnGet('api/v1/food/1')
+            .then(res => setFood(res.data.data))
+            .catch(err => console.error(err))
+
     }
 
     return (
         <div>
             <CustNav />
+            {/* <CarouselHeader /> */}
             <CustHeader />
             <CustMainSearchBar />
-            {/* <UpComming /> */}
+            <UpComming />
             <OurServices />
             {/* <CustOffers /> */}
             <HolidayPlans />
             <UpCommingHome data={data.projects} />
+            <FoodFiesta />
             <InstagramPost data={data.cities} />
             {/* <Services /> */}
             {/* <OffrsSwiper /> */}
             {/* <HolidaySwiper /> */}
             {/* <CafeSwiper /> */}
-            <RecentBlogs data={data?.blogs?.slice(0, 3)} />
+            <RecentBlogs data={data?.blogs?.slice(0, 4)} />
             <Ads />
             <OurClients />
-            <Newsletter />
+            {/* <Newsletter /> */}
             <CustFooter />
         </div>
     )
@@ -84,7 +96,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         saveLoginUser: data => {
-             dispatch(saveLoginUser(data))
+            dispatch(saveLoginUser(data))
         }
     }
 }

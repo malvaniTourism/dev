@@ -9,11 +9,12 @@ import img31 from '../../assets/img/destination-list/31.png';
 import img32 from '../../assets/img/destination-list/32.png';
 import img33 from '../../assets/img/destination-list/33.png';
 import UpcommingHomeCard from '../cards/UpcommingHomeCard';
+import FlipCard from '../cards/FlipCard';
 
-const UpCommingHome = ({ data }) => {
+const FoodFiesta = ({ data }) => {
     const [imgArr, setImgArr] = useState([img28, img29, img30, img31, img32, img33])
     return (
-        <div className="upcomming-tour pd-top-65 pd-bottom-80">
+        <div className="upcomming-tour pd-top-65 pd-bottom-60">
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-xl-6 col-lg-8">
@@ -23,29 +24,27 @@ const UpCommingHome = ({ data }) => {
                                 data-wow-duration="0.6s"
                                 data-wow-delay="0.1s"
                             >
-                                Projects
+                                Food Fiesta
                             </h2>
                             <p
                                 className="wow animated fadeInUp"
                                 data-wow-duration="0.6s"
                                 data-wow-delay="0.2s"
                             >
-                                Lorem Ipsum is simply dummy text the printing and typesetting
-                                industry. Lorem Ipsum has been the industry's standard dummy text
-                                ever since the 1500s,
+                                Most delicious across the globe!
                             </p>
                         </div>
                     </div>
                 </div>
-                {data &&
-                    <div className="row">
-                        {data.map(data => {
-                            return (
-                                <UpcommingHomeCard data={data} />
-                            )
-                        })}
-                    </div>
-                }
+
+                <div className="overflowX">
+                    <FlipCard data={data} />
+                    <FlipCard data={data} />
+                    <FlipCard data={data} />
+                    <FlipCard data={data} />
+                    <FlipCard data={data} />
+                </div>
+
                 <div
                     className="innerbtn-wrap text-center wow animated fadeInUp"
                     data-wow-duration="2.2s"
@@ -60,4 +59,4 @@ const UpCommingHome = ({ data }) => {
     )
 }
 
-export default UpCommingHome;
+export default FoodFiesta;

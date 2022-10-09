@@ -3,23 +3,23 @@ import { connect } from 'react-redux';
 import { saveLoginUser } from '../../actions/commonActions';
 import { comnPost } from '../../services/comnServ';
 
-const CommentsForm = ({ type, parentId, tableName, postId, isPosted, ...props }) => {
+const CommentsForm = ({ type, parentId, tableName, postId, isPosted, setIsLoading, ...props }) => {
     const [content, setContent] = useState('');
-    console.log('login--',props.loginUser);
 
     const postComment = () => {
+        setIsLoading(true)
         let data = new FormData();
         data.append('parent_id', parentId || '');
-        data.append('user_id', props.loginUser.id);
+        data.append('user_id', localStorage.getItem('user_id'));
         data.append('comment', content);
         data.append('commentable_type', tableName);
         data.append('commentable_id', postId);
 
-        console.log('payload - ', data);
         comnPost('api/v1/comment', data)
             .then(res => {
                 console.log(res);
                 isPosted();
+                setIsLoading(false)
             })
             .catch(err => console.error(err))
     }

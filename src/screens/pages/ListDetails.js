@@ -12,7 +12,7 @@ const ListDetails = () => {
             <CustNav />
             {/* <Carousel /> */}
             <TourDetails />
-            <Newsletter />
+            {/* <Newsletter /> */}
             <CustFooter />
         </div>
     )

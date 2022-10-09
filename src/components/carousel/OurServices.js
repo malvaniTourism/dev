@@ -9,7 +9,7 @@ import img12 from '../../assets/img/icons/12.png';
 
 const OurServices = () => {
     return (
-        <div className="intro-area pd-top-75">
+        <div className="intro-area">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-3 col-sm-6 single-intro-two bl-0">

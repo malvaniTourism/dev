@@ -15,7 +15,7 @@ import Review from "../../components/commonComponents/Review";
 import CitySingleCard from "../../components/cards/CitySingleCard";
 import Spinner from "../../components/commonComponents/Spinner";
 import CommentsCard from '../../components/cards/CommentsCard';
-import CommentsForm from '../../components/cards/CommentsForm';
+import CommentsForm from '../../components/commonComponents/CommentsForm';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 
@@ -32,7 +32,7 @@ const style = {
     p: 4,
 };
 
-const DestinationDetails = ({ openComment, isPosted }) => {
+const DestinationDetails = ({ openComment }) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const location = useLocation();
@@ -40,7 +40,6 @@ const DestinationDetails = ({ openComment, isPosted }) => {
     const [parentId, setParentId] = useState('');
     const [open, setOpen] = useState(false);
 
-    console.log(location);
     useEffect(() => {
         window.scrollTo(0, 0)
         setIsLoading(true)
@@ -66,7 +65,6 @@ const DestinationDetails = ({ openComment, isPosted }) => {
     }
 
     const onCommentSuccess = () => {
-        isPosted(true)
         setOpen(false)
         getData();
     }
@@ -202,13 +200,13 @@ const DestinationDetails = ({ openComment, isPosted }) => {
                         aria-describedby="modal-modal-description"
                     >
                         <Box sx={style}>
-                            <CommentsForm type={'comment'} tableName={location.state.name} postId={data.id} parentId={parentId} isPosted={() => onCommentSuccess()} />
+                            <CommentsForm type={'comment'} tableName={location.state.name} postId={data.id} parentId={parentId} isPosted={() => onCommentSuccess()} setIsLoading={(value) => setIsLoading(value)} />
                         </Box>
                     </Modal>
                 </div>
             </div>
 
-            <Newsletter />
+            {/* <Newsletter /> */}
             <CustFooter />
         </div>
     )
