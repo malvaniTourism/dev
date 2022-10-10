@@ -17,8 +17,7 @@ const CustHeader = () => {
         fade: true,
         autoplay: true,
         autoplaySpeed: 9000,
-        nextArrow: <img alt="arr-img" className="bkArrow" src={LeftArr} height={60} width={60} />,
-        prevArrow: <img alt="arr-img" className="bkArrow" src={RightArr} height={60} width={60} />
+       
         // appendDots: $(".banner-slider-dots"),
     };
 
@@ -29,11 +28,9 @@ const CustHeader = () => {
                     <div className="container">
                         <div className="row bannerContent">
                             <div className="col-xl-8 col-lg-9 offset-xl-2 offset-lg-1">
-                                <Slider {...settings}>
                                     <MainHeadData />
                                     <MainHeadData />
                                     <MainHeadData />
-                                </Slider>
                             </div>
                         </div>
                     </div>

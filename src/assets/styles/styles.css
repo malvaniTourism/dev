@@ -377,11 +377,12 @@ a {
 }
 
 .detPageImgDiv {
-    object-fit: fill;
     background-repeat: no-repeat;
     padding-top: 8vh;
     padding-left: 8vw;
-    height: 45vh
+    height: 45vh;
+    background-size: 100%;
+
 }
 
 .myLogo {

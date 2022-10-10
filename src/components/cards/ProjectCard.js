@@ -3,6 +3,7 @@ import img12 from '../../assets/img/destination-list/12.png';
 import map from '../../assets/img/icons/1.png';
 import { useNavigate } from 'react-router-dom';
 import "../../assets/styles/ProjectCard.scss"
+import { Button } from "@mui/material";
 
 const ProjectCard = ({ project, color }) => {
     const navigate = useNavigate();
@@ -13,53 +14,56 @@ const ProjectCard = ({ project, color }) => {
 
     return (
         <>
-        <div className="single-destinations-list style-three" style={{borderColor: color, boxShadow: `1px 1px 7px ${color}`}} onClick={() => getId()}>
-            <div className="thumb">
-                <img src={img12} alt="list" />
-            </div>
-            <div className="details">
-                <div className="tp-review-meta">
-                    <i className="ic-yellow fa fa-star" />
-                    <i className="ic-yellow fa fa-star" />
-                    <i className="ic-yellow fa fa-star" />
-                    <i className="ic-yellow fa fa-star" />
-                    <i className="fa fa-star" />
-                    <span>4.0</span>
+            <div className="single-destinations-list style-three" style={{ borderColor: color, boxShadow: `1px 1px 7px ${color}` }}>
+                <div className="thumb">
+                    <img src={img12} alt="list" />
                 </div>
-                <p className="location">
-                    <img src={map} alt="map" />
-                    Italy
-                </p>
-                <h4 className="title">
-                    <text>{project.name}</text>
-                </h4>
-                <p className="content">{project.description}</p>
-                {/* <p className="content"><b>Our Speciality:</b> {project.speciality}</p> */}
-                <a className="content" href={project.domain_name}
-                // onClick={()=> window.open(project.domain_name, '_blank', 'noopener,noreferrer')}
-                >{project.domain_name}</a>
-                <div className="list-price-meta">
-                    <ul className="tp-list-meta d-inline-block">
-                        <li>
-                            <i className="fa fa-calendar-o" /> 8oct
-                        </li>
-                        <li>
-                            <i className="fa fa-clock-o" /> 4 days
-                        </li>
-                        <li>
-                            <i className="fa fa-star" /> {project.ratings}
-                        </li>
-                    </ul>
-                    <div className="tp-price-meta d-inline-block">
-                        <p>Price</p>
-                        <h2 className="price-color">
-                            {project.start_price} <span>₹</span>
-                        </h2>
+                <div className="details">
+                    <div className="tp-review-meta">
+                        <i className="ic-yellow fa fa-star" />
+                        <i className="ic-yellow fa fa-star" />
+                        <i className="ic-yellow fa fa-star" />
+                        <i className="ic-yellow fa fa-star" />
+                        <i className="fa fa-star" />
+                        <span>4.0</span>
+                    </div>
+                    <p className="location">
+                        <img src={map} alt="map" />
+                        Italy
+                    </p>
+                    <h4 className="title">
+                        <text>{project.name}</text>
+                    </h4>
+                    <p className="content">{project.description}</p>
+                    {/* <p className="content"><b>Our Speciality:</b> {project.speciality}</p> */}
+                    <a className="content" href={project.domain_name}
+                    // onClick={()=> window.open(project.domain_name, '_blank', 'noopener,noreferrer')}
+                    >{project.domain_name}</a>
+                    <div className="list-price-meta">
+                        <ul className="tp-list-meta d-inline-block">
+                            <li>
+                                <i className="fa fa-calendar-o" /> 8oct
+                            </li>
+                            <li>
+                                <i className="fa fa-clock-o" /> 4 days
+                            </li>
+                            <li>
+                                <i className="fa fa-star" /> {project.ratings}
+                            </li>
+                        </ul>
+                        <div className="tp-price-meta d-inline-block">
+                            <p>Price</p>
+                            <h2 className="price-color">
+                                {project.start_price} <span>₹</span>
+                            </h2>
+                        </div>
                     </div>
                 </div>
+                <div className="deatil-button">
+                            <Button size="small" sx={{textTransform:"none"}} onClick={() => getId()}>Read More</Button>
+                        </div>
             </div>
-        </div>
-        {/* <div className="project-card" >
+            {/* <div className="project-card" >
 
         <section class="product" style={{borderColor: color, boxShadow: `1px 1px 7px ${color}`}} onClick={() => getId()}>
 	<div class="product__photo">

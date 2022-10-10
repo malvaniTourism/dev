@@ -32,6 +32,15 @@ import CommentsForm from '../../components/commonComponents/CommentsForm';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Spinner from "../../components/commonComponents/Spinner";
+import Typography from '@mui/material/Typography';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
+
 
 const mapProps = {
     center: {
@@ -92,6 +101,12 @@ const TourDetails = ({ openComment, isPosted }) => {
         getData();
     }
 
+    const [expanded, setExpanded] = React.useState('panel1');
+
+    const handleChange = (panel) => (event, newExpanded) => {
+        setExpanded(newExpanded ? panel : false);
+    };
+    // console.log(speciality.replace(/['"]+/g, ''),"baaaaa")
     const sendMessage = () => {
         let formData = new FormData();
         formData.append('user_id', localStorage.getItem('user_id'));
@@ -180,7 +195,7 @@ const TourDetails = ({ openComment, isPosted }) => {
                                             <span>4.0</span>
                                         </div>
                                         <div className="all-tags">
-                                            <a href="#">Adventures</a>
+                                            <a href="#">{data.speciality.replace(/['"]+/g  , '')}</a>
                                             <a href="#">Local special ties</a>
                                             <a href="#">Natural</a>
                                             <a href="#">Travel</a>
@@ -237,7 +252,7 @@ const TourDetails = ({ openComment, isPosted }) => {
                                     Please note that flights to and from St. John's are not included in
                                     the trip cost. This trip is limited by 12 travelers.
                                 </p>
-                                <div className="package-included-area">
+                                {/* <div className="package-included-area">
                                     <h4 className="single-page-small-title">Included</h4>
                                     <div className="row">
                                         <div className="col-xl-4 col-sm-6">
@@ -283,8 +298,72 @@ const TourDetails = ({ openComment, isPosted }) => {
                                             </div>
                                         </div>
                                     </div>
+                                </div> */}
+                                <div>
+                                    <h4 className="single-page-small-title">Included</h4>
+
+                                    <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                                        <AccordionSummary expandIcon={<ExpandMoreIcon />}
+                                            aria-controls="panel1a-content"
+                                            id="panel1a-header">
+                                            <img src={img15} alt="icons" />
+                                            <Typography sx={{ marginLeft: 2, marginTop: 1 }}>Food</Typography>
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                            <Typography>
+                                                <Stack direction="row" spacing={2}>
+                                                    <Avatar alt="Remy Sharp" sx={{ minWidth: 130, minHeight: 130 }} />
+                                                    <Avatar alt="Remy Sharp" sx={{ minWidth: 130, minHeight: 130 }} />
+                                                    <Avatar alt="Remy Sharp" sx={{ minWidth: 130, minHeight: 130 }} />
+                                                    <Avatar alt="Remy Sharp" sx={{ minWidth: 130, minHeight: 130 }} />
+                                                    <Avatar alt="Remy Sharp" sx={{ minWidth: 130, minHeight: 130 }} />
+
+
+                                                </Stack>
+                                                <Stack direction="row" spacing={14} sx={{ marginLeft: 5,marginTop:2 }}>
+                                                    <Typography >Food</Typography>
+                                                    <Typography >Food</Typography>
+                                                    <Typography >Food</Typography>
+                                                    <Typography >Food</Typography>
+                                                    <Typography >Food</Typography>
+                                                </Stack>
+                                            </Typography>
+                                        </AccordionDetails>
+                                    </Accordion>
+                                    <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                                        <AccordionSummary expandIcon={<ExpandMoreIcon />}
+                                            aria-controls="panel2a-content"
+                                            id="panel2a-header">
+                                            <img src={img16} alt="icons" />
+                                            <Typography sx={{ marginLeft: 2, marginTop: 1 }}>Accommodations</Typography>
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                            <Typography>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                                                malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
+                                                sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+                                                sit amet blandit leo lobortis eget.
+                                            </Typography>
+                                        </AccordionDetails>
+                                    </Accordion>
+                                    <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                                        <AccordionSummary expandIcon={<ExpandMoreIcon />}
+                                            aria-controls="panel2a-content"
+                                            id="panel2a-header">
+                                            <img src={img17} alt="icons" />
+                                            <Typography sx={{ marginLeft: 2, marginTop: 1 }}>Transportation</Typography>
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                            <Typography>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                                                malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
+                                                sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+                                                sit amet blandit leo lobortis eget.
+                                            </Typography>
+                                        </AccordionDetails>
+                                    </Accordion>
                                 </div>
-                                <div className="package-included-location">
+                                {/* <div className="package-included-location">
                                     <h4 className="single-page-small-title">Your Itinerary</h4>
                                     <div className="row">
                                         <div className="col-lg-4 col-md-4">
@@ -363,7 +442,7 @@ const TourDetails = ({ openComment, isPosted }) => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                                 <div className="host-area">
                                     <div className="single-host-wrap text-center">
                                         <div>

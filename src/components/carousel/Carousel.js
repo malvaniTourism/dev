@@ -1,7 +1,6 @@
 import React from 'react';
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import LeftArr from '../../assets/images/arrow_left.png'
 import RightArr from '../../assets/images/arrow_right.png'
 
@@ -16,8 +15,7 @@ const Carousel = (props) => {
         fade: true,
         autoplay: true,
         autoplaySpeed: 9000,
-        nextArrow: <img alt="arr-img" className="bkArrow" src={LeftArr} height={60} width={60} />,
-        prevArrow: <img alt="arr-img" className="bkArrow" src={RightArr} height={60} width={60} />
+       
         // appendDots: $(".banner-slider-dots"),
     };
 
