@@ -29,8 +29,8 @@ const CustHeader = () => {
                         <div className="row bannerContent">
                             <div className="col-xl-8 col-lg-9 offset-xl-2 offset-lg-1">
                                     <MainHeadData />
-                                    <MainHeadData />
-                                    <MainHeadData />
+                                    {/* <MainHeadData />
+                                    <MainHeadData /> */}
                             </div>
                         </div>
                     </div>

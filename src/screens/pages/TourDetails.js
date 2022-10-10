@@ -39,6 +39,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import RoundCard from "../../components/cards/RoundCard";
 
 
 
@@ -74,6 +75,10 @@ const TourDetails = ({ openComment, isPosted }) => {
     const [number, setNumber] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [isFood, setIsFood] = useState(true);
+    const [isAccom, setIsAccom] = useState(false);
+    const [isTrans, setIsTrans] = useState(false);
+
     //project/5
     useEffect(() => {
         getData();
@@ -101,11 +106,6 @@ const TourDetails = ({ openComment, isPosted }) => {
         getData();
     }
 
-    const [expanded, setExpanded] = React.useState('panel1');
-
-    const handleChange = (panel) => (event, newExpanded) => {
-        setExpanded(newExpanded ? panel : false);
-    };
     // console.log(speciality.replace(/['"]+/g, ''),"baaaaa")
     const sendMessage = () => {
         let formData = new FormData();
@@ -195,7 +195,7 @@ const TourDetails = ({ openComment, isPosted }) => {
                                             <span>4.0</span>
                                         </div>
                                         <div className="all-tags">
-                                            <a href="#">{data.speciality.replace(/['"]+/g  , '')}</a>
+                                            <a href="#">{data.speciality?.replace(/['"]+/g  , '')}</a>
                                             <a href="#">Local special ties</a>
                                             <a href="#">Natural</a>
                                             <a href="#">Travel</a>
@@ -302,35 +302,26 @@ const TourDetails = ({ openComment, isPosted }) => {
                                 <div>
                                     <h4 className="single-page-small-title">Included</h4>
 
-                                    <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                                    <Accordion expanded={isFood} onChange={() => setIsFood(!isFood)}>
                                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                             aria-controls="panel1a-content"
                                             id="panel1a-header">
                                             <img src={img15} alt="icons" />
                                             <Typography sx={{ marginLeft: 2, marginTop: 1 }}>Food</Typography>
                                         </AccordionSummary>
-                                        <AccordionDetails>
-                                            <Typography>
-                                                <Stack direction="row" spacing={2}>
-                                                    <Avatar alt="Remy Sharp" sx={{ minWidth: 130, minHeight: 130 }} />
-                                                    <Avatar alt="Remy Sharp" sx={{ minWidth: 130, minHeight: 130 }} />
-                                                    <Avatar alt="Remy Sharp" sx={{ minWidth: 130, minHeight: 130 }} />
-                                                    <Avatar alt="Remy Sharp" sx={{ minWidth: 130, minHeight: 130 }} />
-                                                    <Avatar alt="Remy Sharp" sx={{ minWidth: 130, minHeight: 130 }} />
+                                        <div className="overflowX">
 
+                                                <div className="overflowX1">
+                                                    <RoundCard />
+                                                    <RoundCard />
+                                                    <RoundCard />
+                                                    <RoundCard />
+                                                    <RoundCard />
+                                                </div>
 
-                                                </Stack>
-                                                <Stack direction="row" spacing={14} sx={{ marginLeft: 5,marginTop:2 }}>
-                                                    <Typography >Food</Typography>
-                                                    <Typography >Food</Typography>
-                                                    <Typography >Food</Typography>
-                                                    <Typography >Food</Typography>
-                                                    <Typography >Food</Typography>
-                                                </Stack>
-                                            </Typography>
-                                        </AccordionDetails>
+                                                </div>
                                     </Accordion>
-                                    <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                                    <Accordion expanded={isAccom} onChange={() => setIsAccom(!isAccom)}>
                                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                             aria-controls="panel2a-content"
                                             id="panel2a-header">
@@ -346,7 +337,7 @@ const TourDetails = ({ openComment, isPosted }) => {
                                             </Typography>
                                         </AccordionDetails>
                                     </Accordion>
-                                    <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                                    <Accordion expanded={isTrans} onChange={() => setIsTrans(!isTrans)}>
                                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                             aria-controls="panel2a-content"
                                             id="panel2a-header">

@@ -490,6 +490,12 @@ a {
     padding: 20px;
     overflow-x: auto;
 }
+.overflowX1 {
+    display: flex;
+    padding: 20px;
+    overflow-x: auto;
+    min-width: fit-content;
+}
 .myUpcomCard {
     height: 254px;
     width: auto;
@@ -497,6 +503,15 @@ a {
 .myDetails {
     position: relative !important;
     bottom: 117px !important;
+}
+.roundCard {
+    border-radius: 100px;
+    height: 170px;
+    width: 170px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 20px;
+    box-shadow: 1px 6px 17px 9px rgba(0, 0, 0, 0.25);
 }
 * {
     -ms-overflow-style: none;

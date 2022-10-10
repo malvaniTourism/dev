@@ -10,7 +10,7 @@ import Img6 from '../../assets/img/instagram/6.png';
 
 const MainFooter = () => {
     return (
-        <footer className="footer-area" style={{ backgroundImage: `url(${BG})` }}>
+        <footer className="footer-area" style={{ backgroundImage: `url(${BG})`, marginTop: 30 }}>
             <div className="container">
                 <div className="row">
                     <div className="col-lg-4 col-md-6">
