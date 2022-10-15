@@ -8,11 +8,8 @@ const IndexHead = () => {
         <div className="indexHead" style={{ background: 'url(' + Image + ')' }}>
             <div className="flex-row alignCenter justifyEven">
                 <h2 className="whiteText headText">Devgad Beach</h2>
-                <div style={{ display: 'flex', width: '35%', justifyContent: 'center' }}>
-                    <BookNow />
-                </div>
             </div>
-            <div className="flex-row indHdDesc">
+            {/* <div className="flex-row indHdDesc">
                 <div className="flex-col">
                     <text className="yellowText">₹ 2000</text>
                     <text className="whiteText">2 Days tour for 2 people</text>
@@ -25,7 +22,7 @@ const IndexHead = () => {
                     <text className="yellowText">Starts from</text>
                     <text className="whiteText">20 April or later</text>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 };

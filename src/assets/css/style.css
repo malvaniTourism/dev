@@ -3239,7 +3239,8 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 
 .mobile-logo,
 .responsive-mobile-menu .nav-right-content {
-  display: none;
+  /* display: none; */
+  margin-left: 20px;
 }
 
 @media all and (max-width: 991px) {
@@ -6269,7 +6270,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   -o-transition: all 0.6s ease;
   transition: all 0.6s ease;
   min-height: 218px;
-  width: 175px;
+  width: 219px;
 }
 
 .single-upconing-card .shadow {
@@ -6367,6 +6368,18 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   border-radius: 40px 0 0 40px;
   padding: 6px 30px 7px 35px;
 }
+.single-upconing-card .tp-price-meta-home {
+  top: 14px;
+    right: 14px;
+    border-radius: 30px;
+    padding: 0px;
+    height: 62px;
+    width: 62px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
 
 .single-upconing-card .tp-price-meta h2 {
   font-size: 32px;
@@ -6411,7 +6424,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 
 .single-upconing-card .location {
   color: #f0ecec;
-  font-size: 50px;
+  font-size: 32px;
   font-weight: 500;
   position: absolute;
   -webkit-transform: rotate(-90deg);
@@ -6420,6 +6433,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   left: -80px;
   right: 100%;
   bottom: 25px;
+  line-height: 1;
 }
 
 .single-upconing-card:hover .content {

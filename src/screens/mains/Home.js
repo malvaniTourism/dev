@@ -27,6 +27,7 @@ import FlipCard from "../../components/cards/FlipCard";
 import FoodCardFront from "../../components/cards/FoodCardFront";
 import FoodFiesta from "../../components/carousel/FoodFiesta";
 import CarouselHeader from "../../components/headers/CarouselHeader";
+import CustomNavbar from "../../components/navbars/CustomNavbar";
 //₹
 const Home = (props) => {
     const [data, setData] = useState([])
@@ -63,9 +64,11 @@ const Home = (props) => {
 
     return (
         <div>
-            <CustNav />
+            {/* <CustNav /> */}
+            <CustomNavbar />
             {/* <CarouselHeader /> */}
-            <CustHeader />
+            {/* <CustHeader /> */}
+            <IndexHead />
             <CustMainSearchBar />
             <UpComming />
             <OurServices />

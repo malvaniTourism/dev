@@ -49,6 +49,9 @@
     .banner-paginations-3 {
         max-width: 1400px;
     }
+    .single-upconing-card {
+        width: 219px
+    }
     .single-upconing-card .location {
         font-size: 30px;
         left: -73px;

@@ -6,7 +6,7 @@ const upcommingToursCard = (props) => {
         <div className="single-upconing-card">
             <div
                 className="shadow"
-                style={{ backgroundImage: "url(assets/img/tour/8.png)" }}
+                style={{ height: 316, width: 219 }}
             >
                 <img className="myUpcomCard" src={props.img} alt="img" />
             </div>

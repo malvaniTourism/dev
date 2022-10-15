@@ -134,7 +134,7 @@ a {
 }
 
 .indexHead {
-    height: 80vh;
+    height: 70vh;
     width: 100vw;
     background-size: cover;
     background-repeat: no-repeat;
@@ -497,7 +497,7 @@ a {
     min-width: fit-content;
 }
 .myUpcomCard {
-    height: 254px;
+    height: 316px;
     width: auto;
 }
 .myDetails {

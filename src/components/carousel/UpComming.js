@@ -32,28 +32,12 @@ const UpComming = () => {
         >
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-4">
+                    <div className="col-lg-2 d-flex align-items-center">
                         <div className="section-title">
                             <h2 className="title">Upcoming Tours</h2>
-                            <p>
-                                Mauris neque nisi, faucibus non elementum in, convallis et eros. Sed
-                                pretium sem libero, vel pellentesque purus ultrices ut.
-                            </p>
-                        </div>
-                        <div className="row">
-                            <div className="col-lg-8">
-                                <form className="search-form">
-                                    <div className="form-group">
-                                        <input type="text" placeholder="Search" />
-                                    </div>
-                                    <button className="submit-btn" type="submit">
-                                        <i className="ti-search" />
-                                    </button>
-                                </form>
-                            </div>
                         </div>
                     </div>
-                    <div className="col-lg-8">
+                    <div className="col-lg-10">
                         <div className="upcomming-card-slider upcomming-card-slider-2 tp-common-slider-style overflowX">
                             {imgArr.map(img => {
                                 return (

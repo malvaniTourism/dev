@@ -38,7 +38,7 @@ const UpCommingHome = ({ data }) => {
                     </div>
                 </div>
                 {data &&
-                    <div className="row">
+                    <div className="row justifyCenter">
                         {data.map(data => {
                             return (
                                 <UpcommingHomeCard data={data} />

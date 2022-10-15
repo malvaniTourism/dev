@@ -15,13 +15,11 @@ const UpcommingHomeCard = ({ data }) => {
                 <div
                     className="shadow"
                 >
-                    <img src={Img} alt="img" style={{minHeight: 218}} />
+                    <img src={Img} alt="img" style={{ minHeight: 218 }} />
                 </div>
-                <div className="tp-price-meta">
-                    <h2>
-                        620 <span>₹</span>
-                    </h2>
-                    <p>Price</p>
+                <div className="tp-price-meta tp-price-meta-home">
+                    <text style={{color: 'coral', fontWeight: 700}}>620 ₹</text>
+                    {/* <p>Price</p> */}
                 </div>
                 <div className="details">
                     <h3 className="title">

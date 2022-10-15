@@ -9,7 +9,7 @@ const CustMainSearchBar = () => {
       <div className="container" >
         <div className="tp-main-search">
           <div className="row">
-            <div className="col-lg-3 col-md-4">
+            <div className="col-lg-10 col-md-4">
               <div className="home-search tp-search-single-wrap ">
                 <input  type="text" placeholder="Bangladesh,Dhaka" />
                 <i className="ti-location-pin" />
@@ -45,7 +45,7 @@ const CustMainSearchBar = () => {
                 <i className="fa fa-plus-circle" />
               </div>
             </div> */}
-            <div className="col-lg-2 col-md-4 order-12 alignCenter mx-auto">
+            <div className="col-lg-2 col-md-4 order-12 alignCenter justifyCenter mx-auto">
               <a className="bkNow whiteAlign alignCenter alink" href="#/list"><i className="ti-search" /> Search</a>
             </div>
           </div>
