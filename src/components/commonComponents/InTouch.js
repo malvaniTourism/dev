@@ -30,7 +30,7 @@ const InTouch = () => {
             'conta ctable_id': '4',
         }
 
-        comnPost('api/v1/contact', formData)
+        comnPost('/api/v1/contact', formData)
         .then(res => {
             console.log('res', res);
             setName('')

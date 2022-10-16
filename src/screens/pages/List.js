@@ -8,13 +8,15 @@ import ProductHeader from "../../components/headers/ProductHeader";
 import Background from "../../assets/img/banner/4.png";
 import { connect } from "react-redux";
 import { useLocation } from "react-router-dom";
+import CustomNavbar from "../../components/navbars/CustomNavbar";
 
 const List = (props) => {
     const location = useLocation();
 
     return (
         <div>
-            <CustNav />
+            {/* <CustNav /> */}
+            <CustomNavbar />
             {/* <Carousel page={page ?? 'list'} /> */}
             <ProductHeader page={props.selectedProduct ?? 'list'} background={Background} />
             <ListFilter projName={location.state?.name||''} />

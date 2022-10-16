@@ -15,7 +15,7 @@ const CommentsForm = ({ type, parentId, tableName, postId, isPosted, setIsLoadin
         data.append('commentable_type', tableName);
         data.append('commentable_id', postId);
 
-        comnPost('api/v1/comment', data)
+        comnPost('/api/v1/comment', data)
             .then(res => {
                 console.log(res);
                 isPosted();

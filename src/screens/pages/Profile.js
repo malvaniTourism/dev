@@ -5,6 +5,7 @@ import CustFooter from "../../components/footers/CustFooter";
 import Background from "../../assets/img/bg/5.png";
 import CustNav from "../../components/navbars/CustNav";
 import { comnGet } from "../../services/comnServ";
+import CustomNavbar from "../../components/navbars/CustomNavbar";
 
 const Profile = () => {
     const [userData, setUserData] = useState([]);
@@ -26,7 +27,8 @@ const Profile = () => {
     return (
         <div>
             <Spinner />
-            <CustNav />
+            {/* <CustNav /> */}
+            <CustomNavbar />
             <ProductHeader page={'Profile'} background={Background} />
             <div style={{ padding: 50 }}>
                 <h2>Hello, {userData.name}</h2>

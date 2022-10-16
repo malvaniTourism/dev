@@ -39,7 +39,7 @@ const Home = (props) => {
         data.append('email', 'kamblepranav460@gmail.com');
         data.append('password', '123456');
 
-        comnPost('api/auth/login', data)
+        comnPost('/api/auth/login', data)
             .then(res => {
                 localStorage.setItem('apiToken', res.data.data.access_token)
                 localStorage.setItem('user_id', res.data.data.user.id)
@@ -49,14 +49,14 @@ const Home = (props) => {
     }, [])
 
     const getData = () => {
-        comnGet('api/v1/landingpage')
+        comnGet('/api/v1/landingpage')
             .then(res => {
                 setData(res.data.data)
                 console.log('landing data--',res.data.data);
             })
             .catch(err => console.error(err))
 
-        comnGet('api/v1/food/1')
+        comnGet('/api/v1/food/1')
             .then(res => setFood(res.data.data))
             .catch(err => console.error(err))
 

@@ -7,13 +7,14 @@ import CityList from "../../components/carousel/CityList";
 import { comnGet } from "../../services/comnServ";
 import Spinner from "../../components/commonComponents/Spinner";
 import DestinationBanner from "../../components/banners/DestinationBanner";
+import CustomNavbar from "../../components/navbars/CustomNavbar";
 
 const Cities = () => {
     const [cities, setCities] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        comnGet('api/v1/cities')
+        comnGet('/api/v1/cities')
             .then(res => {
                 console.log('city', res);
                 setCities(res.data.data.data)
@@ -24,7 +25,8 @@ const Cities = () => {
     return (
         <div>
             <Spinner active={isLoading} />
-            <CustNav />
+            {/* <CustNav /> */}
+            <CustomNavbar />
             <DestinationBanner page={'Cities'} />
             <CityList cities={cities} />
             <CustFooter />

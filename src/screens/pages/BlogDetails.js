@@ -9,6 +9,7 @@ import Background from "../../assets/img/bg/10.png";
 import { useLocation } from "react-router-dom";
 import { comnGet } from "../../services/comnServ";
 import Spinner from "../../components/commonComponents/Spinner";
+import CustomNavbar from "../../components/navbars/CustomNavbar";
 
 const BlogDetails = () => {
     const [data, setData] = useState([]);
@@ -17,7 +18,7 @@ const BlogDetails = () => {
     const location = useLocation();
 
     useEffect(() => {
-        comnGet('api/v1/blog/' + location.state.id)
+        comnGet('/api/v1/blog/' + location.state.id)
         .then(res => {
             setData(res.data.data)
             setIsPosted(false)
@@ -29,7 +30,8 @@ const BlogDetails = () => {
     return (
         <div>
             <Spinner active={isLoading} />
-            <CustNav />
+            {/* <CustNav /> */}
+            <CustomNavbar />
             <ProductHeader page={'Blogs'} background={Background} />
             <BlogDetail data={data} isPosted={setIsPosted} setIsLoading={(value) => setIsLoading(value)} />
             {/* <Newsletter /> */}

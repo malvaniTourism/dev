@@ -18,13 +18,13 @@ const Blogs = (props) => {
     const [projects, setProjects] = useState([])
 
     useEffect(() => {
-        comnGet('api/v1/categories')
+        comnGet('/api/v1/categories')
             .then(res => {
                 setCategories(res.data.data.data)
             })
             .catch(err => console.error(err))
 
-        comnPost('api/v1/projects')
+        comnPost('/api/v1/projects')
             .then(res => {
                 setProjects(res.data.data.data)
             })

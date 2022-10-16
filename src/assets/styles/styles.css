@@ -504,6 +504,31 @@ a {
     position: relative !important;
     bottom: 117px !important;
 }
+.includeMainDiv {
+    border: 1px solid #c8c7c2;
+    padding: 10px;
+    margin: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.includeTitle {
+    border: 1px solid #c8c7c2;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.categoryIcon {
+    height: 50px;
+    width: 50px;
+    border-radius: 40px;
+}
+.showAll {
+    color: #1976d2;
+    cursor: pointer;
+}
 .roundCard {
     border-radius: 100px;
     height: 170px;

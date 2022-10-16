@@ -8,6 +8,7 @@ import img3 from '../../assets/img/tour-details/3.png';
 import img4 from '../../assets/img/tour-details/4.png';
 import img5 from '../../assets/img/tour-details/5.png';
 import img6 from '../../assets/img/tour-details/6.png';
+import CustomNavbar from "../../components/navbars/CustomNavbar";
 
 import img15 from '../../assets/img/icons/15.png';
 import img16 from '../../assets/img/icons/16.png';
@@ -40,8 +41,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import RoundCard from "../../components/cards/RoundCard";
-
-
+import { Button } from "@mui/material";
 
 const mapProps = {
     center: {
@@ -75,7 +75,7 @@ const TourDetails = ({ openComment, isPosted }) => {
     const [number, setNumber] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-    const [isFood, setIsFood] = useState(true);
+    const [expand, setExpand] = useState('');
     const [isAccom, setIsAccom] = useState(false);
     const [isTrans, setIsTrans] = useState(false);
 
@@ -86,7 +86,7 @@ const TourDetails = ({ openComment, isPosted }) => {
     }, []);
 
     const getData = () => {
-        comnGet(`api/v1/project/${location.state.id}`)
+        comnGet(`/api/v1/project/${location.state.id}`)
             .then(res => {
                 console.log(res.data.data);
                 setData(res.data.data);
@@ -127,7 +127,7 @@ const TourDetails = ({ openComment, isPosted }) => {
             'conta ctable_id': '4',
         }
 
-        comnPost('api/v1/contact', formData)
+        comnPost('/api/v1/contact', formData)
             .then(res => {
                 console.log('res', res);
                 setName('')
@@ -140,7 +140,8 @@ const TourDetails = ({ openComment, isPosted }) => {
 
     return (
         <div>
-            <CustNav />
+            {/* <CustNav /> */}
+            <CustomNavbar />
             <Spinner active={isLoading} />
             <div className="tour-details-area mg-top--70">
                 <div className="tour-details-gallery">
@@ -195,7 +196,7 @@ const TourDetails = ({ openComment, isPosted }) => {
                                             <span>4.0</span>
                                         </div>
                                         <div className="all-tags">
-                                            <a href="#">{data.speciality?.replace(/['"]+/g  , '')}</a>
+                                            <a href="#">{data.speciality?.replace(/['"]+/g, '')}</a>
                                             <a href="#">Local special ties</a>
                                             <a href="#">Natural</a>
                                             <a href="#">Travel</a>
@@ -299,29 +300,38 @@ const TourDetails = ({ openComment, isPosted }) => {
                                         </div>
                                     </div>
                                 </div> */}
-                                <div>
-                                    <h4 className="single-page-small-title">Included</h4>
 
-                                    <Accordion expanded={isFood} onChange={() => setIsFood(!isFood)}>
-                                        <AccordionSummary expandIcon={<ExpandMoreIcon />}
-                                            aria-controls="panel1a-content"
-                                            id="panel1a-header">
-                                            <img src={img15} alt="icons" />
-                                            <Typography sx={{ marginLeft: 2, marginTop: 1 }}>Food</Typography>
-                                        </AccordionSummary>
-                                        <div className="overflowX">
+                                {data?.category?.allowedproduct_category &&
+                                    <div>
+                                        <h4 className="single-page-small-title">Included</h4>
 
-                                                <div className="overflowX1">
-                                                    <RoundCard />
-                                                    <RoundCard />
-                                                    <RoundCard />
-                                                    <RoundCard />
-                                                    <RoundCard />
+                                        {data?.category?.allowedproduct_category.map(allowed => {
+                                            return (
+                                                <div className="includeMainDiv">
+                                                    <div className="includeTitle" aria-controls="panel1a-content" id="panel1a-header">
+                                                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                            <img className="categoryIcon" src={Path.API_PATH + allowed.product_category.icon} alt="icons" />
+                                                            <Typography sx={{ marginLeft: 2, marginTop: 1, fontWeight: 'bold' }}>{allowed.product_category.name}</Typography>
+                                                        </div>
+                                                        <div>
+                                                            <Button size="small" sx={{ textTransform: "none" }} >Show All</Button>
+                                                        </div>
+                                                    </div>
+                                                    <div className="overflowX">
+                                                        <div className="overflowX1">
+                                                            {allowed.product_category.products.map(product => {
+                                                                return (
+                                                                    <RoundCard product={product} />
+                                                                )
+                                                            })
+                                                            }
+                                                        </div>
+                                                    </div>
                                                 </div>
-
-                                                </div>
-                                    </Accordion>
-                                    <Accordion expanded={isAccom} onChange={() => setIsAccom(!isAccom)}>
+                                            )
+                                        })
+                                        }
+                                        {/* <Accordion expanded={isAccom} onChange={() => setIsAccom(!isAccom)}>
                                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                             aria-controls="panel2a-content"
                                             id="panel2a-header">
@@ -336,8 +346,8 @@ const TourDetails = ({ openComment, isPosted }) => {
                                                 sit amet blandit leo lobortis eget.
                                             </Typography>
                                         </AccordionDetails>
-                                    </Accordion>
-                                    <Accordion expanded={isTrans} onChange={() => setIsTrans(!isTrans)}>
+                                    </Accordion> */}
+                                        {/* <Accordion expanded={isTrans} onChange={() => setIsTrans(!isTrans)}>
                                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                             aria-controls="panel2a-content"
                                             id="panel2a-header">
@@ -352,8 +362,8 @@ const TourDetails = ({ openComment, isPosted }) => {
                                                 sit amet blandit leo lobortis eget.
                                             </Typography>
                                         </AccordionDetails>
-                                    </Accordion>
-                                </div>
+                                    </Accordion> */}
+                                    </div>}
                                 {/* <div className="package-included-location">
                                     <h4 className="single-page-small-title">Your Itinerary</h4>
                                     <div className="row">
@@ -457,20 +467,15 @@ const TourDetails = ({ openComment, isPosted }) => {
                                         </p>
                                     </div>
                                 </div>
-                                <div style={{ height: '100vh', width: '100%' }}>
+                                {/* <div style={{ height: '100vh', width: '100%' }}>
                                     <GoogleMapReact
                                         bootstrapURLKeys={{ key: "AIzaSyDh0r4d43_4Jms5sGWfSTQjHO9QXEj_Qvw" }}
                                         defaultCenter={mapProps.center}
                                         defaultZoom={mapProps.zoom}
                                     >
-                                        {/* <AnyReactComponent
-                                            lat={59.955413}
-                                            lng={30.337844}
-                                            text="My Marker"
-                                        /> */}
                                         <text>map</text>
                                     </GoogleMapReact>
-                                </div>
+                                </div> */}
                                 <div className="service-location-map">
                                     <h4 className="single-page-small-title">Service Location</h4>
                                     <div className="service-location-map">
@@ -554,7 +559,7 @@ const TourDetails = ({ openComment, isPosted }) => {
                                 </div>
                                 <div className="widget_ads">
                                     <a href="#">
-                                        <img className="w-100" src="assets/img/others/01.png" alt="img" />
+                                        <img className="w-100" src="../../assets/img/others/01.png" alt="img" />
                                     </a>
                                 </div>
                             </div>

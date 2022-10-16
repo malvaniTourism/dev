@@ -29,7 +29,8 @@ const CustomNavbar = () => {
 
     return (
         <nav>
-            {!toggleMenu && <div className="mobile-logo">
+            {!toggleMenu &&
+            <div className="mobile-logo">
                 <a href="index-2.html">
                     <img src={MyLogo} className='myLogo' alt="logo" />
                 </a>
@@ -61,6 +62,9 @@ const CustomNavbar = () => {
                     <li className="items"><a href="#/blogs">Blog</a></li>
                 </ul>
             ))}
+            {!toggleMenu &&
+            <div className="mobile-logo">
+            </div>}
             {toggleMenu ?
                 null :
                 <button onClick={toggleNav} className="toggleBtn">

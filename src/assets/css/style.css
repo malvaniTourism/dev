@@ -1862,6 +1862,8 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 
 .comments-area .comment-list li .single-comment-wrap .thumb img {
   border-radius: 50%;
+  height: 61px;
+  width: 61px;
 }
 
 .comments-area .comment-list li .single-comment-wrap .date,

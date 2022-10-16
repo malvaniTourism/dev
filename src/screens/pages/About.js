@@ -7,12 +7,14 @@ import AboutCardInfo from "../../components/carousel/AboutCardInfo";
 import Team from "../../components/commonComponents/Team";
 import Background from "../../assets/img/bg/5.png";
 import ProductHeader from "../../components/headers/ProductHeader";
+import CustomNavbar from "../../components/navbars/CustomNavbar";
 
 const AboutUs = () => {
 
     return (
         <div>
-            <CustNav />
+            {/* <CustNav /> */}
+            <CustomNavbar />
             <ProductHeader page={'About Us'} background={Background} />
             <AboutCardInfo />
             <AboutCard />

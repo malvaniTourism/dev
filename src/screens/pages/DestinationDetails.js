@@ -18,6 +18,7 @@ import CommentsCard from '../../components/cards/CommentsCard';
 import CommentsForm from '../../components/commonComponents/CommentsForm';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
+import CustomNavbar from "../../components/navbars/CustomNavbar";
 
 const style = {
     position: 'absolute',
@@ -47,7 +48,7 @@ const DestinationDetails = ({ openComment }) => {
     }, [location.state]);
 
     const getData = () => {
-        comnGet(`api/v1/${location.state.name.toLowerCase()}/${location.state.id}`)
+        comnGet(`/api/v1/${location.state.name.toLowerCase()}/${location.state.id}`)
             .then(res => {
                 setData(res.data.data);
                 setIsLoading(false)
@@ -72,7 +73,8 @@ const DestinationDetails = ({ openComment }) => {
     return (
         <div>
             <Spinner active={isLoading} />
-            <CustNav />
+            {/* <CustNav /> */}
+            <CustomNavbar />
             <DestinationBanner page={'Details'} />
             <DestinationCarousel />
             <div class="row justify-content-center">

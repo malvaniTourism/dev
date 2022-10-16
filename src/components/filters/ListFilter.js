@@ -49,7 +49,7 @@ const ListFilter = (props) => {
         formData.append('string', name || '');
         formData.append('table_name', 'projects')
 
-        comnPost(`api/v1/search?page=${page}`, formData)
+        comnPost(`/api/v1/search?page=${page}`, formData)
             .then(res => {
                 console.log(res.data.data.data);
                 setProjects(res.data.data.data);

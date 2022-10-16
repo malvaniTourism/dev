@@ -4,12 +4,14 @@ import CustHeader from "../../components/headers/CustHeader";
 import CustNav from "../../components/navbars/CustNav";
 import CustFooter from "../../components/footers/CustFooter";
 import TopRatedCard from "../../components/cards/TopRatedCard";
+import CustomNavbar from "../../components/navbars/CustomNavbar";
 
 const AboutUs = () => {
 
     return (
         <div>
-            <CustNav />
+            {/* <CustNav /> */}
+            <CustomNavbar />
             <CustHeader />
             <TopRatedCard />
             <CustFooter />

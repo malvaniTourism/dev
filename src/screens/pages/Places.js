@@ -7,6 +7,7 @@ import { comnGet } from "../../services/comnServ";
 import Spinner from "../../components/commonComponents/Spinner";
 import PlaceList from "../../components/carousel/PlaceList";
 import DestinationBanner from "../../components/banners/DestinationBanner";
+import CustomNavbar from "../../components/navbars/CustomNavbar";
 
 const Places = () => {
     const [places, setPlaces] = useState([]);
@@ -15,7 +16,7 @@ const Places = () => {
     const [totalPages, setTotalPages] = useState(1)
 
     useEffect(() => {
-        comnGet(`api/v1/placecategories?page=${page}`)
+        comnGet(`/api/v1/placecategories?page=${page}`)
             .then(res => {
                 setPlaces(res.data.data.data);
                 setIsLoading(false);
@@ -26,7 +27,8 @@ const Places = () => {
     return (
         <div>
             <Spinner active={isLoading} />
-            <CustNav />
+            {/* <CustNav /> */}
+            <CustomNavbar />
             <DestinationBanner page={'Places'} />
             <PlaceList places={places} setPage={(v) => setPage(v)} pageCount={totalPages} />
             <CustFooter />

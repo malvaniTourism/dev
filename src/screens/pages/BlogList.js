@@ -11,6 +11,7 @@ import Spinner from "../../components/commonComponents/Spinner";
 import Background from "../../assets/img/bg/10.png";
 import ProductHeader from "../../components/headers/ProductHeader";
 import { useNavigate } from 'react-router-dom';
+import CustomNavbar from "../../components/navbars/CustomNavbar";
 
 const BlogList = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -26,7 +27,7 @@ const BlogList = () => {
 
     const getBlogs = (page) => {
         console.log(page);
-        comnGet(`api/v1/blogs?page=${page}`)
+        comnGet(`/api/v1/blogs?page=${page}`)
             .then(res => {
                 if (res.status == 200) {
                     setBlogsData(res.data.data.data)
@@ -49,7 +50,8 @@ const BlogList = () => {
     return (
         <div>
             <Spinner active={isLoading} />
-            <CustNav />
+            {/* <CustNav /> */}
+            <CustomNavbar />
             <ProductHeader page={'Blogs'} background={Background} />
             <Blogs data={blogsData} pageCount={totalPages} setPage={(v) => setPage(v)} onClick={(id) => onClick(id)} getLatestProject={(name) => getLatestProject(name)} />
             {/* <Newsletter /> */}
