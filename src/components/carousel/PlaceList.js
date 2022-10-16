@@ -59,7 +59,7 @@ const PlaceList = ({ places, setPage, pageCount }) => {
                             </div> */}
 
                             <Stack spacing={2} style={{ alignItems: 'center' }} >
-                                <Pagination variant="outlined" color="secondary" size='large' count={pageCount} onChange={setPage(value)} showFirstButton showLastButton />
+                                <Pagination className='myPagination' variant="outlined" color="secondary" size='large' count={pageCount} onChange={setPage(value)} showFirstButton showLastButton />
                             </Stack>
                         </div>
                     </div>

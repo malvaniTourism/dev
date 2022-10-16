@@ -23,6 +23,7 @@ import BookNow from "../../components/buttons/BookNow";
 import { comnGet, comnPost } from '../../services/comnServ';
 import { connect } from "react-redux";
 import { saveLoginUser } from "../../actions/commonActions";
+import CategoriesCard from "../../components/cards/CategoriesCard";
 import FlipCard from "../../components/cards/FlipCard";
 import FoodCardFront from "../../components/cards/FoodCardFront";
 import FoodFiesta from "../../components/carousel/FoodFiesta";
@@ -70,21 +71,21 @@ const Home = (props) => {
             {/* <CustHeader /> */}
             <IndexHead />
             <CustMainSearchBar />
-            <UpComming />
-            <OurServices />
+            {/* <UpComming /> */}
+            <CategoriesCard data={data?.categories} />
+            {/* <OurServices /> */}
             {/* <CustOffers /> */}
-            <HolidayPlans />
+            <HolidayPlans data={data.projects}/>
             <UpCommingHome data={data.projects} />
             <FoodFiesta />
-            <InstagramPost data={data.cities} />
+            <InstagramPost data={data?.cities} />
             {/* <Services /> */}
             {/* <OffrsSwiper /> */}
             {/* <HolidaySwiper /> */}
             {/* <CafeSwiper /> */}
-            <RecentBlogs data={data?.blogs?.slice(0, 4)} />
+            {/* <RecentBlogs data={data?.blogs?.slice(0, 3)} /> */}
             <Ads />
             <OurClients />
-            {/* <Newsletter /> */}
             <CustFooter />
         </div>
     )
@@ -99,7 +100,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         saveLoginUser: data => {
-            dispatch(saveLoginUser(data))
+             dispatch(saveLoginUser(data))
         }
     }
 }

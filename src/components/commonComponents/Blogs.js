@@ -74,7 +74,7 @@ const Blogs = (props) => {
                                 )
                             })}
                             <Stack spacing={2} style={{alignItems: 'center'}} >
-                                <Pagination variant="outlined" color="secondary" size='large' count={props.pageCount} onChange={changePage} showFirstButton showLastButton />
+                                <Pagination className='myPagination' variant="outlined" color="secondary" size='large' count={props.pageCount} onChange={changePage} showFirstButton showLastButton />
                             </Stack>
                         </div>
                     </div>

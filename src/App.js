@@ -35,6 +35,7 @@ import TourDetails from './screens/pages/TourDetails';
 import Vr from './screens/pages/Vr';
 import Profile from './screens/pages/Profile';
 import DestinationDetails from './screens/pages/DestinationDetails';
+import TourForm from './screens/mains/TourForm';
 
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
         <Route path='/tourdetails' element={<TourDetails />}></Route>
         <Route path='city/details' element={<DestinationDetails />}></Route>
         <Route path='place/details' element={<DestinationDetails />}></Route>
+        <Route path="/tourForm" element={<TourForm />}></Route>
         <Route element={<NotFound />}></Route>
       </Routes>
     </Router>
