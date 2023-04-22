@@ -3,7 +3,7 @@ import img28 from '../../assets/img/destination-list/28.png';
 import Path from "../../services/baseUrl";
 
 const UpcommingHomeCard = ({ data }) => {
-    let Img = Path.API_PATH + data.fevicon
+    let Img = Path.API_PATH + '/' + data.fevicon
 
     return (
         <div className="col-xl-4 col-md-6">

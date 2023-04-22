@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const HolidayPlans = (data) => {
+    console.log(data.data);
     const navigate = useNavigate();
 
     return (
@@ -37,14 +38,14 @@ const HolidayPlans = (data) => {
                 <div className="row">
                     
                 {data?.data?.map((item) => {
-                       return (
+                    return (
                         <div className="col-lg-3 col-sm-6">
                         <div
                             className="single-destinations-list style-two wow animated fadeInUp"
                             data-wow-duration="0.4s"
                             data-wow-delay="0.1s"
                         >
-                            <div className="thumb" onClick={() => navigate('listdetails')}>
+                            <div className="thumb" onClick={() => navigate('listdetails', { state: { id: item.id }})}>
                                 <img src={Thumb} alt="list" />
                             </div>
                             <div className="details">
@@ -62,10 +63,8 @@ const HolidayPlans = (data) => {
                             </div>
                         </div>
                     </div>
-                
                     )
                 })}
-
                 </div>
             </div>
         </div>

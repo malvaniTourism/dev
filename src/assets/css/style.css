@@ -2317,7 +2317,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     main search style
 ----------------------------------------------------- */
 .tp-main-search-area {
-  margin-top: -85px;
+  margin-top: -75px;
   z-index: 2;
   position: relative;
 }
@@ -3517,6 +3517,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .banner-area {
   /* position: relative; */
   height: 60vh;
+  padding-top: 50px
 }
 
 .banner-slider {
@@ -3593,6 +3594,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .banner-bg-1 {
   background-repeat: no-repeat;
   background-size: contain;
+  padding-top: 50px
 }
 .banner-slider .banner-slider-item.banner-bg-1:after {
   background-image: url("../img/banner/11.jpg");

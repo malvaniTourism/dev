@@ -37,7 +37,7 @@ const Home = (props) => {
     useEffect(() => {
         window.scrollTo(0, 0)
         var data = new FormData();
-        data.append('email', 'kamblepranav460@gmail.com');
+        data.append('email', 'pk123@gmail.com');
         data.append('password', '123456');
 
         comnPost('/api/auth/login', data)

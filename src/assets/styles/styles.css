@@ -138,7 +138,8 @@ a {
     width: 100vw;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center
+    background-position: center;
+    padding-top: 50px
 }
 
 .headText {
@@ -146,8 +147,8 @@ a {
     font-family: 'Abril Fatface';
     font-style: normal;
     font-weight: 400;
-    font-size: 15vw;
-    line-height: 15vw;
+    font-size: 12vw;
+    line-height: 12vw;
     display: flex;
     align-items: center;
     text-align: center;
@@ -378,11 +379,10 @@ a {
 
 .detPageImgDiv {
     background-repeat: no-repeat;
-    padding-top: 8vh;
+    padding-top: 10vh;
     padding-left: 8vw;
     height: 45vh;
     background-size: 100%;
-
 }
 
 .myLogo {
@@ -537,6 +537,9 @@ a {
     background-repeat: no-repeat;
     margin: 20px;
     box-shadow: 1px 6px 17px 9px rgba(0, 0, 0, 0.25);
+}
+.formDivv {
+    padding: 20px;
 }
 * {
     -ms-overflow-style: none;
